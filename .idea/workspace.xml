@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ajax/login.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1irhjke2fma8B2RWxh9C1Ln2Hlf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="" />
+      <created>1602671754370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602671754370</updated>
+      <workItem from="1602671755568" duration="3377000" />
+      <workItem from="1602699956367" duration="230000" />
+      <workItem from="1602771254440" duration="5500000" />
+      <workItem from="1602780445251" duration="1967000" />
+      <workItem from="1602786140062" duration="2620000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="553" y="259" key="#Deployment" timestamp="1602672294883">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
+    <state x="905" y="311" key="CommitChangelistDialog2" timestamp="1602788765596">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="905" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788765596" />
+    <state x="1061" y="463" key="FileChooserDialogImpl" timestamp="1602788673245">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
+    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1602786397198">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1602776557474" />
+    <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
+    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602786397198" />
+    <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
+    <state x="1051" y="547" key="publish.login" timestamp="1602786308147">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1602780556152" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602786308147" />
+    <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="379" y="206" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1602777688047" />
+  </component>
+</project>

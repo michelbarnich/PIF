@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="192.168.56.1" id="d8e48a62-9863-47a2-b411-415a382e79f3" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.56.1" id="6c6e528c-18f2-42d9-8bf2-962f90d537fe" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
