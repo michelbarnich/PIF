@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ajax/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/setUpSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/createAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/createAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/connectToDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/connectToDatabase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,41 +72,63 @@
       <workItem from="1602699956367" duration="230000" />
       <workItem from="1602771254440" duration="5500000" />
       <workItem from="1602780445251" duration="1967000" />
-      <workItem from="1602786140062" duration="2620000" />
+      <workItem from="1602786140062" duration="2714000" />
+      <workItem from="1602874280214" duration="2402000" />
+      <workItem from="1602877816977" duration="370000" />
     </task>
+    <task id="LOCAL-00001" summary="create Account and login working partially">
+      <created>1602788807825</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602788807825</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create Account and login working partially" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Account and login working partially" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="259" key="#Deployment" timestamp="1602672294883">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="905" y="311" key="CommitChangelistDialog2" timestamp="1602788765596">
+    <state x="905" y="311" key="CommitChangelistDialog2" timestamp="1602788807212">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="905" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788765596" />
+    <state x="905" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788807212" />
     <state x="1061" y="463" key="FileChooserDialogImpl" timestamp="1602788673245">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
-    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1602786397198">
+    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1602878161887">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1602776557474" />
     <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
-    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602786397198" />
+    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878161887" />
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1602788817483">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788817483" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1602874280379">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602874280379" />
     <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1602786308147">
+    <state x="1051" y="547" key="publish.login" timestamp="1602874304262">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1602780556152" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602786308147" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602874304262" />
     <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

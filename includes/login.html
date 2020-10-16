@@ -1,14 +1,14 @@
-<input id="login_email">
-<input id="login_password" type="password">
-<button id="button_login">Login</button>
+<input id="login_email" placeholder="Email Address">
+<input id="login_password" type="password" placeholder="Password">
+<button id="button_login">Login!</button>
 <p id="login_response"></p>
 
-<input id="createAccount_email">
-<input id="createAccount_password">
-<input id="createAccount_passwordRepeat">
-<input id="createAccount_name">
-<input id="createAccount_surName">
-<button id="button_createAccount">Login</button>
+<input id="createAccount_email" placeholder="Email Address">
+<input id="createAccount_password" placeholder="Password" type="password">
+<input id="createAccount_passwordRepeat" placeholder="Repeat Password" type="password">
+<input id="createAccount_name" placeholder="First Name">
+<input id="createAccount_surName" placeholder="Sur Name">
+<button id="button_createAccount">Create Account!</button>
 <p id="createAccount_response"></p>
 
 <script>
@@ -24,6 +24,7 @@
 
             console.log("[ajax/login.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
             console.log("[ajax/login.php][LoginSuccess:] " + loginResponse.LoginSuccess);
+            console.log("[ajax/login.php][SQLError:] " + loginResponse.SQLError);
 
             if(loginResponse.SQLServerConnection == false) $("#login_response").html("The website is currently having a Problem. Please try again later.");
             if(loginResponse.LoginSuccess == false) $("#login_response").html("Wrong Email/Password.");
@@ -46,9 +47,10 @@
             console.log("[ajax/createAccount.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
             console.log("[ajax/createAccount.php][emailAlreadyInUse:] " + loginResponse.emailAlreadyInUse);
             console.log("[ajax/createAccount.php][createdAccount:] " + loginResponse.createdAccount);
+            console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
 
             if(loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem. Please try again later.");
-            if(loginResponse.emailAlreadyInUse == false) $("#createAccount_response").html("This email is already in use!");
+            if(loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
             if(loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
         });
     });
