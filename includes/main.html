@@ -1,1 +1,10 @@
 <p>LOGIN SUCCESS</p>
+<button id="logout">Logout!</button>
+<script>
+    $("#logout").click(function() {
+        $.get("ajax/logout.php", function (response) {
+            console.log("[ajax/logout.php][logoutSuccess:] " + JSON.parse(response).logoutSuccess);
+        });
+        location.reload();
+    });
+</script>

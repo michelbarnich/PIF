@@ -1,9 +1,13 @@
 <?php
 // Connecting to Database
 include_once "../scripts/connectToDatabase.php";
+include_once "../scripts/setUpSession.php";
 
-if($conn != false) {
-// Checking if email Address is already used
+if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    $response["validEmail"] = false;
+}elseif($conn != false) {
+    $response["validEmail"] = true;
+    // Checking if email Address is already used
     $sql = "SELECT dtEmail FROM tblBenutzer WHERE dtEmail = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $_POST["email"]);
@@ -20,7 +24,7 @@ if($conn != false) {
 
         if ($conn != false) {
             // Inserting new dataset
-            $sql = "INSERT INTO tblBenutzer(dtEmail, dtPasswortHash, dtName, dtVorname) VALUES(?, ?, ?, ?)";
+            $sql = "INSERT INTO tblBenutzer(dtEmail, dtPasswortHash, dtVorname, dtName) VALUES(?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
                 "ssss",
@@ -39,10 +43,12 @@ if($conn != false) {
         }
     }
 
-// Closing connection to avoid mem leak
-    $conn->close();
+    include_once "./login.php";
 }
 
+// Closing connection to avoid mem leak
+//$conn->close();
+
 // output
-echo json_encode($response);
+//echo json_encode($response);
 ?>

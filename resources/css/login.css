@@ -1,0 +1,147 @@
+* {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue";
+    font-weight: normal;
+}
+
+body {
+    background-color: black;
+    background-image: url("/resources/img/login.html/plants_header.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 1920px;
+    height: 1080px;
+}
+
+h1 {
+    position: absolute;
+    top: 455px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    text-shadow: 16px 26px 28px rgba(0,0,0,0.45);
+}
+
+#loginBox {
+    display: none;
+    height: 926px;
+    width: 666px;
+    background-color: rgba(255,255,255,0.79);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 30px;
+    position: fixed;
+    top: 65px;
+    left: 627px;
+}
+
+#showLoginBox_login {
+    position: absolute;
+    top: 682px;
+    left: 797px;
+    border:none;
+    background-color: rgba(255,255,255,0.79);
+    border-radius: 30px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    height: 117px;
+    width: 326px;
+    color: #20C800;
+    font-size: 70px;
+}
+
+#showLoginBox_createAccount {
+    position: absolute;
+    top: 824px;
+    left: 691px;
+    color: white;
+    font-size: 55px;
+    background-color: rgba(0,0,0,0);
+    border:none;
+    text-shadow: 16px 26px 28px rgba(0,0,0,0.45);
+}
+
+input {
+    position: absolute;
+    width: 591px;
+    height: 52px;
+    left: 29px;
+    background-color: white;
+    color: #767676;
+    box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
+    border: none;
+    font-size: 24px;
+    border-radius: 15px;
+    padding-left: 17px;
+}
+
+#login_email {
+    top: 93px;
+}
+
+#login_password {
+    top: 170px;
+}
+
+#createAccount_email {
+    top: 422px;
+}
+
+#createAccount_password {
+    top: 499px;
+}
+
+#createAccount_passwordRepeat {
+    top: 576px;
+}
+
+#createAccount_name {
+    top: 655px;
+}
+
+#createAccount_surName {
+    top: 733px;
+}
+
+h2 {
+    font-size: 57px;
+    color: #767676;
+    position: absolute;
+}
+
+#h2_login {
+    top: 10px;
+    left: 262px;
+}
+
+#h2_createAccount {
+    top: 339px;
+    left: 134px;
+}
+
+#button_login {
+    width: 159px;
+    height: 57px;
+    color: #20C800;
+    font-size: 33px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    top: 254px;
+    left: 254px;
+}
+
+#button_createAccount {
+    width: 159px;
+    height: 57px;
+    color: #20C800;
+    font-size: 33px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    top: 815px;
+    left: 254px;
+}

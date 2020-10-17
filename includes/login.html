@@ -1,57 +1,124 @@
-<input id="login_email" placeholder="Email Address">
-<input id="login_password" type="password" placeholder="Password">
-<button id="button_login">Login!</button>
-<p id="login_response"></p>
 
-<input id="createAccount_email" placeholder="Email Address">
-<input id="createAccount_password" placeholder="Password" type="password">
-<input id="createAccount_passwordRepeat" placeholder="Repeat Password" type="password">
-<input id="createAccount_name" placeholder="First Name">
-<input id="createAccount_surName" placeholder="Sur Name">
-<button id="button_createAccount">Create Account!</button>
-<p id="createAccount_response"></p>
+<h1>Automate your greenhouse</h1>
+<button id="showLoginBox_login">Login!</button>
+<button id="showLoginBox_createAccount">Or create an Account!</button>
+
+<div id="loginBox">
+
+    <h2 id="h2_login">Login</h2>
+    <input id="login_email" placeholder="Email Address">
+    <input id="login_password" type="password" placeholder="Password">
+    <button id="button_login">Login!</button>
+    <p id="login_response"></p>
+
+    <h2 id="h2_createAccount">Create Account</h2>
+    <input id="createAccount_email" placeholder="Email Address">
+    <input id="createAccount_password" placeholder="Password" type="password">
+    <input id="createAccount_passwordRepeat" placeholder="Repeat Password" type="password">
+    <input id="createAccount_name" placeholder="First Name">
+    <input id="createAccount_surName" placeholder="Sur Name">
+    <button id="button_createAccount">Join!</button>
+    <p id="createAccount_response"></p>
+
+</div>
 
 <script>
+    // loading stylesheet
+    $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "resources/css/login.css"
+    }).appendTo("head");
+
+    // if login Button pressed
+    $("#showLoginBox_login").click(function () {
+        $("#loginBox").show();
+        $("#login_email").focus();
+    });
+
+    // if login Button pressed
+    $("#showLoginBox_createAccount").click(function () {
+        $("#loginBox").show();
+        $("#createAccount_email").focus();
+    });
+
     // Calling login script
     $("#button_login").click(function () {
-        $.post( "ajax/login.php", {
+        if ($("#login_email").val() != "" && $("#login_password").val() != "") {
+            $.post("ajax/login.php", {
 
-            email: $("#login_email").val(),
-            password: $("#login_password").val()
+                email: $("#login_email").val(),
+                password: $("#login_password").val()
 
-        }).done(function( response ) {
-            let loginResponse = JSON.parse(response);
+            }).done(function (response) {
+                let loginResponse = JSON.parse(response);
 
-            console.log("[ajax/login.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
-            console.log("[ajax/login.php][LoginSuccess:] " + loginResponse.LoginSuccess);
-            console.log("[ajax/login.php][SQLError:] " + loginResponse.SQLError);
+                console.log("[ajax/login.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
+                console.log("[ajax/login.php][LoginSuccess:] " + loginResponse.LoginSuccess);
+                console.log("[ajax/login.php][SQLError:] " + loginResponse.SQLError);
 
-            if(loginResponse.SQLServerConnection == false) $("#login_response").html("The website is currently having a Problem. Please try again later.");
-            if(loginResponse.LoginSuccess == false) $("#login_response").html("Wrong Email/Password.");
+                if (loginResponse.SQLServerConnection == false) $("#login_response").html("The website is currently having a Problem. Please try again later.");
+                if (loginResponse.LoginSuccess == false) $("#login_response").html("Wrong Email/Password.");
 
-        });
+                if (loginResponse.LoginSuccess) {
+                    location.reload();
+                } else {
+                    $("#login_password").css("border", "2px solid red");
+                }
+            });
+        } else {
+            $("#login_email").css("border", "4px solid red");
+        }
     });
+
+    function validateEmail(mail)
+    {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+        {
+            return (true)
+        } else {
+            return (false)
+        }
+    }
 
     // calling createAccount Script
     $("#button_createAccount").click(function () {
-        $.post("ajax/createAccount.php", {
 
-            email: $("#createAccount_email").val(),
-            password: $("#createAccount_password").val(),
-            name: $("#createAccount_name").val(),
-            surName: $("#createAccount_surName").val()
+        if(!validateEmail($("#createAccount_email").val())) {
+            $("#createAccount_email").css("border", "2px solid red");
+        } else if ($("#createAccount_email").val() != "" &&
+            $("#createAccount_password").val() != "" &&
+            $("#createAccount_name").val() != "" &&
+            $("#createAccount_surName").val() != ""
+        ) {
+            $.post("ajax/createAccount.php", {
 
-        }).done(function ( response ) {
-            let loginResponse = JSON.parse(response);
+                email: $("#createAccount_email").val(),
+                password: $("#createAccount_password").val(),
+                name: $("#createAccount_name").val(),
+                surName: $("#createAccount_surName").val()
 
-            console.log("[ajax/createAccount.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
-            console.log("[ajax/createAccount.php][emailAlreadyInUse:] " + loginResponse.emailAlreadyInUse);
-            console.log("[ajax/createAccount.php][createdAccount:] " + loginResponse.createdAccount);
-            console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
+            }).done(function (response) {
+                let loginResponse = JSON.parse(response);
 
-            if(loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem. Please try again later.");
-            if(loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
-            if(loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
-        });
+                console.log("[ajax/createAccount.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
+                console.log("[ajax/createAccount.php][emailAlreadyInUse:] " + loginResponse.emailAlreadyInUse);
+                console.log("[ajax/createAccount.php][createdAccount:] " + loginResponse.createdAccount);
+                console.log("[ajax/createAccount.php][validEmail:] " + loginResponse.validEmail);
+                console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
+
+                if (loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem. Please try again later.");
+                if (loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
+                if (loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
+
+                location.reload();
+            });
+        } else {
+            $("#createAccount_email").css("border", "2px solid red");
+            $("#createAccount_password").css("border", "2px solid red");
+            $("#createAccount_passwordRepeat").css("border", "2px solid red");
+            $("#createAccount_name").css("border", "2px solid red");
+            $("#createAccount_surName").css("border", "2px solid red");
+        }
     });
 </script>
