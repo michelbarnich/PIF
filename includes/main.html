@@ -1,10 +1,43 @@
-<p>LOGIN SUCCESS</p>
-<button id="logout">Logout!</button>
+<div id="sidebar">
+    <h1 id="sidebar_name">Michel Barnich</h1>
+    <hr id="sidebar_hr"/>
+    <ul id="sidebar_menu">
+        <li class="sidebar_option selected">
+            <img src="resources/img/main.html/Plants.png" class="option_icon">
+            <span>My Plants</span>
+        </li>
+        <li class="sidebar_option">
+            <img src="resources/img/main.html/Company.png" class="option_icon">
+            <span>My Company</span>
+        </li>
+        <li class="sidebar_option">
+            <img src="resources/img/main.html/Account.png" class="option_icon">
+            <span>My Account</span>
+        </li>
+        <li class="sidebar_option">
+            <img src="resources/img/main.html/System.png" class="option_icon">
+            <span>System</span>
+        </li>
+    </ul>
+    <button id="sidebar_logout" class="sidebar_option">Logout!</button>
+</div>
+
+<div id="content">
+</div>
+
 <script>
-    $("#logout").click(function() {
+    // loading stylesheet
+    $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "resources/css/main.css"
+    }).appendTo("head");
+
+    // call logout script
+    $("#sidebar_logout").click(function() {
         $.get("ajax/logout.php", function (response) {
             console.log("[ajax/logout.php][logoutSuccess:] " + JSON.parse(response).logoutSuccess);
+            location.reload();
         });
-        location.reload();
     });
 </script>

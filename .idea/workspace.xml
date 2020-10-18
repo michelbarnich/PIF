@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Account.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Company.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Plants.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/main.html/System.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,7 +47,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\website\resources\img\main.html" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -71,6 +87,8 @@
       <workItem from="1602877816977" duration="508000" />
       <workItem from="1602879590592" duration="200000" />
       <workItem from="1602925245022" duration="89000" />
+      <workItem from="1602951581906" duration="114000" />
+      <workItem from="1603021478914" duration="5927000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -86,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602878275169</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Logout working, fixed multiple bugs, and added checks for validating email addresses">
+      <created>1602951681527</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602951681527</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,17 +120,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create Account and login working partially" />
     <MESSAGE value="fixed Create Account Bug (SQL email field not long enough), and Session is now working correctly (scripts/setUpSession.pp)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Create Account Bug (SQL email field not long enough), and Session is now working correctly (scripts/setUpSession.pp)" />
+    <MESSAGE value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
   </component>
   <component name="WindowStateProjectService">
     <state x="553" y="259" key="#Deployment" timestamp="1602672294883">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="905" y="311" key="CommitChangelistDialog2" timestamp="1602878274352">
+    <state x="872" y="311" key="CommitChangelistDialog2" timestamp="1602951680468">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="905" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878274352" />
+    <state x="872" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951680468" />
     <state x="1061" y="463" key="FileChooserDialogImpl" timestamp="1602788673245">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -116,23 +142,23 @@
     <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1602776557474" />
     <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
     <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878161887" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1602878285001">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1602951689719">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878285001" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1602951581409">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951689719" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1603021478887">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951581409" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603021478887" />
     <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1602951598454">
+    <state x="1051" y="547" key="publish.login" timestamp="1603021699485">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1602780556152" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951598454" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603021699485" />
     <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

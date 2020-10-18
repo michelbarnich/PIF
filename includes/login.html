@@ -30,6 +30,14 @@
         href: "resources/css/login.css"
     }).appendTo("head");
 
+    $(document).ready(function () {
+        document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+    });
+
+    $(window).resize(function () {
+        document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+    });
+
     // if login Button pressed
     $("#showLoginBox_login").click(function () {
         $("#loginBox").show();
