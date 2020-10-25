@@ -34,7 +34,8 @@ h1 {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-radius: 30px;
-    transform: translateY(15%);
+    transform: translateY(3.6%);
+    transform: scale(100vh/1080);
     margin: auto;
 }
 

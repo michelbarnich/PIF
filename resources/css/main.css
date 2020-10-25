@@ -6,6 +6,12 @@
     font-weight: normal;
 }
 
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background-color: white;
     background-image: url("/resources/img/login.html/plants_header.jpg");
@@ -13,12 +19,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 #sidebar {
     width: 282px;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -42,7 +48,7 @@ body {
 
 #content {
     width: calc(100% - 282px);
-    height: 100vh;
+    height: 100%;
     background-color: white;
     left: 282px;
     border: none;
