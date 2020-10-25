@@ -41,17 +41,20 @@
     // if login Button pressed
     $("#showLoginBox_login").click(function () {
         $("#loginBox").show();
+        document.getElementById("loginBox").style.zoom = (document.documentElement.clientHeight / 1000  * 100) + "%";
         $("#login_email").focus();
     });
 
-    // if login Button pressed
+    // if create Button pressed
     $("#showLoginBox_createAccount").click(function () {
         $("#loginBox").show();
+        document.getElementById("loginBox").style.zoom = (document.documentElement.clientHeight / 1000  * 100) + "%";
         $("#createAccount_email").focus();
     });
 
     // Calling login script
     $("#button_login").click(function () {
+
         if ($("#login_email").val() != "" && $("#login_password").val() != "") {
             $.post("ajax/login.php", {
 
@@ -71,11 +74,15 @@
                 if (loginResponse.LoginSuccess) {
                     location.reload();
                 } else {
-                    $("#login_password").css("border", "2px solid red");
+                    var topOffset = parseInt($("#login_email").css("top")) - 2 + "px";
+                    $("#login_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+                    $("#login_response").html("Wrong Email/Password!");
                 }
             });
         } else {
-            $("#login_email").css("border", "4px solid red");
+            var topOffset = parseInt($("#login_email").css("top")) - 2 + "px";
+            $("#login_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            $("#login_response").html("Please enter an email AND Password!");
         }
     });
 
@@ -91,9 +98,23 @@
 
     // calling createAccount Script
     $("#button_createAccount").click(function () {
+        if($("#createAccount_password").val() != $("#createAccount_passwordRepeat").val()) {
 
-        if(!validateEmail($("#createAccount_email").val())) {
-            $("#createAccount_email").css("border", "2px solid red");
+            var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px";
+            $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+            var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px";
+            $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+            $("#createAccount_response").html("The Passwords do not match!");
+
+        } else if(!validateEmail($("#createAccount_email").val())) {
+
+            var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px";
+            $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+            $("#createAccount_response").html("The Email Address is not valid");
+
         } else if ($("#createAccount_email").val() != "" &&
             $("#createAccount_password").val() != "" &&
             $("#createAccount_name").val() != "" &&
@@ -115,18 +136,20 @@
                 console.log("[ajax/createAccount.php][validEmail:] " + loginResponse.validEmail);
                 console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
 
-                if (loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem. Please try again later.");
+                if (loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem.");
                 if (loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
                 if (loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
 
                 location.reload();
             });
         } else {
-            $("#createAccount_email").css("border", "2px solid red");
-            $("#createAccount_password").css("border", "2px solid red");
-            $("#createAccount_passwordRepeat").css("border", "2px solid red");
-            $("#createAccount_name").css("border", "2px solid red");
-            $("#createAccount_surName").css("border", "2px solid red");
+            if($("#createAccount_email").val == "") var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px"; $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            if($("#createAccount_password").val == "") var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px"; $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            if($("#createAccount_passwordRepeat").val == "") var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px"; $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            if($("#createAccount_name").val == "") var topOffset = parseInt($("#createAccount_name").css("top")) - 2 + "px"; $("#createAccount_name").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            if($("#createAccount_surName").val == "") var topOffset = parseInt($("#createAccount_surName").css("top")) - 2 + "px"; $("#createAccount_surName").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+            $("#createAccount_response").html("All fields need to be filled");
         }
     });
 </script>

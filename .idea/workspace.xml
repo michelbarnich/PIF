@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Account.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Company.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/main.html/Plants.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/main.html/System.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/login.css" afterDir="false" />
-    </list>
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,22 +39,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\website" />
       <recent name="G:\website\resources\img\main.html" />
     </key>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,7 +64,10 @@
       <workItem from="1602879590592" duration="200000" />
       <workItem from="1602925245022" duration="89000" />
       <workItem from="1602951581906" duration="114000" />
-      <workItem from="1603021478914" duration="5927000" />
+      <workItem from="1603021478914" duration="6050000" />
+      <workItem from="1603103160006" duration="4554000" />
+      <workItem from="1603346461073" duration="2218000" />
+      <workItem from="1603350328917" duration="1711000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -111,54 +90,63 @@
       <option name="project" value="LOCAL" />
       <updated>1602951681527</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers">
+      <created>1603027522648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603027522648</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create Account and login working partially" />
     <MESSAGE value="fixed Create Account Bug (SQL email field not long enough), and Session is now working correctly (scripts/setUpSession.pp)" />
     <MESSAGE value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
+    <MESSAGE value="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="553" y="259" key="#Deployment" timestamp="1602672294883">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state x="316" y="68" key="#Deployment" timestamp="1603104302058">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="316" y="68" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1603104302058" />
     <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="872" y="311" key="CommitChangelistDialog2" timestamp="1602951680468">
+    <state x="872" y="311" key="CommitChangelistDialog2" timestamp="1603027522056">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="872" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951680468" />
+    <state x="872" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603027522056" />
     <state x="1061" y="463" key="FileChooserDialogImpl" timestamp="1602788673245">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
-    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1602878161887">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="598" y="393" key="NewPhpFileDialog" timestamp="1603351969473">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1602776557474" />
+    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603351969473" />
     <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
     <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878161887" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1602951689719">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1603027529114">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602951689719" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1603021478887">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603027529114" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1603638241005">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603021478887" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603638241005" />
     <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1603021699485">
+    <state x="1051" y="547" key="publish.login" timestamp="1603638258326">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1602780556152" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603021699485" />
+    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1603350372755" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603638258326" />
     <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -1,5 +1,5 @@
 <div id="sidebar">
-    <h1 id="sidebar_name">Michel Barnich</h1>
+    <h1 id="sidebar_name"></h1>
     <hr id="sidebar_hr"/>
     <ul id="sidebar_menu">
         <li class="sidebar_option selected">
@@ -22,8 +22,9 @@
     <button id="sidebar_logout" class="sidebar_option">Logout!</button>
 </div>
 
-<div id="content">
-</div>
+<iframe id="content" frameBorder="0">
+    You are using an unsupported Browser.
+</iframe>
 
 <script>
     // loading stylesheet
@@ -40,4 +41,18 @@
             location.reload();
         });
     });
+
+    $(".sidebar_option").click(function () {
+        $(".sidebar_option").removeClass("selected");
+        $(this).addClass("selected");
+
+        $("#content").attr('src', "ajax/getContentForUser.php?page_name=" + $(this).children("span").text().toLowerCase());
+        console.log("[ajax/getContentForUser.php][requestedPage:] " + $(this).children("span").text().toLowerCase());
+
+    });
+
+    $.get("ajax/getUserData.php", function (response) {
+        console.log(response);
+        $("#sidebar_name").text(JSON.parse(response).userData.firstName + " " + JSON.parse(response).userData.name);
+    })
 </script>

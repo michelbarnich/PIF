@@ -8,6 +8,15 @@
       <sshConfig authType="PASSWORD" host="192.168.56.1" id="6c6e528c-18f2-42d9-8bf2-962f90d537fe" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
         <option name="customName" value="localServer" />
       </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.56.1" id="82a8ca37-34d4-4934-9cf5-1364d9238250" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.56.1" id="9c83ae95-50d2-4a02-867e-6e59e959f7b8" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.56.1" id="f66a7582-c325-49ea-9c02-2f5a3fbcd8c7" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
     </configs>
   </component>
 </project>

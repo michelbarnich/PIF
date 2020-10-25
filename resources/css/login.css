@@ -26,6 +26,7 @@ h1 {
 }
 
 #loginBox {
+    position: relative;
     display: none;
     height: 926px;
     width: 666px;
@@ -33,9 +34,8 @@ h1 {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-radius: 30px;
-    position: fixed;
-    top: 65px;
-    left: 627px;
+    transform: translateY(15%);
+    margin: auto;
 }
 
 #showLoginBox_login {
@@ -144,4 +144,20 @@ h2 {
     background-color: white;
     top: 815px;
     left: 254px;
+}
+
+#login_response {
+    top:316px;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+#createAccount_response {
+    top:877px;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    color: red;
 }

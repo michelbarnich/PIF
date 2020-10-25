@@ -45,6 +45,7 @@ body {
     height: 100vh;
     background-color: white;
     left: 282px;
+    border: none;
 }
 
 .sidebar_option {
