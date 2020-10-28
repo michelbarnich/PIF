@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        //isset($_POST["id"]) &&
+        //         isset($_POST["moisture"]) &&
+        //         isset($_POST["light"]) &&
+        //         isset($_POST["temp"]) &&
+        //         isset($_POST["humidity"])
+
+        $.post( "ajax/sensor_post.php", { id: "1", moisture: 2.1, light : 7.1, temp: 11.2, humidity: 2.9 })
+            .done(function( data ) {
+                console.log( data );
+            });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

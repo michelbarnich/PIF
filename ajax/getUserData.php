@@ -30,5 +30,7 @@
     }
 
     // output
-    echo json_encode($response);
+    if(!isset($silent) || $silent == false) {
+        echo json_encode($response);
+    }
 ?>
