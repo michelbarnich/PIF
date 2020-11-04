@@ -12,7 +12,7 @@ if($conn != false) {
     $result = $stmt->get_result();
     $response["SQLError"] = $stmt->error;
 
-    if ($result->num_rows > 0) {
+    if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
 
         // Comparing provided password to the stored one in Database
