@@ -8,4 +8,8 @@
     if($_GET["page_name"] == "system" && $response["userData"]["role"] == 3) {
         include_once "../includes/system.php";
     }
+
+    if($_GET["page_name"] == "my account" && $response["userData"]["role"] >= 1) {
+        include_once "../includes/my account.html";
+    }
 ?>
