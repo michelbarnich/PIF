@@ -1,6 +1,11 @@
+* {
+    position: absolute;
+    margin: 0;
+}
+
 body {
     width: 100%;
-    height: 100%;
+    height: 1080px;
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
@@ -9,21 +14,89 @@ body {
 }
 
 #accountSettingsContainer {
-    height: 24vw;
-    width: 50vw;
-    margin: auto;
-    margin-top: calc(50vh - 12vw);
-    box-shadow: 0px 3px 16px rgba(0,0,0,0.2);
-    background-color: #F9F9F9;
+    left: 335px;
+    top: calc(50vh - 228px);
+    height: 457px;
+    width: 969px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    background-color: rgb(249, 249, 249);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-radius: 30px;
 }
 
 h1 {
-    font-weight: normal;
+    top: 10px;
     width: 100%;
     text-align: center;
-    margin-top: 2%;
-    font-size: 12%;
+    font-size: 57px;
+    font-weight: 300;
 }
+
+input {
+    border: none;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    font-size: 24px;
+    padding-left: 17px;
+    width: 398px;
+    height: 53px;
+    color: #434343;
+}
+
+input:nth-child(2) {
+    top: 93px;
+    left: 46px;
+}
+
+input:nth-child(3) {
+    top: 93px;
+    left: 508px;
+}
+
+input:nth-child(4) {
+    top: 170px;
+    left: 46px;
+}
+
+input:nth-child(5) {
+    top: 170px;
+    left: 508px;
+}
+
+input:nth-child(6) {
+    top: 248px;
+    left: 46px;
+}
+
+input:nth-child(7) {
+    top: 248px;
+    left: 508px;
+}
+
+#applyButton {
+    top: 346px;
+    left: 508px;
+    color: #20C800;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    font-size: 30px;
+    width: 415px;
+    height: 57px;
+    border: none;
+    background-color: white;
+}
+
+#cancelButton {
+    top: 346px;
+    left: 46px;
+    color: red;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    font-size: 30px;
+    width: 415px;
+    height: 57px;
+    border: none;
+    background-color: white;
+}
+

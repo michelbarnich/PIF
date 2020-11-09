@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/includes/my account.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="accountSettingsContainer">
         <h1>Account Settings</h1>
-        <input placeholder="Email">
-        <input placeholder="Company Name">
-        <input placeholder="Name">
-        <input placeholder="Surname">
-        <input placeholder="Password">
-        <input placeholder="Repeat Password">
+        <input placeholder="Email" id="inputEmail">
+        <input placeholder="Company Name" id="inputCompanyName">
+        <input placeholder="Name" id="inputName">
+        <input placeholder="Surname" id="inputSurname">
+        <input placeholder="Password" id="inputPassword" type="password">
+        <input placeholder="Repeat Password" id="inputRepeatPassword" type="password">
 
         <button id="cancelButton">Cancel</button>
         <button id="applyButton">Apply Changes</button>
     </div>
     <script>
 
+        $(document).ready(function () {
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            console.log(zoomFactor);
+            document.body.style.zoom = zoomFactor + "%";
+            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
+            $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+        });
+
+        $(window).resize(function () {
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
+            $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+        });
+
+        $.get("../ajax/getUserData.php", function (jsonObj) {
+            let parsedJsonObj = JSON.parse(jsonObj);
+            $("#inputEmail").val(parsedJsonObj.userData.email);
+            $("#inputCompanyName").val(parsedJsonObj.userData.company);
+            $("#inputSurname").val(parsedJsonObj.userData.name);
+            $("#inputName").val(parsedJsonObj.userData.firstName);
+        })
     </script>
 </body>
 </html>
