@@ -12,4 +12,8 @@
     if($_GET["page_name"] == "my account" && $response["userData"]["role"] >= 1) {
         include_once "../includes/my account.html";
     }
+
+    if($_GET["page_name"] == "accounts" && $response["userData"]["role"] == 3) {
+        include_once "../includes/accounts.html";
+    }
 ?>

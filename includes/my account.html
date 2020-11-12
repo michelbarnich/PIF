@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/includes/my account.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -10,20 +9,20 @@
     <div id="accountSettingsContainer">
         <h1>Account Settings</h1>
         <input placeholder="Email" id="inputEmail">
-        <input placeholder="Company Name" id="inputCompanyName">
+        <input placeholder="Company Name" id="inputCompanyName" disabled>
         <input placeholder="Name" id="inputName">
         <input placeholder="Surname" id="inputSurname">
         <input placeholder="Password" id="inputPassword" type="password">
         <input placeholder="Repeat Password" id="inputRepeatPassword" type="password">
 
-        <button id="cancelButton">Cancel</button>
-        <button id="applyButton">Apply Changes</button>
+        <button id="cancelButton" onclick="reloadData()">Cancel</button>
+        <button id="applyButton" onclick="applyChanges()">Apply Changes</button>
     </div>
     <script>
 
         $(document).ready(function () {
+            reloadData();
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
-            console.log(zoomFactor);
             document.body.style.zoom = zoomFactor + "%";
             document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
             $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
@@ -36,13 +35,78 @@
             $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
         });
 
-        $.get("../ajax/getUserData.php", function (jsonObj) {
-            let parsedJsonObj = JSON.parse(jsonObj);
-            $("#inputEmail").val(parsedJsonObj.userData.email);
-            $("#inputCompanyName").val(parsedJsonObj.userData.company);
-            $("#inputSurname").val(parsedJsonObj.userData.name);
-            $("#inputName").val(parsedJsonObj.userData.firstName);
-        })
+        function reloadData() {
+            console.log("[../ajax/getUserData.php]")
+            $.get("../ajax/getUserData.php", function (jsonObj) {
+                let parsedJsonObj = JSON.parse(jsonObj);
+                $("#inputEmail").val(parsedJsonObj.userData.email);
+                $("#inputCompanyName").val(parsedJsonObj.userData.company);
+                $("#inputSurname").val(parsedJsonObj.userData.name);
+                $("#inputName").val(parsedJsonObj.userData.firstName);
+                $("#inputPassword").val("");
+                $("#inputRepeatPassword").val("")
+
+                console.log(jsonObj);
+            });
+        }
+
+        function validateEmail(mail)
+        {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+            {
+                return (true)
+            } else {
+                return (false)
+            }
+        }
+
+        function applyChanges() {
+
+            if($("#inputPassword").val() != $("#inputRepeatPassword").val()) {
+
+                var topOffset = parseInt($("#inputPassword").css("top")) - 2 + "px";
+                $("#inputPassword").css({"border": "2px solid red", "left": "44px", "top": topOffset});
+
+                var topOffset = parseInt($("#inputRepeatPassword").css("top")) - 2 + "px";
+                $("#inputRepeatPassword").css({"border": "2px solid red", "left": "506px", "top": topOffset});
+
+            } else if(!validateEmail($("#inputEmail").val())) {
+
+                var topOffset = parseInt($("#inputEmail").css("top")) - 2 + "px";
+                $("#inputEmail").css({"border": "2px solid red", "left": "44px", "top": topOffset});
+
+            } else if ($("#inputEmail").val() != "" &&
+                $("#inputName").val() != "" &&
+                $("#inputSurname").val() != ""
+            ) {
+
+                console.log("[../ajax/updateAccount.php]")
+                $.post("../ajax/updateAccount.php", {
+                    email: $("#inputEmail").val(),
+                    surName: $("#inputSurname").val(),
+                    name: $("#inputName").val(),
+                    password: $("#inputPassword").val()
+                }, function (data) {
+                    console.log(data);
+                    if(JSON.parse(data).SQLError != "") {
+                        $("#applyButton").html("An Error Occured");
+                        $("#applyButton").css("color", "red");
+                    } else {
+                        $("#applyButton").html("Saved &#10004;");
+                        $("#applyButton").css("color", "#20C800");
+                    }
+
+                    if(JSON.parse(data).emailAlreadyInUse) {
+                        $("#applyButton").html("Email taken");
+                        $("#applyButton").css("color", "red");
+                    }
+                });
+                reloadData();
+
+            }
+
+        }
+
     </script>
 </body>
 </html>

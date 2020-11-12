@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;-">
+      <change afterPath="$PROJECT_DIR$/ajax/listUsers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/accounts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/includes/accounts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/createAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/createAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/getContentForUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getContentForUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/getUserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getUserData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/sensor_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/sensor_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/updateAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/updateAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/my account.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,13 +23,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution />
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -34,9 +49,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/sensor_post_test.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -45,7 +66,19 @@
       <recent name="G:\website\resources\img\main.html" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -75,6 +108,19 @@
       <workItem from="1603711594887" duration="4681000" />
       <workItem from="1603884189826" duration="4487000" />
       <workItem from="1603888717425" duration="599000" />
+      <workItem from="1603898087277" duration="3227000" />
+      <workItem from="1603969010484" duration="151000" />
+      <workItem from="1603969200019" duration="69000" />
+      <workItem from="1604499650332" duration="4105000" />
+      <workItem from="1604923469963" duration="127000" />
+      <workItem from="1604923606444" duration="222000" />
+      <workItem from="1604923841651" duration="1231000" />
+      <workItem from="1604933229204" duration="7534000" />
+      <workItem from="1604946849926" duration="60000" />
+      <workItem from="1604962646432" duration="130000" />
+      <workItem from="1605112041989" duration="628000" />
+      <workItem from="1605164272548" duration="5418000" />
+      <workItem from="1605187863017" duration="6181000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -118,11 +164,46 @@
       <option name="project" value="LOCAL" />
       <updated>1603640113261</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[ajax/sensor_post.php]&#10;- added this file to transfer data from the sensorStations to the MySQL Database.&#10;&#10;[ajax/getUserData]&#10;- added $silent. If true, the script will not echo anything.&#10;&#10;[ajax/getContentForUser.php]&#10;- added a role check. System.php can now only be displayed if you have role 3 (Administrator)&#10;&#10;[includes/main.html]&#10;- removes &quot;System&quot; from the sidebar if you are not role 3 (Administrator)">
+      <created>1603898389708</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603898389708</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)&#10;&#10;[includes/login.html]&#10;- removed unnecessary code">
+      <created>1604500418918</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604500418918</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[includes/my account.html]&#10;- added the file&#10;&#10;[resources/css/includes/my account.css]&#10;- added the file&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;my account&quot;">
+      <created>1604933525255</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604933525255</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)">
+      <created>1604933669955</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604933669955</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements">
+      <created>1604962764411</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604962764411</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create Account and login working partially" />
@@ -131,46 +212,68 @@
     <MESSAGE value="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers" />
     <MESSAGE value="idk anymore" />
     <MESSAGE value="[login.html/login.css]&#10;- fixed loginBox placement and size&#10;&#10;[main.html/main.css]&#10;- fixed body size issue for some window-sizes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[login.html/login.css]&#10;- fixed loginBox placement and size&#10;&#10;[main.html/main.css]&#10;- fixed body size issue for some window-sizes" />
+    <MESSAGE value="[ajax/sensor_post.php]&#10;- added this file to transfer data from the sensorStations to the MySQL Database.&#10;&#10;[ajax/getUserData]&#10;- added $silent. If true, the script will not echo anything.&#10;&#10;[ajax/getContentForUser.php]&#10;- added a role check. System.php can now only be displayed if you have role 3 (Administrator)&#10;&#10;[includes/main.html]&#10;- removes &quot;System&quot; from the sidebar if you are not role 3 (Administrator)" />
+    <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)&#10;&#10;[includes/login.html]&#10;- removed unnecessary code" />
+    <MESSAGE value="[includes/my account.html]&#10;- added the file&#10;&#10;[resources/css/includes/my account.css]&#10;- added the file&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;my account&quot;" />
+    <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)" />
+    <MESSAGE value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="316" y="68" key="#Deployment" timestamp="1603104302058">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="316" y="68" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1603104302058" />
-    <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="789" y="311" key="CommitChangelistDialog2" timestamp="1603640112845">
+    <state x="562" y="109" key="#Deployment" timestamp="1604500772513">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="789" y="311" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603640112845" />
-    <state x="597" y="289" key="FileChooserDialogImpl" timestamp="1603714501801">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="562" y="109" key="#Deployment/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500772513" />
+    <state x="316" y="68" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1603104302058" />
+    <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
+    <state x="335" y="76" width="1772" height="1072" key="CommitChangelistDialog2" timestamp="1605194044853">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="564" y="0" key="CommitChangelistDialog2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500418573" />
+    <state x="335" y="76" width="1772" height="1072" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605194044853" />
+    <state x="3840" y="612" width="1920" height="1080" key="DiffContextDialog" timestamp="1604962664561">
+      <screen x="3840" y="612" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" key="DiffContextDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500396837" />
+    <state x="0" y="0" width="1152" height="748" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1604924391823" />
+    <state x="3840" y="612" width="1920" height="1080" key="DiffContextDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1604962664561" />
+    <state x="4245" y="949" key="FileChooserDialogImpl" timestamp="1605112068791">
+      <screen x="3840" y="612" width="1920" height="1080" />
     </state>
     <state x="597" y="289" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1603714501801" />
     <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
-    <state x="598" y="393" key="NewPhpFileDialog" timestamp="1603351969473">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="4245" y="949" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605112068791" />
+    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1605191451705">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603351969473" />
     <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
-    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602878161887" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1603640121199">
+    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605191451705" />
+    <state x="222" y="95" key="SettingsEditor" timestamp="1604924153153">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="222" y="95" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1604924153153" />
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1604962769694">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603640121199" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1603898086285">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500427393" />
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1604962769694" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1605187866988">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603898086285" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604499660304" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605187866988" />
+    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605112042108" />
     <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1603898122837">
+    <state x="1051" y="547" key="publish.login" timestamp="1605187877496">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1603884272633" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1603898122837" />
+    <state x="1051" y="547" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500726147" />
+    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1605164293793" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605187877496" />
     <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

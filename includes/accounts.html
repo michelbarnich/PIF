@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/resources/css/includes/accounts.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+
+        $(window).resize(function () {
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
+        });
+
+        $(document).ready(function () {
+
+            $.get("/ajax/listUsers.php", function (data) {
+                console.log(data);
+
+                let userList = JSON.parse(data).userList;
+
+                for (var i = 0; i < userList.length; i++) {
+
+                    if(userList[i].role == 3) {
+                        var roleName = "Administrator";
+                    } else if(userList[i].role == 2) {
+                        var roleName = "Company Owner";
+                    } else if(userList[i].role == 1) {
+                        var roleName = "User";
+                    }
+
+                    $("body").append(
+                        "<div>" +
+                            "<p>" + userList[i].name + "</p>" +
+                            "<p>" + userList[i].surname + "</p>" +
+                            "<p>" + userList[i].email + "</p>" +
+                            "<p>" + roleName + "</p>" +
+                            "<p></p>\n" +
+                        "</div>"
+                    );
+                }
+
+            })
+
+        });
+
+    </script>
+</body>
+</html>

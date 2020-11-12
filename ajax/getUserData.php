@@ -24,9 +24,6 @@
 
         }
 
-
-        // Closing connection to avoid mem leak
-        $conn->close();
     }
 
     // output

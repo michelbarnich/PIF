@@ -24,7 +24,7 @@ if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 
         if ($conn != false) {
             // Inserting new dataset
-            $sql = "INSERT INTO tblBenutzer(dtEmail, dtPasswortHash, dtVorname, dtName) VALUES(?, ?, ?, ?)";
+            $sql = "INSERT INTO tblBenutzer(dtEmail, dtPasswortHash, dtVorname, dtName, dtRolle) VALUES(?, ?, ?, ?, 1)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
                 "ssss",

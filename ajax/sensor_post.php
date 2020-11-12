@@ -24,7 +24,7 @@
                 // Inserting new dataset
                 $sql = "INSERT INTO tblsensordaten(fiSensorStation, dtLuftfeuchtigkeit, dtHelligkeit, dtBodenfeuchtigkeit, dtTemperatur) VALUES(?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param( "ddddd",
+                $stmt->bind_param( "sdddd",
                     $_POST["id"],
                     $_POST["humidity"],
                     $_POST["light"],
