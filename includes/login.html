@@ -1,7 +1,6 @@
 
 <h1>Automate your greenhouse</h1>
 <button id="showLoginBox_login">Login!</button>
-<button id="showLoginBox_createAccount">Or create an Account!</button>
 
 <div id="loginBox">
 
@@ -10,15 +9,6 @@
     <input id="login_password" type="password" placeholder="Password">
     <button id="button_login">Login!</button>
     <p id="login_response"></p>
-
-    <h2 id="h2_createAccount">Create Account</h2>
-    <input id="createAccount_email" placeholder="Email Address">
-    <input id="createAccount_password" placeholder="Password" type="password">
-    <input id="createAccount_passwordRepeat" placeholder="Repeat Password" type="password">
-    <input id="createAccount_name" placeholder="First Name">
-    <input id="createAccount_surName" placeholder="Sur Name">
-    <button id="button_createAccount">Join!</button>
-    <p id="createAccount_response"></p>
 
 </div>
 
@@ -93,61 +83,4 @@
             return (false)
         }
     }
-
-    // calling createAccount Script
-    $("#button_createAccount").click(function () {
-        if($("#createAccount_password").val() != $("#createAccount_passwordRepeat").val()) {
-
-            var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px";
-            $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-
-            var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px";
-            $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-
-            $("#createAccount_response").html("The Passwords do not match!");
-
-        } else if(!validateEmail($("#createAccount_email").val())) {
-
-            var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px";
-            $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-
-            $("#createAccount_response").html("The Email Address is not valid");
-
-        } else if ($("#createAccount_email").val() != "" &&
-            $("#createAccount_password").val() != "" &&
-            $("#createAccount_name").val() != "" &&
-            $("#createAccount_surName").val() != ""
-        ) {
-            $.post("ajax/createAccount.php", {
-
-                email: $("#createAccount_email").val(),
-                password: $("#createAccount_password").val(),
-                name: $("#createAccount_name").val(),
-                surName: $("#createAccount_surName").val()
-
-            }).done(function (response) {
-                let loginResponse = JSON.parse(response);
-
-                console.log("[ajax/createAccount.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
-                console.log("[ajax/createAccount.php][emailAlreadyInUse:] " + loginResponse.emailAlreadyInUse);
-                console.log("[ajax/createAccount.php][createdAccount:] " + loginResponse.createdAccount);
-                console.log("[ajax/createAccount.php][validEmail:] " + loginResponse.validEmail);
-                console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
-
-                if (loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem.");
-                if (loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
-                if (loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
-
-                location.reload();
-            });
-        } else {
-            if($("#createAccount_email").val == "") var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px"; $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-            if($("#createAccount_password").val == "") var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px"; $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-            if($("#createAccount_passwordRepeat").val == "") var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px"; $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-            if($("#createAccount_name").val == "") var topOffset = parseInt($("#createAccount_name").css("top")) - 2 + "px"; $("#createAccount_name").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-            if($("#createAccount_surName").val == "") var topOffset = parseInt($("#createAccount_surName").css("top")) - 2 + "px"; $("#createAccount_surName").css({"border": "2px solid red", "left": "27px", "top": topOffset});
-
-            $("#createAccount_response").html("All fields need to be filled");
-        }
-    });
 </script>

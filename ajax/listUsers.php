@@ -7,7 +7,7 @@
 
     if ($response["userData"]["role"] == 3) {
 
-        $sql = "SELECT * FROM tblBenutzer";
+        $sql = "SELECT *, tblbenutzer.dtName AS nutzerName, CASE WHEN fiFirma IS NULL THEN '' ELSE tblfirma.dtname END AS firmenname FROM tblbenutzer, tblfirma;";
         $stmt = $conn->prepare($sql);
         //$stmt->bind_param("s", $_SESSION["id"]);
         $stmt->execute();
@@ -22,9 +22,12 @@
 
             array_push($returnUserArray, [
                 "email" => $row["dtEmail"],
-                "surname" => $row["dtName"],
+                "surname" => $row["nutzerName"],
                 "name" => $row["dtVorname"],
-                "role" => $row["dtRolle"]
+                "role" => $row["dtRolle"],
+                "id" => $row["idIdentifikationsNummer"],
+                "company" => $row["firmenname"],
+                "companyId" => $row["fiFirma"],
             ]);
 
         }

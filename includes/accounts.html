@@ -6,17 +6,92 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div id="blurBox"></div>
+    <div id="createAccountBox">
+        <h2 id="h2_createAccount">Create Account</h2>
+        <input id="createAccount_email" placeholder="Email Address">
+        <input id="createAccount_password" placeholder="Password" type="password">
+        <input id="createAccount_passwordRepeat" placeholder="Repeat Password" type="password">
+        <input id="createAccount_name" placeholder="First Name">
+        <input id="createAccount_surName" placeholder="Sur Name">
+        <button id="button_createAccount">Create!</button>
+        <p id="createAccount_response"></p>
+    </div>
+
+    <div id="accountSettingsContainer">
+        <h2>Account Settings</h2>
+        <input placeholder="Email" id="inputEmail">
+        <!--<input placeholder="Company Name" id="inputCompanyName">-->
+        <select name="company" id="inputCompanyName">
+        </select>
+        <input placeholder="Name" id="inputName">
+        <input placeholder="Surname" id="inputSurname">
+        <input placeholder="Password" id="inputPassword" type="password">
+        <input placeholder="Repeat Password" id="inputRepeatPassword" type="password">
+        <select  id="role">
+            <option value="1">User</option>
+            <option value="2">Company Owner</option>
+            <option value="3">Administrator</option>
+        </select>
+
+        <button id="applyButton" onclick="applyChanges(id)">Apply Changes</button>
+    </div>
+
+    <div>
+        <button id="createAccount">Add Account</button>
+    </div>
+
+    <span id="users">
+    </span>
+
     <script>
 
         $(window).resize(function () {
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
             document.body.style.zoom = zoomFactor + "%";
-            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
         });
+
+        $("#createAccount").click(function () {
+            $("#createAccountBox").show();
+            $("#blurBox").show();
+        });
+
+        function deleteUser( id ) {
+
+            $.post("/ajax/deleteAccount.php", {id: id}, function (data) {
+                console.log(data);
+            });
+
+            loadUserList();
+
+        }
 
         $(document).ready(function () {
 
+            $("#createAccountBox").hide();
+            $("#blurBox").hide();
+            $("#accountSettingsContainer").hide();
+
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+
+            loadUserList();
+
+        });
+
+        function validateEmail(mail)
+        {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+            {
+                return (true)
+            } else {
+                return (false)
+            }
+        }
+
+        function loadUserList() {
             $.get("/ajax/listUsers.php", function (data) {
+                $("#users").html("");
                 console.log(data);
 
                 let userList = JSON.parse(data).userList;
@@ -31,21 +106,177 @@
                         var roleName = "User";
                     }
 
-                    $("body").append(
+                    $("#users").append(
                         "<div>" +
-                            "<p>" + userList[i].name + "</p>" +
-                            "<p>" + userList[i].surname + "</p>" +
-                            "<p>" + userList[i].email + "</p>" +
-                            "<p>" + roleName + "</p>" +
-                            "<p></p>\n" +
+                        "<p>" + userList[i].name + "</p>" +
+                        "<p>" + userList[i].surname + "</p>" +
+                        "<p>" + userList[i].email + "</p>" +
+                        "<p>" + roleName + "</p>" +
+                        "<p>" + userList[i].company + "</p>\n" +
+                        "<button class='deleteButton' onclick='deleteUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/trash.png\"></button>" +
+                        "<button class='editButton' onclick='editUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/edit.png\"></button>" +
                         "</div>"
                     );
                 }
 
             })
+        }
 
+        function editUser(id) {
+
+            $("#accountSettingsContainer").show();
+            $("#blurBox").show();
+
+            $.get("/ajax/listUsers.php", function (data) {
+                console.log(data);
+
+                let parsedJsonObj = JSON.parse(data);
+
+                for(var i = 0; i < parsedJsonObj.userList.length; i++) {
+                    if(parsedJsonObj.userList[i].id == id) {
+                        $("#inputEmail").val(parsedJsonObj.userList[i].email);
+
+                        companies = ["PIF"];
+
+                        $("#inputCompanyName").html("<option value='-1'>No Company</option>");
+
+                        for (var j = 0; j < companies.length; j++) {
+                            $("#inputCompanyName").append("<option value='" + (j + 1) + "'>" + companies[j] + "</option>");
+                            if(j + 1 == parsedJsonObj.userList[i].companyId) {
+                                $("#inputCompanyName").val(j + 1);
+                            }
+                        }
+
+                        $("#inputSurname").val(parsedJsonObj.userList[i].surname);
+                        $("#inputName").val(parsedJsonObj.userList[i].name);
+                        $("#inputPassword").val("");
+                        $("#inputRepeatPassword").val("");
+                        $("#applyButton").attr("onclick", "applyChanges(" + id + ")");
+                        $("#role").val(parsedJsonObj.userList[i].role);
+                    }
+                }
+
+            });
+        }
+
+        // calling createAccount Script
+        $("#button_createAccount").click(function () {
+            alert()
+            if($("#createAccount_password").val() != $("#createAccount_passwordRepeat").val()) {
+
+                var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px";
+                $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+                var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px";
+                $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+                $("#createAccount_response").html("The Passwords do not match!");
+
+            } else if(!validateEmail($("#createAccount_email").val())) {
+
+                var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px";
+                $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+                $("#createAccount_response").html("The Email Address is not valid");
+
+            } else if ($("#createAccount_email").val() != "" &&
+                $("#createAccount_password").val() != "" &&
+                $("#createAccount_name").val() != "" &&
+                $("#createAccount_surName").val() != ""
+            ) {
+                $.post("createAccount.php", {
+
+                    email: $("#createAccount_email").val(),
+                    password: $("#createAccount_password").val(),
+                    name: $("#createAccount_name").val(),
+                    surName: $("#createAccount_surName").val(),
+
+                }).done(function (response) {
+                    let loginResponse = JSON.parse(response);
+
+                    console.log("[ajax/createAccount.php][SQLServerConnection:] " + loginResponse.SQLServerConnection);
+                    console.log("[ajax/createAccount.php][emailAlreadyInUse:] " + loginResponse.emailAlreadyInUse);
+                    console.log("[ajax/createAccount.php][createdAccount:] " + loginResponse.createdAccount);
+                    console.log("[ajax/createAccount.php][validEmail:] " + loginResponse.validEmail);
+                    console.log("[ajax/createAccount.php][SQLError:] " + loginResponse.SQLError);
+
+                    if (loginResponse.SQLServerConnection == false) $("#createAccount_response").html("The website is currently having a Problem.");
+                    if (loginResponse.emailAlreadyInUse) $("#createAccount_response").html("This email is already in use!");
+                    if (loginResponse.createdAccount == false) $("#createAccount_response").html("The account was not created!");
+
+                    location.reload();
+                });
+            } else {
+                if($("#createAccount_email").val == "") var topOffset = parseInt($("#createAccount_email").css("top")) - 2 + "px"; $("#createAccount_email").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+                if($("#createAccount_password").val == "") var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px"; $("#createAccount_password").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+                if($("#createAccount_passwordRepeat").val == "") var topOffset = parseInt($("#createAccount_passwordRepeat").css("top")) - 2 + "px"; $("#createAccount_passwordRepeat").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+                if($("#createAccount_name").val == "") var topOffset = parseInt($("#createAccount_name").css("top")) - 2 + "px"; $("#createAccount_name").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+                if($("#createAccount_surName").val == "") var topOffset = parseInt($("#createAccount_surName").css("top")) - 2 + "px"; $("#createAccount_surName").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+                $("#createAccount_response").html("All fields need to be filled");
+            }
         });
 
+        function validateEmail(mail)
+        {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
+            {
+                return (true)
+            } else {
+                return (false)
+            }
+        }
+
+        function applyChanges(id) {
+
+            if($("#inputPassword").val() != $("#inputRepeatPassword").val()) {
+
+                var topOffset = parseInt($("#inputPassword").css("top")) - 2 + "px";
+                $("#inputPassword").css({"border": "2px solid red", "left": "44px", "top": topOffset});
+
+                var topOffset = parseInt($("#inputRepeatPassword").css("top")) - 2 + "px";
+                $("#inputRepeatPassword").css({"border": "2px solid red", "left": "506px", "top": topOffset});
+
+            } else if(!validateEmail($("#inputEmail").val())) {
+
+                var topOffset = parseInt($("#inputEmail").css("top")) - 2 + "px";
+                $("#inputEmail").css({"border": "2px solid red", "left": "44px", "top": topOffset});
+
+            } else if ($("#inputEmail").val() != "" &&
+                $("#inputName").val() != "" &&
+                $("#inputSurname").val() != ""
+            ) {
+
+                console.log("[../ajax/updateAccount.php]")
+                $.post("../ajax/updateAccount.php", {
+                    email: $("#inputEmail").val(),
+                    surName: $("#inputSurname").val(),
+                    name: $("#inputName").val(),
+                    password: $("#inputPassword").val(),
+                    id: id,
+                    companyId: document.getElementById("inputCompanyName").options[document.getElementById("inputCompanyName").selectedIndex].value, // chromium Bug
+                    role: $("#role").val()
+                }, function (data) {
+                    console.log(data);
+                    if(JSON.parse(data).SQLError != "") {
+                        $("#applyButton").html("An Error Occured");
+                        $("#applyButton").css("color", "red");
+                    } else {
+                        $("#applyButton").html("Saved &#10004;");
+                        $("#applyButton").css("color", "#20C800");
+                    }
+
+                    if(JSON.parse(data).emailAlreadyInUse) {
+                        $("#applyButton").html("Email taken");
+                        $("#applyButton").css("color", "red");
+                    }
+                });
+
+            }
+
+            location.href=location.href;
+
+        }
     </script>
 </body>
 </html>

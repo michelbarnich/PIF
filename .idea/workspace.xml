@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;-">
-      <change afterPath="$PROJECT_DIR$/ajax/listUsers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/accounts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/includes/accounts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[ajax/createAccount.php]&#10;- added close connection and echo json_encode, as it wasnt present before&#10;&#10;[ajax/deleteAccount.php]&#10;- added the file so an Admin can delete a User&#10;&#10;[ajax/getUserData.php]&#10;- added more fields and partially renamed them in the output&#10;&#10;[ajax/listUsers.php]&#10;- added more fields to be returned&#10;&#10;[ajax/updateAccount.php]&#10;- added functionality and checks for Administrators to edit User Accounts&#10;&#10;[includes/accounts.html]&#10;- added functionality to create a new account&#10;- added functionality to edit an account&#10;&#10;[includes/login.html]&#10;- create Account option no longer exists&#10;&#10;[includes/img/accounts.html/edit.png]&#10;- aded file&#10;&#10;[includes/img/accounts.html/trash.png]&#10;- aded file">
+      <change afterPath="$PROJECT_DIR$/ajax/deleteAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/accounts.html/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/accounts.html/trash.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajax/createAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/createAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/getContentForUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getContentForUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajax/getUserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getUserData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/sensor_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/sensor_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/listUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/listUsers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajax/updateAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/updateAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/my account.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/accounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/accounts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/includes/accounts.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/accounts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +60,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\website\resources\img\accounts.html" />
       <recent name="F:\website" />
       <recent name="G:\website\resources\img\main.html" />
     </key>
@@ -120,7 +119,9 @@
       <workItem from="1604962646432" duration="130000" />
       <workItem from="1605112041989" duration="628000" />
       <workItem from="1605164272548" duration="5418000" />
-      <workItem from="1605187863017" duration="6181000" />
+      <workItem from="1605187863017" duration="10448000" />
+      <workItem from="1605263793031" duration="11381000" />
+      <workItem from="1605292574128" duration="11273000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -199,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604962764411</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;- added CSS for &quot;Accounts&quot; page&#10;&#10;[test.html]&#10;- modified test script according to the changes in /ajax/sensor_post.php">
+      <created>1605194116143</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605194116143</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +225,8 @@
     <MESSAGE value="[includes/my account.html]&#10;- added the file&#10;&#10;[resources/css/includes/my account.css]&#10;- added the file&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;my account&quot;" />
     <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)" />
     <MESSAGE value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
+    <MESSAGE value="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;- added CSS for &quot;Accounts&quot; page&#10;&#10;[test.html]&#10;- modified test script according to the changes in /ajax/sensor_post.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;- added CSS for &quot;Accounts&quot; page&#10;&#10;[test.html]&#10;- modified test script according to the changes in /ajax/sensor_post.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="562" y="109" key="#Deployment" timestamp="1604500772513">
@@ -226,11 +235,11 @@
     <state x="562" y="109" key="#Deployment/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500772513" />
     <state x="316" y="68" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1603104302058" />
     <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="335" y="76" width="1772" height="1072" key="CommitChangelistDialog2" timestamp="1605194044853">
+    <state x="327" y="120" width="1772" height="1072" key="CommitChangelistDialog2" timestamp="1605308094807">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="564" y="0" key="CommitChangelistDialog2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500418573" />
-    <state x="335" y="76" width="1772" height="1072" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605194044853" />
+    <state x="327" y="120" width="1772" height="1072" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605308094807" />
     <state x="3840" y="612" width="1920" height="1080" key="DiffContextDialog" timestamp="1604962664561">
       <screen x="3840" y="612" width="1920" height="1080" />
     </state>
@@ -243,37 +252,37 @@
     <state x="597" y="289" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1603714501801" />
     <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
     <state x="4245" y="949" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605112068791" />
-    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1605191451705">
+    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1605277501178">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603351969473" />
     <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
-    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605191451705" />
+    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605277501178" />
     <state x="222" y="95" key="SettingsEditor" timestamp="1604924153153">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="222" y="95" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1604924153153" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1604962769694">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1605194123252">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="873" y="454" key="Vcs.Push.Dialog.v2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500427393" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1604962769694" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1605187866988">
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605194123252" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1605292575676">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="977" y="545" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604499660304" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605187866988" />
-    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605112042108" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605292575676" />
+    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605263793028" />
     <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1605187877496">
+    <state x="1051" y="547" key="publish.login" timestamp="1605294441599">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1051" y="547" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500726147" />
     <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1605164293793" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605187877496" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605294441599" />
     <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -4,7 +4,7 @@
 
     if($conn != false) {
         // Requesting Data from SQL Server
-        $sql = "SELECT * FROM tblBenutzer WHERE idIdentifikationsNummer = ?";
+        $sql = "SELECT *, tblbenutzer.dtName AS nutzerName, CASE WHEN fiFirma IS NULL THEN '' ELSE tblfirma.dtname END AS firmenname FROM tblbenutzer, tblfirma WHERE idIdentifikationsNummer = ?;";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $_SESSION["id"]);
         $stmt->execute();
@@ -17,9 +17,9 @@
             $response["userData"] = [
                 "email" => $row["dtEmail"],
                 "role" => $row["dtRolle"],
-                "company" => $row["fiFirma"],
-                "name" => $row["dtName"],
-                "firstName" => $row["dtVorname"]
+                "name" => $row["nutzerName"],
+                "firstName" => $row["dtVorname"],
+                "company" => $row["firmenname"]
             ];
 
         }

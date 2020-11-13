@@ -43,12 +43,11 @@ if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         }
     }
 
-    include_once "./login.php";
 }
 
 // Closing connection to avoid mem leak
-//$conn->close();
+$conn->close();
 
 // output
-//echo json_encode($response);
+echo json_encode($response);
 ?>

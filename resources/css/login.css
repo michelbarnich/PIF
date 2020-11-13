@@ -28,15 +28,15 @@ h1 {
 #loginBox {
     position: relative;
     display: none;
-    height: 926px;
+    height: 350px;
     width: 666px;
     background-color: rgba(255,255,255,0.79);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-radius: 30px;
-    transform: translateY(3.6%);
-    transform: scale(100vh/1080);
     margin: auto;
+    margin-top: 375px;
+    transform: scale(100vh/1080);
 }
 
 #showLoginBox_login {
