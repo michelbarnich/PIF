@@ -9,7 +9,7 @@
     if(isset($_SESSION["id"])) {
         $response["NotLoggedIn"] = false;
 
-        if ($response["userData"]["role"] == 3 && isset($_POST["id"])) {
+        if ($response["userData"]["role"] >=2 && isset($_POST["id"])) {
             $id = $_POST["id"];
         } else {
             $id = $_SESSION["id"];
@@ -42,13 +42,16 @@
 
                 if($response["userData"]["role"] == 3 && isset($_POST["companyId"])) {
 
+                    // if update is requested by a System Admin
+
                     $companyId = $_POST["companyId"];
 
-                    if($_POST["companyId"] == -1) {
+                    if ($_POST["companyId"] == -1) {
                         $companyId = NULL;
                     }
 
                     if ($conn != false) {
+
                         // Inserting new dataset
                         $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, fiFirma = ?, dtRolle = ? WHERE idIdentifikationsNummer = ?";
                         $stmt = $conn->prepare($sql);
@@ -63,10 +66,35 @@
                             $id
                         );
                         $stmt->execute();
-                        $response["SQLError"] =  $stmt->error;
+                        $response["SQLError"] = $stmt->error;
 
                         $response["updatedAccount"] = true;
 
+                    } else {
+                        $response["updatedAccount"] = false;
+                    }
+
+                } elseif ($response["userData"]["role"] == 2 && isset($_POST["companyId"])) {
+
+                    if($_POST["role"] < 3) {
+
+                        // Inserting new dataset
+                        $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, fiFirma = ?, dtRolle = ? WHERE idIdentifikationsNummer = ? AND fiFirma = " . $response["userData"]["companyId"];
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bind_param(
+                            "sssssii",
+                            $_POST["email"],
+                            $passwordHash,
+                            $_POST["name"],
+                            $_POST["surName"],
+                            $companyId,
+                            $_POST["role"],
+                            $id
+                        );
+                        $stmt->execute();
+                        $response["SQLError"] = $stmt->error;
+
+                        $response["updatedAccount"] = true;
                     } else {
                         $response["updatedAccount"] = false;
                     }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/includes/companies.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <span>
+        <div id="createDiv">
+            <button id="create" onclick="createCompany()">Add Company</button>
+        </div>
+
+        <div>
+            <h1>PIF</h1>
+            <p>Luxembourg</p>
+            <button class="deleteButton" onclick="deleteUser(17)">
+                <img src="../resources/img/accounts.html/trash.png">
+            </button>
+            <button class="editButton" onclick="editUser(17)">
+                <img src="../resources/img/accounts.html/edit.png">
+            </button>
+        </div>
+    </span>
+
+    <script>
+
+        $(window).resize(function () {
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+        });
+
+        $(document).ready(function () {
+
+            $.get("/ajax/listCompanies.php", function (data) {
+
+                console.log(data)
+
+                let companies = JSON.parse(data)["companyList"];
+                let createCompanyDiv = $("#createDiv").prop("outerHTML");
+                $("span").html(createCompanyDiv);
+
+                for (var i = 0; i < companies.length; i++) {
+
+                    $("span").append("" +
+                        "<div>\n" +
+                        "            <h1>" + companies[i].name + "</h1>\n" +
+                        "            <p>" + companies[i].address + "</p>\n" +
+                        "            <button class=\"deleteButton\" onclick=\"deleteUser(" + companies[i].id + ")\">\n" +
+                        "                <img src=\"../resources/img/accounts.html/trash.png\">\n" +
+                        "            </button>\n" +
+                        "            <button class=\"editButton\" onclick=\"editUser(" + companies[i].id + ")\">\n" +
+                        "                <img src=\"../resources/img/accounts.html/edit.png\">\n" +
+                        "            </button>\n" +
+                        "        </div>" +
+                        "");
+
+                }
+
+            });
+
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+
+        });
+    </script>
+</body>
+</html>

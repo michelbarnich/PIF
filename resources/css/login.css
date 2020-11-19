@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
     position: absolute;
     margin: 0;
@@ -36,6 +43,8 @@ h1 {
     border-radius: 30px;
     margin: auto;
     margin-top: 375px;
+    -webkit-transform: scale(100vh/1080);
+    -ms-transform: scale(100vh/1080);
     transform: scale(100vh/1080);
 }
 
@@ -72,6 +81,7 @@ input {
     left: 29px;
     background-color: white;
     color: #767676;
+    -webkit-box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
     box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
     border: none;
     font-size: 24px;

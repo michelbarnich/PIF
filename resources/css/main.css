@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
     position: absolute;
     margin: 0;
@@ -76,6 +83,7 @@ body {
     bottom: 35px;
     padding-top: 0;
     height: 47px;
+    width: 248px;
 }
 
 #sidebar_menu {

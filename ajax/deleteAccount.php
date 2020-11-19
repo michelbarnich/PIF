@@ -5,11 +5,17 @@
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
 
-    if($response["userData"]["role"] == 3) {
+    if($response["userData"]["role"] >= 2) {
+
+        if($response["userData"]["role"] == 2) {
+            $sqlAddition = " AND fiFirma = " . $response["userData"]["companyId"];
+        } else {
+            $sqlAddition = "";
+        }
 
         if ($conn != false) {
             // Deleting Dataset
-            $sql = "DELETE FROM tblbenutzer WHERE idIdentifikationsNummer = ?";
+            $sql = "DELETE FROM tblbenutzer WHERE idIdentifikationsNummer = ?" . $sqlAddition;
             $stmt = $conn->prepare($sql);
             $stmt->bind_param(
                 "s",

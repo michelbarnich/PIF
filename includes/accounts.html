@@ -136,16 +136,24 @@
                     if(parsedJsonObj.userList[i].id == id) {
                         $("#inputEmail").val(parsedJsonObj.userList[i].email);
 
-                        companies = ["PIF"];
+                        let usersCompany = parsedJsonObj.userList[i].companyId;
+
+
+                        $.get("/ajax/listCompanies.php", function (data) {
+                            console.log(data);
+
+                            let companiesJSON = JSON.parse(data).companyList;
+
+                            for (var j = 0; j < companiesJSON.length; j++) {
+                                $("#inputCompanyName").append("<option value='" + companiesJSON[j]["id"] + "'>" + companiesJSON[j]["name"] + "</option>");
+                                if(companiesJSON[j]["id"] == usersCompany) {
+                                    $("#inputCompanyName").val(j + 1);
+                                }
+                            }
+
+                        });
 
                         $("#inputCompanyName").html("<option value='-1'>No Company</option>");
-
-                        for (var j = 0; j < companies.length; j++) {
-                            $("#inputCompanyName").append("<option value='" + (j + 1) + "'>" + companies[j] + "</option>");
-                            if(j + 1 == parsedJsonObj.userList[i].companyId) {
-                                $("#inputCompanyName").val(j + 1);
-                            }
-                        }
 
                         $("#inputSurname").val(parsedJsonObj.userList[i].surname);
                         $("#inputName").val(parsedJsonObj.userList[i].name);
@@ -161,7 +169,6 @@
 
         // calling createAccount Script
         $("#button_createAccount").click(function () {
-            alert()
             if($("#createAccount_password").val() != $("#createAccount_passwordRepeat").val()) {
 
                 var topOffset = parseInt($("#createAccount_password").css("top")) - 2 + "px";
@@ -274,9 +281,19 @@
 
             }
 
-            location.href=location.href;
-
         }
+
+        // removing option to give User Administrator Rights if Request User is not Administrator themselves
+
+        $.get("/ajax/getUserData.php", function (response) {
+            console.log(response);
+            // if role is not high enough, remove item from selector
+
+            if(JSON.parse(response).userData.role != 3) {
+                $("#role option[value=3]").remove(); // remove system if roleLvl not high enough
+            }
+
+        })
     </script>
 </body>
 </html>

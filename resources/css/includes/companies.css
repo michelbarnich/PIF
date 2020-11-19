@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: calc(100% - 40px);
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-weight: normal;
+    color: #767676;
+    margin-left: 40px;
+}
+
+span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div {
+    position: relative;
+    height: 100px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: rgba(255,255,255,0.79);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+}
+
+.deleteButton, .editButton {
+    position: absolute;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    bottom: 10px;
+}
+
+.editButton {
+    right: 60px;
+}
+
+.deleteButton {
+    right: 20px;
+}
+
+.deleteButton > img, .editButton > img {
+    height: 30px;
+}
+
+h1, p {
+    padding-left: 20px;
+}
+
+p {
+    position: absolute;
+    top: 35px;
+}
+
+#create {
+    background-color: #20C800;
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    color: white;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 16px;
+}

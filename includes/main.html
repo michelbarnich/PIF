@@ -22,6 +22,10 @@
             <img src="resources/img/main.html/Account.png" class="option_icon">
             <span>Accounts</span>
         </li>
+        <li class="sidebar_option">
+            <img src="resources/img/main.html/Company.png" class="option_icon">
+            <span>Companies</span>
+        </li>
     </ul>
     <button id="sidebar_logout" class="sidebar_option">Logout!</button>
 </div>
@@ -63,6 +67,10 @@
 
         if(JSON.parse(response).userData.role != 3) {
             $("ul li:nth-child(4)").remove(); // remove system if roleLvl not high enough
+            $("ul li:nth-child(5)").remove(); // remove system if roleLvl not high enough
+        }
+
+        if(JSON.parse(response).userData.role < 2) {
             $("ul li:nth-child(4)").remove(); // remove accounts if roleLvl not high enough
         }
     })

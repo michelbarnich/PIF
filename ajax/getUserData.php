@@ -19,7 +19,8 @@
                 "role" => $row["dtRolle"],
                 "name" => $row["nutzerName"],
                 "firstName" => $row["dtVorname"],
-                "company" => $row["firmenname"]
+                "company" => $row["firmenname"],
+                "companyId" => $row["fiFirma"]
             ];
 
         }
