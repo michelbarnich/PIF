@@ -79,15 +79,14 @@
                     if($_POST["role"] < 3) {
 
                         // Inserting new dataset
-                        $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, fiFirma = ?, dtRolle = ? WHERE idIdentifikationsNummer = ? AND fiFirma = " . $response["userData"]["companyId"];
+                        $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, dtRolle = ? WHERE idIdentifikationsNummer = ? AND fiFirma = " . $response["userData"]["companyId"];
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param(
-                            "sssssii",
+                            "ssssii",
                             $_POST["email"],
                             $passwordHash,
                             $_POST["name"],
                             $_POST["surName"],
-                            $companyId,
                             $_POST["role"],
                             $id
                         );

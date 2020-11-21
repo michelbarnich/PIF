@@ -145,11 +145,10 @@
                             let companiesJSON = JSON.parse(data).companyList;
 
                             for (var j = 0; j < companiesJSON.length; j++) {
-                                $("#inputCompanyName").append("<option value='" + companiesJSON[j]["id"] + "'>" + companiesJSON[j]["name"] + "</option>");
-                                if(companiesJSON[j]["id"] == usersCompany) {
-                                    $("#inputCompanyName").val(j + 1);
-                                }
+                                $("#inputCompanyName").append("<option value='" + companiesJSON[j].id + "'>" + companiesJSON[j]["name"] + "</option>");
                             }
+
+                            $("#inputCompanyName").val(usersCompany);
 
                         });
 
@@ -254,14 +253,14 @@
                 $("#inputSurname").val() != ""
             ) {
 
-                console.log("[../ajax/updateAccount.php]")
+                console.log("[../ajax/updateAccount.php]");
                 $.post("../ajax/updateAccount.php", {
                     email: $("#inputEmail").val(),
                     surName: $("#inputSurname").val(),
                     name: $("#inputName").val(),
                     password: $("#inputPassword").val(),
                     id: id,
-                    companyId: document.getElementById("inputCompanyName").options[document.getElementById("inputCompanyName").selectedIndex].value, // chromium Bug
+                    companyId: $("#inputCompanyName").val(),
                     role: $("#role").val()
                 }, function (data) {
                     console.log(data);

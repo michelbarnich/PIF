@@ -6,12 +6,12 @@
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
 
-    if ($response["userData"]["role"] == 3 && isset($_POST["name"]) && isset($_POST["address"])) {
+    if ($response["userData"]["role"] == 3 && isset($_POST["id"])) {
 
         // selecting Data from Database
-        $sql = "INSERT INTO tblfirma(dtName, dtAdresse) VALUES(?, ?)";
+        $sql = "DELETE FROM tblfirma WHERE idFirmenNummer = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $_POST["name"], $_POST["address"]);
+        $stmt->bind_param("s", $_POST["id"]);
         $stmt->execute();
         $result = $stmt->get_result();
         $response["SQLError"] = $stmt->error;

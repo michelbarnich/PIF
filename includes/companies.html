@@ -7,21 +7,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div id="blurBox" style=""></div>
+    <div id="createBox">
+
+        <h2 id="h2_create">Create Company</h2>
+        <input id="companyName" placeholder="Company Name">
+        <input id="companyAddress" placeholder="Address">
+        <button id="createButton">Create!</button>
+
+    </div>
+
+    <div id="editBox">
+
+        <h2 id="h2_edit">Edit Company</h2>
+        <input id="editName" placeholder="Company Name">
+        <input id="editAddress" placeholder="Address">
+        <button id="editButton">Save!</button>
+
+    </div>
 
     <span>
         <div id="createDiv">
-            <button id="create" onclick="createCompany()">Add Company</button>
-        </div>
-
-        <div>
-            <h1>PIF</h1>
-            <p>Luxembourg</p>
-            <button class="deleteButton" onclick="deleteUser(17)">
-                <img src="../resources/img/accounts.html/trash.png">
-            </button>
-            <button class="editButton" onclick="editUser(17)">
-                <img src="../resources/img/accounts.html/edit.png">
-            </button>
+            <button id="create" onclick="createCompanyShow()">Add Company</button>
         </div>
     </span>
 
@@ -48,10 +55,10 @@
                         "<div>\n" +
                         "            <h1>" + companies[i].name + "</h1>\n" +
                         "            <p>" + companies[i].address + "</p>\n" +
-                        "            <button class=\"deleteButton\" onclick=\"deleteUser(" + companies[i].id + ")\">\n" +
+                        "            <button class=\"deleteButton\" onclick=\"deleteCompany(" + companies[i].id + ")\">\n" +
                         "                <img src=\"../resources/img/accounts.html/trash.png\">\n" +
                         "            </button>\n" +
-                        "            <button class=\"editButton\" onclick=\"editUser(" + companies[i].id + ")\">\n" +
+                        "            <button class=\"editButton\" onclick=\"editCompany(" + companies[i].id + ")\">\n" +
                         "                <img src=\"../resources/img/accounts.html/edit.png\">\n" +
                         "            </button>\n" +
                         "        </div>" +
@@ -63,6 +70,80 @@
 
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
             document.body.style.zoom = zoomFactor + "%";
+
+        });
+
+        function createCompanyShow() {
+
+            $("#blurBox").show();
+            $("#createBox").show();
+
+        }
+
+        function editCompany(id) {
+
+            $("#blurBox").show();
+            $("#editBox").show();
+
+            $.post("/ajax/getCompanyData.php", {id: id}, function (data) {
+                console.log(data);
+
+                var company = JSON.parse(data).companyData;
+
+                $("#editAddress").val(company.address);
+                $("#editName").val(company.name);
+
+            })
+
+            $("#editButton").click(function () {
+                $.post("/ajax/updateCompany.php", {id: id, name: $("#editName").val(), address: $("#editAddress").val()}, function (data) {
+                    console.log(data);
+
+                    let response = JSON.parse(data);
+
+                    if(response.updatedCompany == true && response.SQLError == "") {
+                        location.reload();
+                    } else {
+                        $("#editButton").html("Error");
+                        $("#editButton").css("color", "red");
+                    }
+
+                });
+            });
+
+        }
+
+        function deleteCompany(id) {
+
+            $.post("/ajax/deleteCompany.php", {id: id}, function (data) {
+                console.log(data);
+
+                location.reload();
+            });
+
+        }
+
+        $("#createButton").click(function () {
+
+            if($("#companyAddress").val() == "" || $("#companyName").val() == "") {
+                var topOffset = parseInt($("#companyAddress").css("top")) - 2 + "px";
+                $("#companyAddress").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+
+                var topOffset = parseInt($("#companyName").css("top")) - 2 + "px";
+                $("#companyName").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            } else {
+
+                $.post("/ajax/createCompany.php", {name: $("#companyName").val(), address: $("#companyAddress").val()}, function (data) {
+                    console.log(data);
+                    if(JSON.parse(data).SQLError != "") {
+                        $("#createButton").html("Error");
+                        $("#createButton").css("color", "red");
+                    } else {
+                        location.reload();
+                    }
+                });
+
+            }
 
         });
     </script>
