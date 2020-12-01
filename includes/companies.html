@@ -90,8 +90,8 @@
 
                 var company = JSON.parse(data).companyData;
 
-                $("#editAddress").val(company.address);
-                $("#editName").val(company.name);
+                $("#editAddress").val(company.address.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
+                $("#editName").val(company.name.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
 
             })
 

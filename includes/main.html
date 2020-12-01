@@ -16,7 +16,7 @@
         </li>
         <li class="sidebar_option">
             <img src="resources/img/main.html/System.png" class="option_icon">
-            <span>System</span>
+            <span>Shell</span>
         </li>
         <li class="sidebar_option">
             <img src="resources/img/main.html/Account.png" class="option_icon">
@@ -25,6 +25,10 @@
         <li class="sidebar_option">
             <img src="resources/img/main.html/Company.png" class="option_icon">
             <span>Companies</span>
+        </li>
+        <li class="sidebar_option">
+            <img src="resources/img/main.html/System.png" class="option_icon">
+            <span>Sensors</span>
         </li>
     </ul>
     <button id="sidebar_logout" class="sidebar_option">Logout!</button>
@@ -39,7 +43,7 @@
     $("<link/>", {
         rel: "stylesheet",
         type: "text/css",
-        href: "resources/css/main.css"
+        href: "resources/css/includes/main.css"
     }).appendTo("head");
 
     // call logout script
@@ -61,17 +65,21 @@
 
     $.get("ajax/getUserData.php", function (response) {
         console.log(response);
-        $("#sidebar_name").text(JSON.parse(response).userData.firstName + " " + JSON.parse(response).userData.name);
+        $("#sidebar_name").html(JSON.parse(response).userData.firstName + " " + JSON.parse(response).userData.name);
 
         // if role is not high enough, remove items from sidebar
 
         if(JSON.parse(response).userData.role != 3) {
+            $("ul li:nth-child(7)").remove(); // remove system if roleLvl not high enough
             $("ul li:nth-child(4)").remove(); // remove system if roleLvl not high enough
             $("ul li:nth-child(5)").remove(); // remove system if roleLvl not high enough
+            $("ul li:nth-child(4)").remove(); // remove system if roleLvl not high enough
         }
 
         if(JSON.parse(response).userData.role < 2) {
-            $("ul li:nth-child(4)").remove(); // remove accounts if roleLvl not high enough
+
+            $("ul li:nth-child(2)").remove(); // remove accounts if roleLvl not high enough
+
         }
     })
 </script>

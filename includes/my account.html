@@ -39,12 +39,12 @@
             console.log("[../ajax/getUserData.php]")
             $.get("../ajax/getUserData.php", function (jsonObj) {
                 let parsedJsonObj = JSON.parse(jsonObj);
-                $("#inputEmail").val(parsedJsonObj.userData.email);
-                $("#inputCompanyName").val(parsedJsonObj.userData.company);
-                $("#inputSurname").val(parsedJsonObj.userData.name);
-                $("#inputName").val(parsedJsonObj.userData.firstName);
+                $("#inputEmail").val(parsedJsonObj.userData.email.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
+                $("#inputCompanyName").val(parsedJsonObj.userData.company.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
+                $("#inputSurname").val(parsedJsonObj.userData.name.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
+                $("#inputName").val(parsedJsonObj.userData.firstName.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
                 $("#inputPassword").val("");
-                $("#inputRepeatPassword").val("")
+                $("#inputRepeatPassword").val("");
 
                 console.log(jsonObj);
             });
@@ -94,6 +94,8 @@
                     } else {
                         $("#applyButton").html("Saved &#10004;");
                         $("#applyButton").css("color", "#20C800");
+
+                        reloadData();
                     }
 
                     if(JSON.parse(data).emailAlreadyInUse) {
@@ -101,7 +103,6 @@
                         $("#applyButton").css("color", "red");
                     }
                 });
-                reloadData();
 
             }
 

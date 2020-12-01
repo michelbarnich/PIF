@@ -1,15 +1,17 @@
 <?php
+    include_once "../scripts/replaceSpecialChars.php";
     $silent = true; // if $silent is set to true, getUserData.php wont echo
 
     include_once "../scripts/connectToDatabase.php";
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
+    include_once "../scripts/parseURLForQueries.php";
 
     // checking some permissions
     if ($response["userData"]["role"] >= 2) {
 
         // modifying query depending on the user's persmissions
-        if($response["userData"]["role"] == 2 && $response["userData"]["companyId"] != "") {
+        if(($response["userData"]["role"] == 2 || $queries["page_name"] == "my company") && $response["userData"]["companyId"] != "") {
             $sqlAddition = " WHERE idFirmenNummer = " . $response["userData"]["companyId"];
         } else {
             $sqlAddition = "";
@@ -31,9 +33,9 @@
 
             array_push($companyArray,
                 [
-                    "name" => $row["dtName"],
-                    "address" => $row["dtAdresse"],
-                    "id" => $row["idFirmenNummer"],
+                    "name" => replaceSpecialChars($row["dtName"]),
+                    "address" => replaceSpecialChars($row["dtAdresse"]),
+                    "id" => replaceSpecialChars($row["idFirmenNummer"]),
                 ]
             );
 

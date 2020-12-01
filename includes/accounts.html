@@ -46,6 +46,8 @@
 
     <script>
 
+        var userRole = "";
+
         $(window).resize(function () {
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
             document.body.style.zoom = zoomFactor + "%";
@@ -60,9 +62,8 @@
 
             $.post("/ajax/deleteAccount.php", {id: id}, function (data) {
                 console.log(data);
+                loadUserList();
             });
-
-            loadUserList();
 
         }
 
@@ -74,6 +75,11 @@
 
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
             document.body.style.zoom = zoomFactor + "%";
+
+            $.get("../ajax/getUserData.php", function (response) {
+                console.log(response);
+                userRole = JSON.parse(response).userData.role;
+            });
 
             loadUserList();
 
@@ -106,6 +112,13 @@
                         var roleName = "User";
                     }
 
+                    if(userList[i].role == 3 && userRole < 3) {
+                        var buttons = "";
+                    } else {
+                        var buttons = "<button class='deleteButton' onclick='deleteUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/trash.png\"></button>" +
+                            "<button class='editButton' onclick='editUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/edit.png\"></button>";
+                    }
+
                     $("#users").append(
                         "<div>" +
                         "<p>" + userList[i].name + "</p>" +
@@ -113,8 +126,7 @@
                         "<p>" + userList[i].email + "</p>" +
                         "<p>" + roleName + "</p>" +
                         "<p>" + userList[i].company + "</p>\n" +
-                        "<button class='deleteButton' onclick='deleteUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/trash.png\"></button>" +
-                        "<button class='editButton' onclick='editUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/edit.png\"></button>" +
+                        buttons +
                         "</div>"
                     );
                 }
@@ -134,7 +146,7 @@
 
                 for(var i = 0; i < parsedJsonObj.userList.length; i++) {
                     if(parsedJsonObj.userList[i].id == id) {
-                        $("#inputEmail").val(parsedJsonObj.userList[i].email);
+                        $("#inputEmail").val(parsedJsonObj.userList[i].email.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
 
                         let usersCompany = parsedJsonObj.userList[i].companyId;
 
@@ -144,18 +156,22 @@
 
                             let companiesJSON = JSON.parse(data).companyList;
 
+                            $("#inputCompanyName").append("<option value='-1'>No Company</option>");
+
                             for (var j = 0; j < companiesJSON.length; j++) {
                                 $("#inputCompanyName").append("<option value='" + companiesJSON[j].id + "'>" + companiesJSON[j]["name"] + "</option>");
                             }
 
-                            $("#inputCompanyName").val(usersCompany);
+                            if( usersCompany != "" ) {
+                                $("#inputCompanyName").val(usersCompany);
+                            } else {
+                                $("#inputCompanyName").val(-1)
+                            }
 
                         });
 
-                        $("#inputCompanyName").html("<option value='-1'>No Company</option>");
-
-                        $("#inputSurname").val(parsedJsonObj.userList[i].surname);
-                        $("#inputName").val(parsedJsonObj.userList[i].name);
+                        $("#inputSurname").val(parsedJsonObj.userList[i].surname.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
+                        $("#inputName").val(parsedJsonObj.userList[i].name.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
                         $("#inputPassword").val("");
                         $("#inputRepeatPassword").val("");
                         $("#applyButton").attr("onclick", "applyChanges(" + id + ")");
@@ -264,7 +280,7 @@
                     role: $("#role").val()
                 }, function (data) {
                     console.log(data);
-                    if(JSON.parse(data).SQLError != "") {
+                    if(JSON.parse(data).SQLError != "" || JSON.parse(data).updatedAccount == false) {
                         $("#applyButton").html("An Error Occured");
                         $("#applyButton").css("color", "red");
                     } else {

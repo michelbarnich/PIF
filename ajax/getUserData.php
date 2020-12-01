@@ -1,4 +1,5 @@
 <?php
+    include_once "../scripts/replaceSpecialChars.php";
     include_once "../scripts/connectToDatabase.php";
     include_once "../scripts/setUpSession.php";
 
@@ -15,12 +16,12 @@
             $row = $result->fetch_assoc();
 
             $response["userData"] = [
-                "email" => $row["dtEmail"],
-                "role" => $row["dtRolle"],
-                "name" => $row["nutzerName"],
-                "firstName" => $row["dtVorname"],
-                "company" => $row["firmenname"],
-                "companyId" => $row["fiFirma"]
+                "email" => replaceSpecialChars($row["dtEmail"]),
+                "role" => replaceSpecialChars($row["dtRolle"]),
+                "name" => replaceSpecialChars($row["nutzerName"]),
+                "firstName" => replaceSpecialChars($row["dtVorname"]),
+                "company" => replaceSpecialChars($row["firmenname"]),
+                "companyId" => replaceSpecialChars($row["fiFirma"])
             ];
 
         }

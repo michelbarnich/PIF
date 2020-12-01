@@ -78,7 +78,7 @@ p {
 
 #createBox, #editBox {
     z-index: 100;
-    position: relative;
+    position: absolute;
     display: none;
     height: 350px;
     width: 666px;
@@ -86,8 +86,8 @@ p {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-radius: 30px;
-    margin: auto;
-    margin-top: 375px;
+    top: calc(50% - 175px);
+    left: calc(50% - 333px);
     -webkit-transform: scale(100vh/1080);
     -ms-transform: scale(100vh/1080);
     transform: scale(100vh/1080);

@@ -5,6 +5,7 @@
     include_once "../scripts/connectToDatabase.php";
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
+    include_once "../scripts/parseURLForQueries.php";
 
     if($response["userData"]["role"] >= 2) {
 
@@ -28,7 +29,7 @@
 
                 $passwordHash = hash("sha256", $_POST["password"]);
 
-                if ($response["userData"]["role"] == 2 && $response["userData"]["companyId"] != NULL) {
+                if (($response["userData"]["role"] == 2 || $queries["page_name"] == "my company") && $response["userData"]["companyId"] != NULL) {
                     $sqlAddition = ", fiFirma";
                     $sqlAddition2 = ", " . $response["userData"]["companyId"];
                 } else {

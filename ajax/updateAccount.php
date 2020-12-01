@@ -21,7 +21,7 @@
             $response["validEmail"] = true;
 
             // Checking if email Address is already used
-            $sql = "SELECT dtEmail, dtPasswortHash FROM tblBenutzer WHERE dtEmail = ? OR idIdentifikationsNummer = ?";
+            $sql = "SELECT dtEmail, dtPasswortHash FROM tblBenutzer WHERE dtEmail = ? OR idIdentifikationsNummer = ?;";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("si", $_POST["email"], $id);
             $stmt->execute();
@@ -78,22 +78,39 @@
 
                     if($_POST["role"] < 3) {
 
-                        // Inserting new dataset
-                        $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, dtRolle = ? WHERE idIdentifikationsNummer = ? AND fiFirma = " . $response["userData"]["companyId"];
+                        $sql = "SELECT dtRolle FROM tblBenutzer WHERE idIdentifikationsNummer = ?";
                         $stmt = $conn->prepare($sql);
                         $stmt->bind_param(
-                            "ssssii",
-                            $_POST["email"],
-                            $passwordHash,
-                            $_POST["name"],
-                            $_POST["surName"],
-                            $_POST["role"],
+                            "i",
                             $id
                         );
                         $stmt->execute();
                         $response["SQLError"] = $stmt->error;
+                        $result = $stmt->get_result();
 
-                        $response["updatedAccount"] = true;
+                        $role = $result->fetch_assoc()["dtRolle"];
+
+                        if ($response["userData"]["role"] < $role) {
+                            $response["updatedAccount"] = false;
+                        } else {
+
+                            // Inserting new dataset
+                            $sql = "UPDATE tblBenutzer SET dtEmail = ? , dtPasswortHash = ?, dtVorname = ?, dtName = ?, dtRolle = ? WHERE idIdentifikationsNummer = ? AND fiFirma = " . $response["userData"]["companyId"];
+                            $stmt = $conn->prepare($sql);
+                            $stmt->bind_param(
+                                "ssssii",
+                                $_POST["email"],
+                                $passwordHash,
+                                $_POST["name"],
+                                $_POST["surName"],
+                                $_POST["role"],
+                                $id
+                            );
+                            $stmt->execute();
+                            $response["SQLError"] = $stmt->error;
+
+                            $response["updatedAccount"] = true;
+                        }
                     } else {
                         $response["updatedAccount"] = false;
                     }

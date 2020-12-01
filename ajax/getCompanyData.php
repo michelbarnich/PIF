@@ -1,4 +1,5 @@
 <?php
+    include_once "../scripts/replaceSpecialChars.php";
 
     $silent = true; // if $silent is set to true, getUserData.php wont echo
 
@@ -20,8 +21,8 @@
                 $row = $result->fetch_assoc();
 
                 $response["companyData"] = [
-                    "name" => $row["dtName"],
-                    "address" => $row["dtAdresse"]
+                    "name" => replaceSpecialChars($row["dtName"]),
+                    "address" => replaceSpecialChars($row["dtAdresse"])
                 ];
 
             }

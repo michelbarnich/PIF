@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/resources/css/includes/sensors.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="blurBox" style=""></div>
+    <div id="createBox">
+
+        <h2 id="h2_create">Add Sensor</h2>
+        <input id="companyID" placeholder="Sensor ID">
+        <input id="companyCompany" placeholder="Company">
+        <button id="createButton">Create!</button>
+
+    </div>
+
+    <div id="editBox">
+
+        <h2 id="h2_edit">Edit Sensor</h2>
+        <input id="editID" placeholder="Sensor ID">
+        <input id="editCompany" placeholder="Company">
+        <button id="editButton">Save!</button>
+
+    </div>
+
+    <div id="createDiv">
+        <button id="createAccount" onclick="createCompanyShow()">Add Sensor</button>
+    </div>
+
+    <span>
+    </span>
+
+    <script>
+        $(window).resize(function () {
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+        });
+
+        $(document).ready(function () {
+
+            $("#createBox").hide();
+            $("#editBox").hide();
+            $("#blurBox").hide();
+
+            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
+            document.body.style.zoom = zoomFactor + "%";
+
+            $.get("/ajax/listSensors.php", function (data) {
+                console.log(data);
+
+                $("span").html();
+
+                let sensors = JSON.parse(data).sensorList;
+
+                for (var i = 0; i < sensors.length; i++) {
+                    $("span").append(
+                        "        <div>\n" +
+                        "            <p>" + sensors[i].id + "</p>\n" +
+                        "            <p>" + sensors[i].company + "</p>\n" +
+                        "            <p>Last Online: " + sensors[i].lastOnline.replace(/-/g, ".") + "</p>\n" +
+                        "            <button class=\"editButton\" onclick=\"editUser(" + sensors[i].id + ")\"><img src=\"../resources/img/accounts.html/edit.png\"></button>\n" +
+                        "            <button class=\"deleteButton\" onclick=\"deleteUser(" + sensors[i].id + ")\"><img src=\"../resources/img/accounts.html/trash.png\"></button>\n" +
+                        "        </div>"
+                    )
+                }
+
+            });
+
+        });
+    </script>
+</body>
+</html>

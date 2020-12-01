@@ -1,14 +1,22 @@
 <?php
+    include_once "../scripts/replaceSpecialChars.php";
+
     $silent = true; // if $silent is set to true, getUserData.php wont echo
 
     include_once "../scripts/connectToDatabase.php";
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
+    include_once "../scripts/parseURLForQueries.php";
 
     if ($response["userData"]["role"] >= 2) {
 
-        if($response["userData"]["role"] == 2) {
-            $sqlAddition = " WHERE fiFirma = " . $response["userData"]["companyId"];
+        if($response["userData"]["role"] == 2 || $queries["page_name"] == "my company") {
+            if ($response["userData"]["companyId"] == "") {
+                $companyId = 0;
+            } else {
+                $companyId = $response["userData"]["companyId"];
+            }
+            $sqlAddition = " WHERE fiFirma = " . $companyId;
         } else {
             $sqlAddition = "";
         }
@@ -42,13 +50,13 @@
                 }
 
                 array_push($returnUserArray, [
-                    "email" => $row["dtEmail"],
-                    "surname" => $row["dtName"],
-                    "name" => $row["dtVorname"],
-                    "role" => $row["dtRolle"],
-                    "id" => $row["idIdentifikationsNummer"],
-                    "company" => $row2["dtName"],
-                    "companyId" => $row["fiFirma"],
+                    "email" => replaceSpecialChars($row["dtEmail"]),
+                    "surname" => replaceSpecialChars($row["dtName"]),
+                    "name" => replaceSpecialChars($row["dtVorname"]),
+                    "role" => replaceSpecialChars($row["dtRolle"]),
+                    "id" => replaceSpecialChars($row["idIdentifikationsNummer"]),
+                    "company" => replaceSpecialChars($row2["dtName"]),
+                    "companyId" => replaceSpecialChars($row["fiFirma"])
                 ]);
 
             }
