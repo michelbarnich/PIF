@@ -112,8 +112,8 @@
                         var roleName = "User";
                     }
 
-                    if(userList[i].role == 3 && userRole < 3) {
-                        var buttons = "";
+                    if(userList[i].role >= 2  && userRole < 3) {
+                        var buttons = "<button class='editButton' onclick='editUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/edit.png\"></button>";
                     } else {
                         var buttons = "<button class='deleteButton' onclick='deleteUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/trash.png\"></button>" +
                             "<button class='editButton' onclick='editUser(" + userList[i].id + ")'><img src=\"../resources/img/accounts.html/edit.png\"></button>";

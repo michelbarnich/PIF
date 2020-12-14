@@ -53,7 +53,7 @@
 
             $sql3 = "SELECT dtTimestamp FROM tblsensordaten WHERE fiSensorStation  = ? ORDER BY dtTimestamp DESC LIMIT 1;";
             $stmt3 = $conn->prepare($sql3);
-            $stmt3->bind_param("i", $row["idIdentifikationsNummer"]);
+            $stmt3->bind_param("s", $row["idIdentifikationsNummer"]);
             $stmt3->execute();
             $result3 = $stmt3->get_result();
             $response["SQLError"] = $stmt3->error;
@@ -63,6 +63,8 @@
             if($result3->num_rows > 0) {
                 $row3 = $result3->fetch_assoc();
                 $lastOnline = replaceSpecialChars($row3["dtTimestamp"]);
+            } else {
+                $lastOnline = "N/A";
             }
 
 

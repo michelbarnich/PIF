@@ -58,7 +58,24 @@ img {
     height: 30px;
 }
 
-#createAccount {
+#createBox, #editBox {
+    z-index: 100;
+    position: absolute;
+    display: none;
+    height: 350px;
+    width: 666px;
+    background-color: rgba(255,255,255,0.79);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 30px;
+    top: calc(50% - 175px);
+    left: calc(50% - 333px);
+    -webkit-transform: scale(100vh/1080);
+    -ms-transform: scale(100vh/1080);
+    transform: scale(100vh/1080);
+}
+
+#createSensor {
     top: 5px;
     left: 549px;
     background-color: #20C800;
@@ -86,4 +103,54 @@ p:nth-child(2) {
 
 p:nth-child(3) {
     left: 1000px;
+}
+
+input, select {
+    position: absolute;
+    width: 591px;
+    height: 52px;
+    left: 29px;
+    background-color: white;
+    color: #767676;
+    -webkit-box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
+    border: none;
+    font-size: 24px;
+    border-radius: 15px;
+    padding-left: 17px;
+}
+
+select {
+    width: 608px;
+}
+
+#companyID, #editID {
+    top: 93px;
+}
+
+#companyName, #editCompany {
+    top: 170px;
+}
+
+#createButton, #editButton {
+    position: absolute;
+    width: 159px;
+    height: 57px;
+    color: #20C800;
+    font-size: 33px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    top: 254px;
+    left: 254px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+}
+
+#h2_create, #h2_edit {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 57px;
+    color: #767676;
 }

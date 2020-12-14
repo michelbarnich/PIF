@@ -7,7 +7,7 @@
     include_once "../ajax/getUserData.php";
     include_once "../scripts/parseURLForQueries.php";
 
-    if($response["userData"]["role"] >= 2) {
+    if($response["userData"]["role"] >= 2) { // user is at least company Admin
 
         if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
             $response["validEmail"] = false;
@@ -29,10 +29,10 @@
 
                 $passwordHash = hash("sha256", $_POST["password"]);
 
-                if (($response["userData"]["role"] == 2 || $queries["page_name"] == "my company") && $response["userData"]["companyId"] != NULL) {
+                if (($response["userData"]["role"] == 2 || $queries["page_name"] == "my company") && $response["userData"]["companyId"] != NULL) { // if user is company Admin, or createing Account from company Tab
                     $sqlAddition = ", fiFirma";
                     $sqlAddition2 = ", " . $response["userData"]["companyId"];
-                } else {
+                } else { // user is admin
                     $sqlAddition = "";
                     $sqlAddition2 = "";
                 }

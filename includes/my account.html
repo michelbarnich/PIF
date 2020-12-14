@@ -36,9 +36,12 @@
         });
 
         function reloadData() {
+            // reload all Data in input fields
             console.log("[../ajax/getUserData.php]")
             $.get("../ajax/getUserData.php", function (jsonObj) {
                 let parsedJsonObj = JSON.parse(jsonObj);
+
+                // replacing Data, and emptying password Fields
                 $("#inputEmail").val(parsedJsonObj.userData.email.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
                 $("#inputCompanyName").val(parsedJsonObj.userData.company.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
                 $("#inputSurname").val(parsedJsonObj.userData.name.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&sbquo;/g, ",").replace(/&nbsp;/g, " "));
@@ -62,6 +65,7 @@
 
         function applyChanges() {
 
+            // if passwords dont match
             if($("#inputPassword").val() != $("#inputRepeatPassword").val()) {
 
                 var topOffset = parseInt($("#inputPassword").css("top")) - 2 + "px";
@@ -78,9 +82,11 @@
             } else if ($("#inputEmail").val() != "" &&
                 $("#inputName").val() != "" &&
                 $("#inputSurname").val() != ""
-            ) {
+            ) { // if passwordsd match && other fields arent empty
 
-                console.log("[../ajax/updateAccount.php]")
+                console.log("[../ajax/updateAccount.php]");
+
+                // send request to server
                 $.post("../ajax/updateAccount.php", {
                     email: $("#inputEmail").val(),
                     surName: $("#inputSurname").val(),

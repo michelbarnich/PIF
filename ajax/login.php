@@ -12,6 +12,7 @@ if($conn != false) {
     $result = $stmt->get_result();
     $response["SQLError"] = $stmt->error;
 
+    // checking if only ONE Account with the specified email exists.
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
 

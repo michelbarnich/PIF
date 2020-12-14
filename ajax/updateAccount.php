@@ -6,15 +6,18 @@
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
 
+    // checking if logged in
     if(isset($_SESSION["id"])) {
         $response["NotLoggedIn"] = false;
 
+        // checking if user is allowed to update other users account
         if ($response["userData"]["role"] >=2 && isset($_POST["id"])) {
             $id = $_POST["id"];
         } else {
             $id = $_SESSION["id"];
         }
 
+        // validating email
         if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
             $response["validEmail"] = false;
         }elseif($conn != false) {
@@ -40,7 +43,7 @@
                     $passwordHash = $row["dtPasswortHash"];
                 }
 
-                if($response["userData"]["role"] == 3 && isset($_POST["companyId"])) {
+                if($response["userData"]["role"] == 3 && isset($_POST["companyId"])) { // Website Admin
 
                     // if update is requested by a System Admin
 
@@ -74,7 +77,7 @@
                         $response["updatedAccount"] = false;
                     }
 
-                } elseif ($response["userData"]["role"] == 2 && isset($_POST["companyId"])) {
+                } elseif ($response["userData"]["role"] == 2 && isset($_POST["companyId"])) { // company Admin can only update users inside own company
 
                     if($_POST["role"] < 3) {
 
@@ -92,6 +95,7 @@
 
                         if ($response["userData"]["role"] < $role) {
                             $response["updatedAccount"] = false;
+                            // user cant update higher ranking account
                         } else {
 
                             // Inserting new dataset

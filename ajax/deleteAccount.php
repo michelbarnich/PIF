@@ -27,7 +27,7 @@
         $role = $result->fetch_assoc()["dtRolle"];
         echo $role;
 
-        if ($response["userData"]["role"] < $role) {
+        if ($response["userData"]["role"] <= $role) {
             $response["deletedAccount"] = false;
         } else {
             if ($conn != false) {

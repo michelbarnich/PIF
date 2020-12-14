@@ -11,7 +11,8 @@
 
         <h2 id="h2_create">Add Sensor</h2>
         <input id="companyID" placeholder="Sensor ID">
-        <input id="companyCompany" placeholder="Company">
+        <select id="companyName" >
+        </select>
         <button id="createButton">Create!</button>
 
     </div>
@@ -19,14 +20,15 @@
     <div id="editBox">
 
         <h2 id="h2_edit">Edit Sensor</h2>
-        <input id="editID" placeholder="Sensor ID">
-        <input id="editCompany" placeholder="Company">
+        <input id="editID" placeholder="Sensor ID" disabled>
+        <select id="editCompany" >
+        </select>
         <button id="editButton">Save!</button>
 
     </div>
 
     <div id="createDiv">
-        <button id="createAccount" onclick="createCompanyShow()">Add Sensor</button>
+        <button id="createSensor">Add Sensor</button>
     </div>
 
     <span>
@@ -37,6 +39,59 @@
             let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
             document.body.style.zoom = zoomFactor + "%";
         });
+
+        $("#createSensor").click(function () {
+            $("#createBox").show();
+            $("#blurBox").show();
+
+            $.get("/ajax/listCompanies.php", function (data) {
+                console.log(data);
+
+                let companiesJSON = JSON.parse(data).companyList;
+
+                $("#companyName").append("<option value='-1'>No Company</option>");
+
+                for (var j = 0; j < companiesJSON.length; j++) {
+                    $("#companyName").append("<option value='" + companiesJSON[j].id + "'>" + companiesJSON[j]["name"] + "</option>");
+                }
+
+            });
+
+        });
+
+        function editSensor(id) {
+            $("#editBox").show();
+            $("#blurBox").show();
+
+            $("#editID").val(id);
+
+            $.get("/ajax/listCompanies.php", function (data) {
+                console.log(data);
+
+                let companiesJSON = JSON.parse(data).companyList;
+
+                $("#editCompany").append("<option value='-1'>No Company</option>");
+
+                for (var j = 0; j < companiesJSON.length; j++) {
+                    $("#editCompany").append("<option value='" + companiesJSON[j].id + "'>" + companiesJSON[j]["name"] + "</option>");
+                }
+
+                $.get("/ajax/getSensorData.php?id=" + id, function (data) {
+                    console.log(data);
+
+                    let companyID = JSON.parse(data).sensorData.companyId;
+
+                    if(companyID == "") {
+                        $("#editCompany").val(-1);
+                    } else {
+                        $("#editCompany").val(companyID);
+                    }
+
+                });
+
+            });
+
+        }
 
         $(document).ready(function () {
 
@@ -60,8 +115,8 @@
                         "            <p>" + sensors[i].id + "</p>\n" +
                         "            <p>" + sensors[i].company + "</p>\n" +
                         "            <p>Last Online: " + sensors[i].lastOnline.replace(/-/g, ".") + "</p>\n" +
-                        "            <button class=\"editButton\" onclick=\"editUser(" + sensors[i].id + ")\"><img src=\"../resources/img/accounts.html/edit.png\"></button>\n" +
-                        "            <button class=\"deleteButton\" onclick=\"deleteUser(" + sensors[i].id + ")\"><img src=\"../resources/img/accounts.html/trash.png\"></button>\n" +
+                        "            <button class=\"editButton\" onclick=\"editSensor('" + sensors[i].id + "')\"><img src=\"../resources/img/accounts.html/edit.png\"></button>\n" +
+                        "            <button class=\"deleteButton\" onclick=\"deleteSensor('" + sensors[i].id + "')\"><img src=\"../resources/img/accounts.html/trash.png\"></button>\n" +
                         "        </div>"
                     )
                 }
@@ -69,6 +124,86 @@
             });
 
         });
+
+        $("#editButton").click(function () {
+
+            if($("#editID").val().length != 36) {
+                var topOffset = parseInt($("#editID").css("top")) - 2 + "px";
+                $("#editID").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            } else {
+
+                $.post("/ajax/updateSensor.php", {
+                    id: $("#editID").val(),
+                    companyId: $("#editCompany").val()
+                }, function (data) {
+                    console.log(data);
+
+                    if(JSON.parse(data).SQLError != "" || JSON.parse(data).updatedSensor == false) {
+                        $("#editButton").html("An Error Occured");
+                        $("#editButton").css("color", "red");
+                    } else {
+                        $("#editButton").html("Saved &#10004;");
+                        $("#editButton").css("color", "#20C800");
+                    }
+
+                });
+            }
+
+        });
+
+        $("#createButton").click(function () {
+
+            if($("#companyID").val().length != 36) {
+                var topOffset = parseInt($("#companyID").css("top")) - 2 + "px";
+                $("#companyID").css({"border": "2px solid red", "left": "27px", "top": topOffset});
+            } else {
+
+                $.post("/ajax/createSensor.php", {
+                    id: $("#companyID").val(),
+                    companyId: $("#companyName").val()
+                }, function (data) {
+                    console.log(data);
+
+                    if(JSON.parse(data).SQLError != "" || JSON.parse(data).createdSensor == false) {
+                        $("#createButton").html("An Error Occured");
+                        $("#createButton").css("color", "red");
+                    } else {
+                        $("#createButton").html("Saved &#10004;");
+                        $("#createButton").css("color", "#20C800");
+                    }
+                });
+            }
+        });
+
+        function deleteSensor(id) {
+            $.post("/ajax/deleteSensor.php", {
+                id: id
+            }, function (data) {
+                console.log(data);
+
+                $.get("/ajax/listSensors.php", function (data) {
+                    console.log(data);
+
+                    $("span").html("");
+
+                    let sensors = JSON.parse(data).sensorList;
+
+                    for (var i = 0; i < sensors.length; i++) {
+                        $("span").append(
+                            "        <div>\n" +
+                            "            <p>" + sensors[i].id + "</p>\n" +
+                            "            <p>" + sensors[i].company + "</p>\n" +
+                            "            <p>Last Online: " + sensors[i].lastOnline.replace(/-/g, ".") + "</p>\n" +
+                            "            <button class=\"editButton\" onclick=\"editSensor('" + sensors[i].id + "')\"><img src=\"../resources/img/accounts.html/edit.png\"></button>\n" +
+                            "            <button class=\"deleteButton\" onclick=\"deleteSensor('" + sensors[i].id + "')\"><img src=\"../resources/img/accounts.html/trash.png\"></button>\n" +
+                            "        </div>"
+                        )
+                    }
+
+                });
+
+            });
+        }
     </script>
 </body>
 </html>
