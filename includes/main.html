@@ -34,17 +34,74 @@
     <button id="sidebar_logout" class="sidebar_option">Logout!</button>
 </div>
 
+<div id="mobile_showSideBar">
+    <img id="pageIcon" alt="page Icon" src="resources/img/main.html/Plants.png"/>
+    <p id="pageName">My Plants</p>
+    <img src="/resources/img/main.html/menu.png" alt="menu Icon" id="menuIcon">
+</div>
+
 <iframe id="content" frameBorder="0">
     You are using an unsupported Browser.
 </iframe>
 
 <script>
+    var sidebarHide = true;
     // loading stylesheet
     $("<link/>", {
         rel: "stylesheet",
         type: "text/css",
         href: "resources/css/includes/main.css"
     }).appendTo("head");
+
+    $(document).ready(function () {
+        //document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        if(document.documentElement.clientWidth <= 980) {
+            console.log($("body").height());
+            $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+
+            if(sidebarHide) {
+                $("#sidebar").hide();
+            } else {
+                $("#sidebar").show();
+            }
+
+        } else {
+            $("body").height(document.documentElement.clientHeight);
+            $("body").css({"transform": "scale(1)", "left": "0px", "top": "0px"});
+        }
+
+        $("#mobile_showSideBar").click(function () {
+            if(sidebarHide) {
+                $("#sidebar").show();
+                sidebarHide = false;
+            } else {
+                $("#sidebar").hide();
+                sidebarHide = true;
+            }
+        });
+
+    });
+
+    $(window).resize(function () {
+        //document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        if(document.documentElement.clientWidth <= 980) {
+
+            $("body").height($(document).height() * 414 / $(document).width());
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+
+            if(sidebarHide) {
+                $("#sidebar").hide();
+            } else {
+                $("#sidebar").show();
+            }
+
+        } else {
+            $("body").height($(document).height());
+            $("body").css({"transform": "scale(1)", "left": "0px", "top": "0px"});
+            $("#sidebar").show();
+        }
+    });
 
     // call logout script
     $("#sidebar_logout").click(function() {
@@ -55,11 +112,25 @@
     });
 
     $(".sidebar_option").click(function () {
+
+        if(document.documentElement.clientWidth <= 980) {
+            if(sidebarHide) {
+                $("#sidebar").show();
+                sidebarHide = false;
+            } else {
+                $("#sidebar").hide();
+                sidebarHide = true;
+            }
+        }
+
         $(".sidebar_option").removeClass("selected");
         $(this).addClass("selected");
 
         $("#content").attr('src', "ajax/getContentForUser.php?page_name=" + $(this).children("span").text().toLowerCase());
         console.log("[ajax/getContentForUser.php][requestedPage:] " + $(this).children("span").text().toLowerCase());
+
+        $("#pageName").html($(this).children("span").text());
+        $("#pageIcon").attr("src", $(this).children("img").attr("src"));
 
     });
 

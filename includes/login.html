@@ -21,11 +21,26 @@
     }).appendTo("head");
 
     $(document).ready(function () {
-        document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        //document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        if(document.documentElement.clientWidth <= 980) {
+            console.log($("body").height());
+            $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+        } else {
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 1920 +  ")", "left": (document.documentElement.clientWidth - 1920) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 1920 - $("body").height() ) / 2 + "px"});
+        }
+
     });
 
     $(window).resize(function () {
-        document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        //document.body.style.zoom = (document.documentElement.clientWidth / 1920  * 100) + "%";
+        if(document.documentElement.clientWidth <= 980) {
+            $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+        } else {
+            $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 1920 +  ")", "left": (document.documentElement.clientWidth - 1920) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 1920 - $("body").height() ) / 2 + "px"});
+        }
+
     });
 
     // if login Button pressed

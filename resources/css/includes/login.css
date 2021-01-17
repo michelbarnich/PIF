@@ -172,3 +172,70 @@ h2 {
     text-align: center;
     color: red;
 }
+
+/* mobile styles */
+
+@media screen and (max-width: 980px) {
+
+    body {
+        position: absolute;
+        width: 414px;
+        //background-image: none;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        position: absolute;
+        font-size: 50px;
+        top: calc(50% - 100px);
+        //top: 0;
+        left: 0;
+    }
+
+    #showLoginBox_login {
+        left: 140px;
+        width: 135px;
+        height: 48px;
+        font-size: 29px;
+        border-radius: 15px;
+        top: calc(50% + 20px);
+    }
+
+    #loginBox {
+        position: center;
+        width: 376px;
+        height: 212px;
+        top: calc(50% - 100px);
+        margin: 0;
+    }
+
+    #h2_login {
+        font-size: 31px;
+        left: 150px;
+        top: 3px;
+    }
+
+    #login_email {
+        width: 325px;
+        height: 41px;
+        left: 17px;
+        top: 51px;
+    }
+
+    #login_password {
+        width: 325px;
+        height: 41px;
+        left: 17px;
+        top: 106px;
+    }
+
+    #button_login {
+        width: 121px;
+        height: 42px;
+        left: 128px;
+        top: 159px;
+        font-size: 22px;
+    }
+
+}

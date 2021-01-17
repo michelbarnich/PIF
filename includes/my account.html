@@ -22,17 +22,34 @@
 
         $(document).ready(function () {
             reloadData();
-            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
-            document.body.style.zoom = zoomFactor + "%";
-            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
-            $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+            if(document.documentElement.clientWidth < 699) {
+                console.log($("body").height());
+                $("body").height(Math.floor(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth) - 87);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": "0px"});
+            } else {
+
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+                $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+
+            }
         });
 
         $(window).resize(function () {
-            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
-            document.body.style.zoom = zoomFactor + "%";
-            document.body.style.height = document.documentElement.clientHeight / zoomFactor * 100 + "px";
-            $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+
+            if(document.documentElement.clientWidth < 699) {
+                console.log($("body").height());
+                $("body").height(Math.floor(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth) - 87);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": "0px"});
+                location.reload()
+            } else {
+
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+                $("#accountSettingsContainer").css({top: document.documentElement.clientHeight / zoomFactor * 100 / 2 - 228 + "px"});
+
+            }
+
         });
 
         function reloadData() {

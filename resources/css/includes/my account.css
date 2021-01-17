@@ -12,7 +12,7 @@
 
 body {
     width: 100%;
-    height: 1080px;
+    height: auto;
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
@@ -109,4 +109,89 @@ input:nth-child(7) {
     height: 57px;
     border: none;
     background-color: white;
+}
+
+@media screen and (max-width: 699px) {
+    body {
+        width: 414px;
+    }
+
+    #accountSettingsContainer {
+        width: 394px;
+        left: 10px;
+    }
+
+    #accountSettingsContainer > h1 {
+        font-size: 25px;
+    }
+
+    input {
+        border: none;
+        border-radius: 15px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 20px;
+        padding-left: 17px;
+        width: 367px;
+        height: 40px;
+        color: #434343;
+    }
+
+    input:nth-child(2) {
+        top: 42px;
+        left: 5px;
+    }
+
+    input:nth-child(3) {
+        top: 93px;
+        left: 5px;
+    }
+
+    input:nth-child(4) {
+        top: 144px;
+        left: 5px;
+    }
+
+    input:nth-child(5) {
+        top: 195px;
+        left: 5px;
+    }
+
+    input:nth-child(6) {
+        top: 246px;
+        left: 5px;
+    }
+
+    input:nth-child(7) {
+        top: 297px;
+        left: 5px;
+    }
+
+    #cancelButton {
+        top: 399px;
+        left: 20px;
+        color: red;
+        border-radius: 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 30px;
+        width: 347px;
+        height: 45px;
+        border: none;
+        background-color: white;
+    }
+
+    #applyButton {
+        top: 348px;
+        left: 20px;
+        color: #20C800;
+        border-radius: 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 30px;
+        width: 347px;
+        height: 45px;
+        border: none;
+        background-color: white;
+    }
 }
