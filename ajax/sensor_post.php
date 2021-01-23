@@ -2,10 +2,10 @@
     // check if all fields are set, and sensor data fields are float
     if(
         isset($_POST["id"]) &&
-        isset($_POST["moisture"]) && filter_var($_POST["moisture"], FILTER_VALIDATE_FLOAT) &&
-        isset($_POST["light"]) && filter_var($_POST["light"], FILTER_VALIDATE_FLOAT) &&
-        isset($_POST["temp"]) && filter_var($_POST["temp"], FILTER_VALIDATE_FLOAT) &&
-        isset($_POST["humidity"]) && filter_var($_POST["humidity"], FILTER_VALIDATE_FLOAT)
+        isset($_POST["moisture"]) && is_float((float)$_POST["moisture"]) &&
+        isset($_POST["light"]) && is_float((float)_POST["light"]) &&
+        isset($_POST["temp"]) && is_float((float)$_POST["temp"]) &&
+        isset($_POST["humidity"]) && is_float((float)$_POST["humidity"])
     ) {
         // if so, check if sensorStation does exist in database
         include_once "../scripts/connectToDatabase.php";

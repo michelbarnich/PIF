@@ -133,6 +133,7 @@ li > span {
     body {
         width: 414px;
         height: auto;
+        background-image: none;
     }
 
     #content {

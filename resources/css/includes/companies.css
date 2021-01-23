@@ -151,3 +151,84 @@ input {
     border-radius: 0;
     background-color: rgba(255,255,255,0.3);
 }
+
+@media screen and (max-width: 699px) {
+
+    body {
+        width: 414px;
+        margin: 0px;
+    }
+
+    div {
+        width: 375px;
+        height: 67px;
+    }
+
+    #createDiv {
+        margin-top: 87px;
+        width: 375px;
+        height: 60px;
+        margin-left: 20px !important;
+    }
+
+    #create {
+        width: 300px;
+        left: 37px;
+        height: 50px;
+        top: 5px;
+        border-radius: 30px;
+        font-size: 30px;
+    }
+
+    .deleteButton, .editButton {
+        top: 27px;
+    }
+
+    #blurBox {
+        width: 434px;
+        height: 100%;
+        margin-left: -20px;
+    }
+
+    #createBox, #editBox {
+        width: 375px;
+        left: 20px;
+        margin-left: 0;
+        height: 199px;
+    }
+
+    #h2_create, #h2_edit {
+        font-size: 25px;
+    }
+
+    #companyName, #editName {
+        top: 42px;
+        left: 5px;
+        width: 348px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #companyAddress, #editAddress {
+        top: 93px;
+        left: 5px;
+        width: 348px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #createButton, #editButton {
+        top: 144px;
+        left: 15px;
+        color: #20C800;
+        border-radius: 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 30px;
+        width: 347px;
+        height: 45px;
+        border: none;
+        background-color: white;
+    }
+
+}

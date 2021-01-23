@@ -36,8 +36,19 @@
 
     <script>
         $(window).resize(function () {
-            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
-            document.body.style.zoom = zoomFactor + "%";
+
+            if(document.documentElement.clientWidth <= 699) {
+                console.log($("body").width());
+                //$("body").height(Math.floor(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth) - 87);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": "0px"});
+                location.reload()
+            } else {
+
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+
+            }
+
         });
 
         $("#createSensor").click(function () {
@@ -99,8 +110,15 @@
             $("#editBox").hide();
             $("#blurBox").hide();
 
-            let zoomFactor = (document.documentElement.clientWidth / 1638  * 100);
-            document.body.style.zoom = zoomFactor + "%";
+            if(document.documentElement.clientWidth <= 699) {
+                console.log($("body").height());
+                $("body").height(Math.floor(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth) - 87);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": "0px"});
+            } else {
+
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+            }
 
             $.get("/ajax/listSensors.php", function (data) {
                 console.log(data);

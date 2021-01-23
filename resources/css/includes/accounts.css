@@ -340,6 +340,7 @@ h2 {
     #blurBox {
         height: calc(100% + 87px);
         top: -87px;
+        position: fixed;
     }
 
     #accountSettingsContainer {

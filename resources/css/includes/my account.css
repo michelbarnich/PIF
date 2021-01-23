@@ -112,6 +112,7 @@ input:nth-child(7) {
 }
 
 @media screen and (max-width: 699px) {
+
     body {
         width: 414px;
     }

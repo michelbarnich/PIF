@@ -102,7 +102,9 @@ p:nth-child(2) {
 }
 
 p:nth-child(3) {
+    top: 70px;
     left: 1000px;
+    font-size: 20px;
 }
 
 input, select {
@@ -153,4 +155,188 @@ select {
     text-align: center;
     font-size: 57px;
     color: #767676;
+}
+
+@media screen and (max-width: 699px) {
+
+    body {
+        width: 414px;
+        top: 0;
+    }
+
+    body > div {
+        margin-top: 87px;
+        width: 375px;
+    }
+
+    #createSensor {
+        width: 300px;
+        left: 37px;
+    }
+
+    span > div {
+        height: 175px;
+        width: 375px;
+    }
+
+    span > div:last-child {
+        margin-bottom: 20px;
+    }
+
+    #users {
+        top: 60px;
+    }
+
+    p:nth-child(1) {
+        left: 20px;
+    }
+
+    p:nth-child(2) {
+        left: 20px;
+        top: 110px;
+    }
+
+    p:nth-child(3) {
+        left: 20px;
+        top: 80px;
+    }
+
+    .editButton {
+        top: 140px;
+    }
+
+    .deleteButton {
+        top: 140px;
+    }
+
+    #blurBox {
+        height: calc(100% + 87px);
+        top: -87px;
+        position: fixed;
+    }
+
+    #accountSettingsContainer {
+        top: 0px;
+        margin-top: 0px;
+        left: 0px;
+        width: 394px;
+        margin-left: 10px;
+    }
+
+    #accountSettingsContainer > h2 {
+        font-size: 25px;
+    }
+
+    #accountSettingsContainer > input, #accountSettingsContainer > select {
+        width: 367px;
+        left: 5px;
+        height: 41px;
+        font-size: 20px;
+    }
+
+    #accountSettingsContainer > select {
+        width: 384px;
+    }
+
+    #accountSettingsContainer > input:nth-child(2) {
+        top: 42px;
+        left: 5px;
+    }
+
+    #accountSettingsContainer > input:nth-child(4) {
+        top: 144px;
+        left: 5px;
+    }
+
+    #accountSettingsContainer > input:nth-child(5) {
+        top: 195px;
+        left: 5px;
+    }
+
+    #accountSettingsContainer > input:nth-child(6) {
+        top: 246px;
+        left: 5px;
+    }
+
+    #accountSettingsContainer > input:nth-child(7) {
+        top: 297px;
+        left: 5px;
+    }
+
+    #accountSettingsContainer > #role {
+        top: 348px;
+        left: 5px;
+    }
+
+    #applyButton {
+        top: 399px;
+        left: 20px;
+        color: #20C800;
+        border-radius: 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 30px;
+        width: 347px;
+        height: 45px;
+        border: none;
+        background-color: white;
+    }
+
+    #createBox {
+        top: 0px;
+        margin-top: 0px;
+        left: 0px;
+        width: 394px;
+        margin-left: 10px;
+        height: 355px;
+    }
+
+    #createBox > h2 {
+        font-size: 25px;
+    }
+
+    #createBox > input, #createBox > select, #editBox > input, #editBox > select {
+        width: 350px;
+        left: 5px;
+        height: 41px;
+        font-size: 20px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    }
+
+    #companyID, #editID {
+        top: 42px;
+    }
+
+    #createBox > #companyName, #editBox > #editCompany {
+        top: 93px;
+        width: 367px;
+    }
+
+    #createButton, #editButton {
+        top: 144px;
+        left: 14px;
+        color: #20C800;
+        border-radius: 30px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+        font-size: 30px;
+        width: 347px;
+        height: 45px;
+        border: none;
+        background-color: white;
+    }
+
+    #createBox, #editBox {
+        width: 375px;
+        left: 20px;
+        margin-left: 0;
+        height: 199px;
+    }
+
+    #h2_create, #h2_edit {
+        font-size: 25px;
+    }
+
+
 }
