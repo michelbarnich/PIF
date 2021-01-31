@@ -102,9 +102,8 @@ p:nth-child(2) {
 }
 
 p:nth-child(3) {
-    top: 70px;
     left: 1000px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 input, select {
@@ -338,5 +337,9 @@ select {
         font-size: 25px;
     }
 
+    p:nth-child(3) {
+        left: 1000px;
+        font-size: 20px;
+    }
 
 }
