@@ -28,4 +28,8 @@
         }
         include_once "../includes/accounts.html";
     }
+
+    if($_GET["page_name"] == "my plants" && $response["userData"]["role"] >= 1) {
+        include_once "../includes/my plants.html";
+    }
 ?>

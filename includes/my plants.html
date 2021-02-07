@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Plants</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+    <p>Hello World</p>
+    <canvas id="myChart" style="width:100% !important; height:20% !important;"></canvas>
+    <script>
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['1', '2', '3', '4', '5', '6', '7'],
+                datasets: [{
+                                label: 'My First dataset',
+                                borderColor: 'rgb(255, 99, 132)',
+                                backgroundColor: 'rgb(255, 99, 132)',
+                                data: [0, 10, 5, 2, 20, 30, 45],
+                                fill: false
+                            },
+                            {
+                                label: 'My Second dataset',
+                                borderColor: 'rgb(100, 99, 132)',
+                                backgroundColor: 'rgb(100, 99, 132)',
+                                data: [5, 1, 5, 2, 7, 100, 45],
+                                fill: false
+                            }
+                ]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        position: 'right',
+                        stacked: false
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            //reverse: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
     if(
         isset($_POST["id"]) &&
         isset($_POST["moisture"]) && is_float((float)$_POST["moisture"]) &&
-        isset($_POST["light"]) && is_float((float)_POST["light"]) &&
+        isset($_POST["light"]) && is_float((float)$_POST["light"]) &&
         isset($_POST["temp"]) && is_float((float)$_POST["temp"]) &&
         isset($_POST["humidity"]) && is_float((float)$_POST["humidity"])
     ) {
