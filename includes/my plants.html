@@ -4,10 +4,106 @@
     <meta charset="UTF-8">
     <title>My Plants</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/css/includes/my plants.css">
 </head>
 <body>
-    <p>Hello World</p>
-    <canvas id="myChart" style="width:100% !important; height:20% !important;"></canvas>
+    <div id="plants">
+
+    </div>
+    <script>
+
+        $(window).resize(function () {
+            if(document.documentElement.clientWidth <= 699) {
+                $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+            } else {
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";            }
+        });
+
+        $(document).ready(function () {
+            if(document.documentElement.clientWidth <= 699) {
+                $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+            } else {
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+            }
+        });
+
+        $.get("/ajax/listSensors.php", function (data) {
+            console.log(JSON.parse(data).sensorList);
+
+            let jsonData = JSON.parse(data).sensorList;
+
+            for (var i = 0; i < jsonData.length; i++ ) {
+
+                let plantName = jsonData[i].name;
+                let plantID = jsonData[i].id;
+
+                $.getJSON("/ajax/getPlantTelemetry.php?latest=true&sensorID=" + jsonData[i].id, function (data) {
+
+                    console.log(data);
+
+                    if(data["plantTelemetry"] != undefined) {
+
+                        $("#plants").append(
+                            "<div>\n" +
+                            "            <h1>" + plantName + "</h1>\n" +
+                            "            <p>" + plantID + "</p>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/waterDrop.png\" alt=\"waterDrop\" class=\"waterDrop\">\n" +
+                            "            <div class=\"moisture\">\n" +
+                            "                <span style=\"width: " + data["plantTelemetry"].moisture + "%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/sun.png\" alt=\"sun\" class=\"sun\">\n" +
+                            "            <div class=\"light\">\n" +
+                            "                <span style=\"width: " + data["plantTelemetry"].light + "%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/waterDropMoisture.png\" alt=\"waterDropMoisture\" class=\"waterDropMoisture\">\n" +
+                            "            <div class=\"humidity\">\n" +
+                            "                <span style=\"width: " + data["plantTelemetry"].humidity + "%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/temperature.png\" alt=\"temperatureIcon\" class=\"temperatureIcon\">\n" +
+                            "            <div class=\"temperature\">\n" +
+                            "                <span style=\"width: " + (100 - data["plantTelemetry"].temperature) + "%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <button>More Info</button>\n" +
+                            "        </div>"
+                        );
+                    } else {
+                        $("#plants").append(
+                            "<div>\n" +
+                            "            <h1>" + plantName + "</h1>\n" +
+                            "            <p>" + plantID + "</p>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/waterDrop.png\" alt=\"waterDrop\" class=\"waterDrop\">\n" +
+                            "            <div class=\"moisture\">\n" +
+                            "                <span style=\"width: 0%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/sun.png\" alt=\"sun\" class=\"sun\">\n" +
+                            "            <div class=\"light\">\n" +
+                            "                <span style=\"width: 0%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/waterDropMoisture.png\" alt=\"waterDropMoisture\" class=\"waterDropMoisture\">\n" +
+                            "            <div class=\"humidity\">\n" +
+                            "                <span style=\"width: 0%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <img src=\"/resources/img/my%20plants.html/temperature.png\" alt=\"temperatureIcon\" class=\"temperatureIcon\">\n" +
+                            "            <div class=\"temperature\">\n" +
+                            "                <span style=\"width: 100%;\"></span>\n" +
+                            "            </div>\n" +
+                            "            <button>More Info</button>\n" +
+                            "        </div>"
+                        );
+                    }
+                })
+            }
+
+        })
+    </script>
+    <div style="width: 200px; height: 200px">
+        <canvas id="myChart" style="width:100%; height:100%;"></canvas>
+    </div>
     <script>
 
         var ctx = document.getElementById('myChart').getContext('2d');

@@ -338,7 +338,7 @@ select {
     }
 
     p:nth-child(3) {
-        left: 1000px;
+        left: 20px;
         font-size: 20px;
     }
 

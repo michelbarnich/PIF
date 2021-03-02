@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[ajax/createAccount.php]&#10;- added close connection and echo json_encode, as it wasnt present before&#10;&#10;[ajax/deleteAccount.php]&#10;- added the file so an Admin can delete a User&#10;&#10;[ajax/getUserData.php]&#10;- added more fields and partially renamed them in the output&#10;&#10;[ajax/listUsers.php]&#10;- added more fields to be returned&#10;&#10;[ajax/updateAccount.php]&#10;- added functionality and checks for Administrators to edit User Accounts&#10;&#10;[includes/accounts.html]&#10;- added functionality to create a new account&#10;- added functionality to edit an account&#10;&#10;[includes/login.html]&#10;- create Account option no longer exists&#10;&#10;[includes/img/accounts.html/edit.png]&#10;- aded file&#10;&#10;[includes/img/accounts.html/trash.png]&#10;- aded file">
-      <change afterPath="$PROJECT_DIR$/ajax/deleteAccount.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/accounts.html/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/accounts.html/trash.png" afterDir="false" />
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[/includes/accounts.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style&#10;&#10;[/includes/main.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jquery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax/getPlantTelemetry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/includes/my plants.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/temperature.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/waterDrop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/waterDropMoisture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/createAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/createAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/getUserData.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getUserData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/listUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/listUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/updateAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/updateAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/accounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/accounts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/listSensors.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/listSensors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/companies.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/companies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/my plants.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my plants.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/css/includes/accounts.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/accounts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/includes/companies.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/companies.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/includes/sensors.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/sensors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +44,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1irhjke2fma8B2RWxh9C1Ln2Hlf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -46,7 +60,8 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -55,14 +70,16 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\website\resources\img\my plants.html" />
+      <recent name="$PROJECT_DIR$/resources/img/main.html" />
+      <recent name="$PROJECT_DIR$/resources/css/includes" />
+      <recent name="$PROJECT_DIR$/includes" />
       <recent name="G:\website\resources\img\accounts.html" />
-      <recent name="F:\website" />
-      <recent name="G:\website\resources\img\main.html" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -121,7 +138,69 @@
       <workItem from="1605164272548" duration="5418000" />
       <workItem from="1605187863017" duration="10448000" />
       <workItem from="1605263793031" duration="11381000" />
-      <workItem from="1605292574128" duration="11273000" />
+      <workItem from="1605292574128" duration="11392000" />
+      <workItem from="1605526581047" duration="2716000" />
+      <workItem from="1605535779238" duration="2165000" />
+      <workItem from="1605549826831" duration="3370000" />
+      <workItem from="1605616703463" duration="6682000" />
+      <workItem from="1605698713727" duration="3816000" />
+      <workItem from="1605723446567" duration="2471000" />
+      <workItem from="1605788169728" duration="11330000" />
+      <workItem from="1605947532814" duration="1989000" />
+      <workItem from="1606052409978" duration="1043000" />
+      <workItem from="1606131395667" duration="313000" />
+      <workItem from="1606303369833" duration="464000" />
+      <workItem from="1606303870449" duration="2373000" />
+      <workItem from="1606373944648" duration="2081000" />
+      <workItem from="1606378980219" duration="109000" />
+      <workItem from="1606737175423" duration="3604000" />
+      <workItem from="1606747488576" duration="10627000" />
+      <workItem from="1606837895405" duration="4822000" />
+      <workItem from="1606908080085" duration="1236000" />
+      <workItem from="1606999715505" duration="8206000" />
+      <workItem from="1607341989862" duration="2564000" />
+      <workItem from="1607350095750" duration="3690000" />
+      <workItem from="1607436059120" duration="41000" />
+      <workItem from="1607441399894" duration="3361000" />
+      <workItem from="1607514281317" duration="218000" />
+      <workItem from="1607932630446" duration="1354000" />
+      <workItem from="1607945361719" duration="3537000" />
+      <workItem from="1608017054728" duration="213000" />
+      <workItem from="1608118006460" duration="1346000" />
+      <workItem from="1609761410748" duration="824000" />
+      <workItem from="1609931985138" duration="686000" />
+      <workItem from="1610004700983" duration="41000" />
+      <workItem from="1610005011347" duration="300000" />
+      <workItem from="1610368414881" duration="415000" />
+      <workItem from="1610384220128" duration="6659000" />
+      <workItem from="1610434537297" duration="1000" />
+      <workItem from="1610460381688" duration="7420000" />
+      <workItem from="1610607485771" duration="1874000" />
+      <workItem from="1610786450520" duration="3771000" />
+      <workItem from="1610824709935" duration="5393000" />
+      <workItem from="1610876305946" duration="3909000" />
+      <workItem from="1610885988997" duration="2660000" />
+      <workItem from="1610968959598" duration="1328000" />
+      <workItem from="1610980467319" duration="4447000" />
+      <workItem from="1611141522555" duration="2404000" />
+      <workItem from="1611330095716" duration="2978000" />
+      <workItem from="1611404998706" duration="712000" />
+      <workItem from="1611406729874" duration="481000" />
+      <workItem from="1611409651085" duration="995000" />
+      <workItem from="1611747128883" duration="492000" />
+      <workItem from="1611817181521" duration="528000" />
+      <workItem from="1612084105754" duration="397000" />
+      <workItem from="1612180501132" duration="1869000" />
+      <workItem from="1612351531317" duration="3184000" />
+      <workItem from="1612722599746" duration="594000" />
+      <workItem from="1612797106072" duration="1268000" />
+      <workItem from="1613138481386" duration="132000" />
+      <workItem from="1613139158804" duration="71000" />
+      <workItem from="1613209494884" duration="2363000" />
+      <workItem from="1613395043396" duration="9347000" />
+      <workItem from="1614165866190" duration="1429000" />
+      <workItem from="1614236247691" duration="2020000" />
+      <workItem from="1614439477058" duration="701000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -207,7 +286,70 @@
       <option name="project" value="LOCAL" />
       <updated>1605194116143</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[ajax/createAccount.php]&#10;- added close connection and echo json_encode, as it wasnt present before&#10;&#10;[ajax/deleteAccount.php]&#10;- added the file so an Admin can delete a User&#10;&#10;[ajax/getUserData.php]&#10;- added more fields and partially renamed them in the output&#10;&#10;[ajax/listUsers.php]&#10;- added more fields to be returned&#10;&#10;[ajax/updateAccount.php]&#10;- added functionality and checks for Administrators to edit User Accounts&#10;&#10;[includes/accounts.html]&#10;- added functionality to create a new account&#10;- added functionality to edit an account&#10;&#10;[includes/login.html]&#10;- create Account option no longer exists&#10;&#10;[includes/img/accounts.html/edit.png]&#10;- aded file&#10;&#10;[includes/img/accounts.html/trash.png]&#10;- aded file&#10;&#10;[includes/css/includes/accounts.css]&#10;- added styles for editing account&#10;- added styles for deleting account&#10;&#10;[includes/css/login.css]&#10;- removed styles for create Account">
+      <created>1605308189835</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605308189836</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[/ajax/createAccount.php]&#10;- user with Role 2 (company owner) can now create Accounts for its own company&#10;&#10;[/ajax/createCompany.php]&#10;- added file&#10;- gives User Role 3 the ability to create a new company&#10;&#10;[/ajax/deleteAccount.php]&#10;- added User Role 2 the ability to delete an Account under his company&#10;&#10;[/ajax/getContentForUser.php]&#10;- added &quot;accounts&quot; page&#10;&#10;[/ajax/getUserData.php]&#10;- added more fields to output&#10;&#10;[/ajax/listCompanies.php]&#10;- gives user Role 3 the ability to list all exsting companies&#10;&#10;[/ajax/listUser.php]&#10;- added ability for user Role 2 to see all Accounts in its company&#10;&#10;[/ajax/updateAccount.php]&#10;- added ability for User role 2 to update an account under its company&#10;&#10;[/resources/css/includes/accounts.css]&#10;- fixed CSS for cross browser compatibility&#10;&#10;[/resources/css/includes/companies.css]&#10;- added CSS for &quot;companies&quot; page&#10;&#10;[/resources/css/includes/my account.css]&#10;- fixed CSS for cross browser compatibility&#10;&#10;[/includes/accounts.html]&#10;- fixed a bug where companies could not be selected correctly&#10;- better reload of the page&#10;&#10;[/includes/companies.html]&#10;- added File&#10;- gives User role 3 the ability to create and edit companies in the system&#10;&#10;[/includes/main.html]&#10;- added &quot;companies&quot; in sidebar">
+      <created>1605804314567</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605804314567</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[/ajax/createCompany.php]&#10;- added check if POST Parameters are set&#10;&#10;[/ajax/deleteCompany.php]&#10;- added File&#10;- gives Administrator the possibility to delete a Company by providing a company's ID&#10;&#10;[/ajax/getCompanyData.php]&#10;- added File&#10;- gives Administrator the ability to get all the Data about a specific company&#10;&#10;[/ajax/listUsers.php]&#10;- fixed a bug where a user would be listed multiple times if more than one Company exists&#10;&#10;[/ajax/updateAccount.php]&#10;- Company Owners dont have the possibility to kick a user out of their company anymore&#10;&#10;[/ajax/updateCompany.php]&#10;- added File&#10;- gives Administrators the ability to modify an exisitng Company&#10;&#10;[/includes/accounts.html]&#10;- fixed a Bug where the value could not be read out of #inputCompanyName&#10;&#10;[/includes/companies.html]&#10;- added the ability to delete a Company&#10;- added the ability to create a new company&#10;- added the ability to edit a company&#10;- removes static test element&#10;&#10;[/resources/css/includes/companies.css]&#10;- added all the CSS for the &quot;companies&quot; page">
+      <created>1605948030199</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605948030199</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[/ajax/createAccount.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;&#10;[/ajax/deleteAccount.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;&#10;[/ajax/getCompanyData.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/getContentForUser.php]&#10;- added Checks for &quot;My Company&quot;, &quot;Shell&quot; and &quot;Sensor&quot; Tabs&#10;&#10;[/ajax/getUserData.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/listCompanies.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/Sensors.php]&#10;- added File&#10;- lists all Sensors in the DB and returns JSON Object&#10;&#10;[/ajax/listUsers.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/updateAccount.php]&#10;- a user cant edit another user with a higher role anymore&#10;&#10;[/includes/accounts.html]&#10;- fixed a bug where the user list would not be updated after a Delete action was complete&#10;- has new variable &quot;userRole&quot; which stores the users RoleLvl, to remove delete and edit buttons on Users with higher roles&#10;- can handle more errors visually now&#10;&#10;[/includes/accounts.html]&#10;- added handles to work correctly with XSS protection&#10;&#10;[/includes/login.html]&#10;- changed Path of CSS file&#10;&#10;[/includes/main.html]&#10;- added &quot;Sensors&quot; Tab&#10;&#10;[/includes/my account.html]&#10;- added handles to work correctly with XSS protection&#10;&#10;[/includes/sensors.html]&#10;- added file&#10;- lists all Sensors in DB&#10;&#10;[/includes/shell.php]&#10;- added file&#10;- replaces &quot;System&quot; Tab&#10;- web shell&#10;&#10;[/includes/system.php]&#10;- removed file&#10;&#10;[/resources/css/includes/companies.css]&#10;- fixed misplacing of #createBox and #editBox&#10;&#10;[/resources/css/includes/login.css]&#10;- moved file from /resources/css&#10;&#10;[/resources/css/includes/main.css]&#10;- moved file from /resources/css&#10;&#10;[/resources/css/includes/sensors.css]&#10;- added file&#10;- contains all styles for &quot;Sensors&quot; Tab&#10;&#10;[/scripts/parseURLForQueries.php]&#10;- added file&#10;- saves all queries for the URL, a page has been accessed with, in $queries&#10;&#10;[/scripts/replaceSpecialChars.php]&#10;-added file&#10;- replaces &quot;&lt;&quot;, &quot;&gt;&quot;, &quot; &quot;, &quot;,&quot; characters with the HTML charcode">
+      <created>1606847097150</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1606847097150</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[/ajax/createAccount.php]&#10;- added check for page name, to differenciate pages when logged in as Admin&#10;&#10;[/ajax/createSensor.php]&#10;- added File&#10;- gives Admin ability to add a new SensorStation to the System&#10;&#10;[/ajax/deleteAccount.php]&#10;- Company Owner can only delete Users&#10;&#10;[/ajax/deleteCompany.php]&#10;- deletes all Users in the company before attempting Company Delete&#10;&#10;[/ajax/deleteSensor.php]&#10;- added File&#10;- gives Admin the ability to remove SensorStation from the System&#10;&#10;[/ajax/getSensorData.php]&#10;- added File&#10;- gives Admin the ability to get information about a SensorStation from the System&#10;&#10;[/ajax/listSensors.php]&#10;- provided default value &quot;N/A&quot; if a sensor never was online&#10;&#10;[/ajax/updateSensor.php]&#10;- added File&#10;- gives Admin the ability to change attributes for a Sensor&#10;&#10;[/includes/accounts.html]&#10;- Admin can now edit users of level 2&#10;&#10;[/includes/sensors.html]&#10;- logic for displaying Sensors and their information&#10;&#10;[/resources/css/includes/sensors.css]&#10;- css for Sensors page">
+      <created>1607933250388</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607933250388</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[/includes/accounts.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style&#10;&#10;[/includes/main.html]&#10;- added mobile style&#10;&#10;[/includes/my account.html]&#10;- added mobile style&#10;&#10;[/resources/css/includes/accounts.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/login.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/main.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/my accounts.css]&#10;- added mobile style&#10;&#10;[/resources/img/main.html/menu.png]&#10;- added File&#10;- menu icon that shows in mobile style&#10;&#10;[/index.php]&#10;- added viewport for mobil styles">
+      <created>1610888043059</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1610888043059</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[/ajax/getUserData.php]&#10;- fixed error where field &quot;company&quot; in return Object is always the name of the first Company in Databse&#10;&#10;[/ajax/sensor_post.php]&#10;- fixed error where 0.0 is not passing as float value check, thus not writing to database&#10;&#10;[/includes/companies.html]&#10;- mobile version of Website&#10;&#10;[/includes/sensors.html]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/accounts.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/companies.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/main.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/my account.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/sensors.css]&#10;- mobile version of Website">
+      <created>1611412202215</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1611412202215</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[/resources/css/includes/sensors.css]&#10;- fixed misplacement of last online p tag">
+      <created>1612084408452</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612084408452</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[/ajax/getContentForUser.php]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/ajax/sensor_post.php]&#10;- added missing &quot;$&quot; in line 6&#10;&#10;[/includes/main.html]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/includes/my plants.html]&#10;- added file&#10;- added static graph for testing">
+      <created>1612722754817</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1612722754817</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,66 +368,106 @@
     <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)" />
     <MESSAGE value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
     <MESSAGE value="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;- added CSS for &quot;Accounts&quot; page&#10;&#10;[test.html]&#10;- modified test script according to the changes in /ajax/sensor_post.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ajax/createAccount.php]&#10;- added dtRolle in Query at line 27&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[ajax/getUserData]&#10;- removed $conn-&gt;close as it leads to errors in other pages&#10;&#10;[ajax/listUsers.php]&#10;- added File, is used to get a list of all Users, with inormation about them.&#10;&#10;[ajax/sensor_post.php]&#10;- fixed d standing for double, as it should be a s in line 27&#10;&#10;[ajax/updateAccount.php]&#10;- added logic to update an Account if a user requests so&#10;&#10;[includes/accounts.html]&#10;- added Page, is used by Administrators to show a list of all Users with information about them.&#10;&#10;[includes/main.html]&#10;- added option for &quot;Accounts&quot; page&#10;&#10;[includes/my account.html]&#10;- made #inputCompanyName disabled, as the user should not be able to change his company&#10;- added logic to check if password is changed, as well as feedback on the changeAccount request&#10;&#10;[resources/css/includes/accounts.css]&#10;- added CSS for &quot;Accounts&quot; page&#10;&#10;[test.html]&#10;- modified test script according to the changes in /ajax/sensor_post.php" />
+    <MESSAGE value="[ajax/createAccount.php]&#10;- added close connection and echo json_encode, as it wasnt present before&#10;&#10;[ajax/deleteAccount.php]&#10;- added the file so an Admin can delete a User&#10;&#10;[ajax/getUserData.php]&#10;- added more fields and partially renamed them in the output&#10;&#10;[ajax/listUsers.php]&#10;- added more fields to be returned&#10;&#10;[ajax/updateAccount.php]&#10;- added functionality and checks for Administrators to edit User Accounts&#10;&#10;[includes/accounts.html]&#10;- added functionality to create a new account&#10;- added functionality to edit an account&#10;&#10;[includes/login.html]&#10;- create Account option no longer exists&#10;&#10;[includes/img/accounts.html/edit.png]&#10;- aded file&#10;&#10;[includes/img/accounts.html/trash.png]&#10;- aded file&#10;&#10;[includes/css/includes/accounts.css]&#10;- added styles for editing account&#10;- added styles for deleting account&#10;&#10;[includes/css/login.css]&#10;- removed styles for create Account" />
+    <MESSAGE value="[/ajax/createAccount.php]&#10;- user with Role 2 (company owner) can now create Accounts for its own company&#10;&#10;[/ajax/createCompany.php]&#10;- added file&#10;- gives User Role 3 the ability to create a new company&#10;&#10;[/ajax/deleteAccount.php]&#10;- added User Role 2 the ability to delete an Account under his company&#10;&#10;[/ajax/getContentForUser.php]&#10;- added &quot;accounts&quot; page&#10;&#10;[/ajax/getUserData.php]&#10;- added more fields to output&#10;&#10;[/ajax/listCompanies.php]&#10;- gives user Role 3 the ability to list all exsting companies&#10;&#10;[/ajax/listUser.php]&#10;- added ability for user Role 2 to see all Accounts in its company&#10;&#10;[/ajax/updateAccount.php]&#10;- added ability for User role 2 to update an account under its company&#10;&#10;[/resources/css/includes/accounts.css]&#10;- fixed CSS for cross browser compatibility&#10;&#10;[/resources/css/includes/companies.css]&#10;- added CSS for &quot;companies&quot; page&#10;&#10;[/resources/css/includes/my account.css]&#10;- fixed CSS for cross browser compatibility&#10;&#10;[/includes/accounts.html]&#10;- fixed a bug where companies could not be selected correctly&#10;- better reload of the page&#10;&#10;[/includes/companies.html]&#10;- added File&#10;- gives User role 3 the ability to create and edit companies in the system&#10;&#10;[/includes/main.html]&#10;- added &quot;companies&quot; in sidebar" />
+    <MESSAGE value="[/ajax/createCompany.php]&#10;- added check if POST Parameters are set&#10;&#10;[/ajax/deleteCompany.php]&#10;- added File&#10;- gives Administrator the possibility to delete a Company by providing a company's ID&#10;&#10;[/ajax/getCompanyData.php]&#10;- added File&#10;- gives Administrator the ability to get all the Data about a specific company&#10;&#10;[/ajax/listUsers.php]&#10;- fixed a bug where a user would be listed multiple times if more than one Company exists&#10;&#10;[/ajax/updateAccount.php]&#10;- Company Owners dont have the possibility to kick a user out of their company anymore&#10;&#10;[/ajax/updateCompany.php]&#10;- added File&#10;- gives Administrators the ability to modify an exisitng Company&#10;&#10;[/includes/accounts.html]&#10;- fixed a Bug where the value could not be read out of #inputCompanyName&#10;&#10;[/includes/companies.html]&#10;- added the ability to delete a Company&#10;- added the ability to create a new company&#10;- added the ability to edit a company&#10;- removes static test element&#10;&#10;[/resources/css/includes/companies.css]&#10;- added all the CSS for the &quot;companies&quot; page" />
+    <MESSAGE value="[/ajax/createAccount.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;&#10;[/ajax/deleteAccount.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;&#10;[/ajax/getCompanyData.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/getContentForUser.php]&#10;- added Checks for &quot;My Company&quot;, &quot;Shell&quot; and &quot;Sensor&quot; Tabs&#10;&#10;[/ajax/getUserData.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/listCompanies.php]&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/Sensors.php]&#10;- added File&#10;- lists all Sensors in the DB and returns JSON Object&#10;&#10;[/ajax/listUsers.php]&#10;- Adapted to work in the &quot;My Company&quot; Tab&#10;- fixed possible XSS Attack&#10;&#10;[/ajax/updateAccount.php]&#10;- a user cant edit another user with a higher role anymore&#10;&#10;[/includes/accounts.html]&#10;- fixed a bug where the user list would not be updated after a Delete action was complete&#10;- has new variable &quot;userRole&quot; which stores the users RoleLvl, to remove delete and edit buttons on Users with higher roles&#10;- can handle more errors visually now&#10;&#10;[/includes/accounts.html]&#10;- added handles to work correctly with XSS protection&#10;&#10;[/includes/login.html]&#10;- changed Path of CSS file&#10;&#10;[/includes/main.html]&#10;- added &quot;Sensors&quot; Tab&#10;&#10;[/includes/my account.html]&#10;- added handles to work correctly with XSS protection&#10;&#10;[/includes/sensors.html]&#10;- added file&#10;- lists all Sensors in DB&#10;&#10;[/includes/shell.php]&#10;- added file&#10;- replaces &quot;System&quot; Tab&#10;- web shell&#10;&#10;[/includes/system.php]&#10;- removed file&#10;&#10;[/resources/css/includes/companies.css]&#10;- fixed misplacing of #createBox and #editBox&#10;&#10;[/resources/css/includes/login.css]&#10;- moved file from /resources/css&#10;&#10;[/resources/css/includes/main.css]&#10;- moved file from /resources/css&#10;&#10;[/resources/css/includes/sensors.css]&#10;- added file&#10;- contains all styles for &quot;Sensors&quot; Tab&#10;&#10;[/scripts/parseURLForQueries.php]&#10;- added file&#10;- saves all queries for the URL, a page has been accessed with, in $queries&#10;&#10;[/scripts/replaceSpecialChars.php]&#10;-added file&#10;- replaces &quot;&lt;&quot;, &quot;&gt;&quot;, &quot; &quot;, &quot;,&quot; characters with the HTML charcode" />
+    <MESSAGE value="[/ajax/createAccount.php]&#10;- added check for page name, to differenciate pages when logged in as Admin&#10;&#10;[/ajax/createSensor.php]&#10;- added File&#10;- gives Admin ability to add a new SensorStation to the System&#10;&#10;[/ajax/deleteAccount.php]&#10;- Company Owner can only delete Users&#10;&#10;[/ajax/deleteCompany.php]&#10;- deletes all Users in the company before attempting Company Delete&#10;&#10;[/ajax/deleteSensor.php]&#10;- added File&#10;- gives Admin the ability to remove SensorStation from the System&#10;&#10;[/ajax/getSensorData.php]&#10;- added File&#10;- gives Admin the ability to get information about a SensorStation from the System&#10;&#10;[/ajax/listSensors.php]&#10;- provided default value &quot;N/A&quot; if a sensor never was online&#10;&#10;[/ajax/updateSensor.php]&#10;- added File&#10;- gives Admin the ability to change attributes for a Sensor&#10;&#10;[/includes/accounts.html]&#10;- Admin can now edit users of level 2&#10;&#10;[/includes/sensors.html]&#10;- logic for displaying Sensors and their information&#10;&#10;[/resources/css/includes/sensors.css]&#10;- css for Sensors page" />
+    <MESSAGE value="[/includes/accounts.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style&#10;&#10;[/includes/main.html]&#10;- added mobile style&#10;&#10;[/includes/my account.html]&#10;- added mobile style&#10;&#10;[/resources/css/includes/accounts.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/login.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/main.css]&#10;- added mobile style&#10;&#10;[/resources/css/includes/my accounts.css]&#10;- added mobile style&#10;&#10;[/resources/img/main.html/menu.png]&#10;- added File&#10;- menu icon that shows in mobile style&#10;&#10;[/index.php]&#10;- added viewport for mobil styles" />
+    <MESSAGE value="[/ajax/getUserData.php]&#10;- fixed error where field &quot;company&quot; in return Object is always the name of the first Company in Databse&#10;&#10;[/ajax/sensor_post.php]&#10;- fixed error where 0.0 is not passing as float value check, thus not writing to database&#10;&#10;[/includes/companies.html]&#10;- mobile version of Website&#10;&#10;[/includes/sensors.html]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/accounts.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/companies.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/main.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/my account.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/sensors.css]&#10;- mobile version of Website" />
+    <MESSAGE value="[/resources/css/includes/sensors.css]&#10;- fixed misplacement of last online p tag" />
+    <MESSAGE value="[/ajax/getContentForUser.php]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/ajax/sensor_post.php]&#10;- added missing &quot;$&quot; in line 6&#10;&#10;[/includes/main.html]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/includes/my plants.html]&#10;- added file&#10;- added static graph for testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="[/ajax/getContentForUser.php]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/ajax/sensor_post.php]&#10;- added missing &quot;$&quot; in line 6&#10;&#10;[/includes/main.html]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/includes/my plants.html]&#10;- added file&#10;- added static graph for testing" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="562" y="109" key="#Deployment" timestamp="1604500772513">
+    <state x="562" y="109" key="#Deployment" timestamp="1613395597754">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="562" y="109" key="#Deployment/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500772513" />
-    <state x="316" y="68" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1603104302058" />
-    <state x="553" y="259" key="#Deployment/0.0.1920.1200@0.0.1920.1200" timestamp="1602672294883" />
-    <state x="327" y="120" width="1772" height="1072" key="CommitChangelistDialog2" timestamp="1605308094807">
+    <state x="562" y="109" key="#Deployment/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613395597754" />
+    <state x="660" y="128" key="#Deployment/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613210528676" />
+    <state x="978" y="525" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607441437165">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="564" y="0" key="CommitChangelistDialog2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500418573" />
-    <state x="327" y="120" width="1772" height="1072" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605308094807" />
-    <state x="3840" y="612" width="1920" height="1080" key="DiffContextDialog" timestamp="1604962664561">
-      <screen x="3840" y="612" width="1920" height="1080" />
+    <state x="978" y="525" key="#com.intellij.fileTypes.FileTypeChooser/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607441437165" />
+    <state x="663" y="0" width="1736" height="1314" key="CommitChangelistDialog2" timestamp="1612722754318">
+      <screen x="0" y="0" width="3008" height="1692" />
     </state>
-    <state x="0" y="0" key="DiffContextDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500396837" />
-    <state x="0" y="0" width="1152" height="748" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1604924391823" />
-    <state x="3840" y="612" width="1920" height="1080" key="DiffContextDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1604962664561" />
-    <state x="4245" y="949" key="FileChooserDialogImpl" timestamp="1605112068791">
-      <screen x="3840" y="612" width="1920" height="1080" />
+    <state x="564" y="0" width="1975" height="1440" key="CommitChangelistDialog2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606847096885" />
+    <state x="0" y="0" width="1680" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611412201798" />
+    <state x="321" y="118" width="2239" height="1322" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610888042192" />
+    <state x="3840" y="612" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084407251" />
+    <state x="663" y="0" width="1736" height="1314" key="CommitChangelistDialog2/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1612722754318" />
+    <state x="0" y="0" width="1920" height="1080" key="DiffContextDialog" timestamp="1607932839286">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="597" y="289" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1603714501801" />
-    <state x="1061" y="463" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1602788673245" />
-    <state x="4245" y="949" key="FileChooserDialogImpl/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605112068791" />
-    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1605277501178">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603351969473" />
-    <state x="797" y="524" key="NewPhpFileDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1602671763096" />
-    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605277501178" />
-    <state x="222" y="95" key="SettingsEditor" timestamp="1604924153153">
+    <state x="0" y="0" key="DiffContextDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606846602974" />
+    <state x="0" y="0" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607932839286" />
+    <state x="597" y="289" key="FileChooserDialogImpl" timestamp="1606379087491">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="222" y="95" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1604924153153" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2" timestamp="1605194123252">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500427393" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605194123252" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1605292575676">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604499660304" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605292575676" />
-    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1605263793028" />
-    <state x="788" y="331" key="ftp.server.browser" timestamp="1602671934175">
-      <screen x="0" y="0" width="1920" height="1200" />
-    </state>
-    <state x="788" y="331" key="ftp.server.browser/0.0.1920.1200@0.0.1920.1200" timestamp="1602671934175" />
-    <state x="1051" y="547" key="publish.login" timestamp="1605294441599">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1051" y="547" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1604500726147" />
-    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1605164293793" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1605294441599" />
-    <state x="379" y="206" key="run.anything.popup" timestamp="1602777688047">
+    <state x="597" y="289" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1606379087491" />
+    <state x="551" y="173" key="NewPhpClassDialog" timestamp="1606303755100">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="379" y="206" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1602777688047" />
+    <state x="551" y="173" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606303755100" />
+    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1613400126196">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1063" y="629" key="NewPhpFileDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607008666746" />
+    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1606738477873" />
+    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613400126196" />
+    <state x="1178" y="436" key="RollbackChangesDialog" timestamp="1607351001864">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1178" y="436" key="RollbackChangesDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607351001864" />
+    <state x="395" y="152" key="SettingsEditor" timestamp="1606754733562">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="395" y="152" key="SettingsEditor/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606754733562" />
+    <state x="1026" y="533" key="Vcs.Push.Dialog.v2" timestamp="1612722761313">
+      <screen x="0" y="0" width="3008" height="1692" />
+    </state>
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606847106518" />
+    <state x="573" y="331" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1611412213028" />
+    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610888048147" />
+    <state x="4495" y="952" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084413578" />
+    <state x="1026" y="533" key="Vcs.Push.Dialog.v2/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1612722761313" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1614459687755">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1609761441776" />
+    <state x="3259" y="682" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@2560.305.1920.1080" timestamp="1606747494150" />
+    <state x="641" y="397" key="com.intellij.ide.util.TipDialog/-152.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1614236261148" />
+    <state x="641" y="397" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611747129055" />
+    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1614459687755" />
+    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084104694" />
+    <state x="1095" y="590" key="com.intellij.ide.util.TipDialog/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613209496239" />
+    <state x="911" y="417" width="739" height="606" key="find.popup" timestamp="1610827566029">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="911" y="417" width="739" height="606" key="find.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610827566029" />
+    <state x="1051" y="547" key="publish.login" timestamp="1614439567776">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1051" y="547" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607450605781" />
+    <state x="3348" y="715" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@2560.305.1920.1080" timestamp="1607450648931" />
+    <state x="690" y="399" key="publish.login/-152.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1614240438913" />
+    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1607342566884" />
+    <state x="690" y="399" key="publish.login/0.0.1680.1050@0.0.1680.1050" timestamp="1612180697839" />
+    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1614439567776" />
+    <state x="4628" y="1022" key="publish.login/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1611405034957" />
+    <state x="1235" y="643" key="publish.login/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613210511210" />
+    <state x="674" y="330" key="run.anything.popup" timestamp="1610885061364">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="674" y="330" key="run.anything.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610885061364" />
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1613397465315">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613397465315" />
+    <state x="1003" y="633" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1613398384496">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1003" y="633" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613398384496" />
   </component>
 </project>

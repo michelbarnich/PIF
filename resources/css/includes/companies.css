@@ -30,6 +30,7 @@ div {
     border-radius: 30px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    overflow: hidden;
 }
 
 .deleteButton, .editButton {
@@ -162,6 +163,7 @@ input {
     div {
         width: 375px;
         height: 67px;
+        overflow: hidden;
     }
 
     #createDiv {

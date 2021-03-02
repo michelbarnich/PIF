@@ -9,7 +9,7 @@
 
     $sensorList = [];
 
-    if ($response["userData"]["role"] >= 2 && $queries["page_name"] == "my plants") {
+    if ($response["userData"]["role"] >= 1 && $queries["page_name"] == "my plants") {
 
         $sql = "SELECT dtName, idIdentifikationsNummer FROM tblsensorstation WHERE fiFirma = ?";
         $stmt = $conn->prepare($sql);

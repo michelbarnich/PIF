@@ -35,6 +35,30 @@
       <sshConfig authType="PASSWORD" host="localhost" id="c42940f3-d7b8-4051-8faa-725e009a46ba" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
         <option name="customName" value="localServer" />
       </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="12ccd84f-177f-4a61-b785-876525095972" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="a6cd891e-3148-46d1-8407-6276a28fc6a2" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="a88c39c1-5d4e-4a87-8c9e-4b2a60edf823" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="0c52e0af-f011-4a28-90b9-67ac9fa98f2c" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="ef02ced7-e8a7-4912-89b3-5f98c54f659a" port="22" customName="localServer" nameFormat="CUSTOM" username="barmi016">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="5f662107-8971-407b-bef1-27e0bcb719d9" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="69374597-5838-4cff-93a7-d9f9da954422" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
+      <sshConfig authType="PASSWORD" host="localhost" id="a8f3f164-5531-4e45-8a7b-1335a348e0db" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
+        <option name="customName" value="localServer" />
+      </sshConfig>
     </configs>
   </component>
 </project>

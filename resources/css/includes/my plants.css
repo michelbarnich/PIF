@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: calc(100% - 40px);
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-weight: normal;
+    color: #767676;
+    margin-left: 40px;
+}
+
+#plants {
+    position: absolute;
+    top: 0px;
+    left: 99px;
+    width: 1384px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#plants > div {
+    position: relative;
+    width: 642px;
+    height: 366px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: rgba(255,255,255,0.79);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+}
+
+#plants > div > h1 {
+    font-size: 44px;
+    position: absolute;
+    left: 19px;
+    top: 21px;
+}
+
+#plants > div > p {
+    font-size: 11px;
+    position: absolute;
+    left: 19px;
+    top: 75px;
+}
+
+#plants > div > div {
+    height: 31px;
+    width: 562px;
+    position: absolute;
+    left: 61px;
+    background-color: rgba(255,255,255,0.79);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 16px;
+}
+
+img {
+    height: 31px;
+    position: absolute;
+}
+
+.waterDrop {
+    top: 100px;
+    left: 23px;
+}
+
+.sun {
+    top: 151px;
+    left: 19px;
+}
+
+.waterDropMoisture {
+    top: 195px;
+    left: 20px;
+}
+
+.temperatureIcon {
+    top: 249px;
+    left: 27px;
+}
+
+.moisture {
+    top: 100px;
+    overflow: hidden;
+}
+
+.light {
+    top: 151px;
+    overflow: hidden;
+}
+
+.humidity {
+    top: 200px;
+    overflow: hidden;
+}
+
+.temperature {
+    top: 249px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(1,128,255,1) 0%, rgba(255,0,0,1) 100%);
+}
+
+.light > span {
+    display: block;
+    height: 110%;
+    background-color: #FFD800;
+    margin-bottom: -10px;
+}
+
+.moisture > span {
+    display: block;
+    height: 31px;
+    background-color: #0093FF;
+}
+
+.humidity > span {
+    display: block;
+    height: 31px;
+    background-color: #00C4FF;
+}
+
+.temperature > span {
+    display: block;
+    height: 31px;
+    background-color: white;
+    float: right;
+    right: 0px;
+    box-shadow: 0px 1px 0px 0px #FFFFFF;
+    -webkit-box-shadow: 0px 1px 0px 0px #FFFFFF;
+}
+
+#plants > div > button {
+    position: absolute;
+    color: #767676;
+    top: 303px;
+    left: 233px;
+    border-radius: 30px;
+    -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    font-size: 30px;
+    width: 176px;
+    height: 43px;
+    border: none;
+    background-color: white;
+}

@@ -77,7 +77,8 @@
                 $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
             } else {
                 let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
-                document.body.style.zoom = zoomFactor + "%";            }
+                document.body.style.zoom = zoomFactor + "%";
+            }
 
         });
 
