@@ -8,6 +8,25 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/includes/my plants.css">
 </head>
 <body>
+    <div id="blurBox" style=""></div>
+    <div id="infoAndEditBox">
+
+        <select id="rate" onchange="reloadData()">
+            <option value="h">Hourly</option>
+            <option value="d">Daily</option>
+            <option value="w">Weekly</option>
+            <option value="m">Monthly</option>
+            <option value="y">Yearly</option>
+        </select>
+
+        <input type="date" id="dateFrom" onchange="reloadData()">
+        <input type="date" id="dateTo" onchange="reloadData()">
+
+        <div style="" id="chartBox">
+            <canvas id="Chart" style="width:100%; height:100%;"></canvas>
+        </div>
+
+    </div>
     <div id="plants">
 
     </div>
@@ -68,7 +87,7 @@
                             "            <div class=\"temperature\">\n" +
                             "                <span style=\"width: " + (100 - data["plantTelemetry"].temperature) + "%;\"></span>\n" +
                             "            </div>\n" +
-                            "            <button>More Info</button>\n" +
+                            "            <button onclick='showInfo(\"" + plantID + "\")'>More Info</button>\n" +
                             "        </div>"
                         );
                     } else {
@@ -99,56 +118,189 @@
                 })
             }
 
-        })
-    </script>
-    <div style="width: 200px; height: 200px">
-        <canvas id="myChart" style="width:100%; height:100%;"></canvas>
-    </div>
-    <script>
+        });
 
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
 
-            // The data for our dataset
-            data: {
-                labels: ['1', '2', '3', '4', '5', '6', '7'],
-                datasets: [{
-                                label: 'My First dataset',
-                                borderColor: 'rgb(255, 99, 132)',
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                data: [0, 10, 5, 2, 20, 30, 45],
+        function showInfo( id ) {
+
+            $("#dateFrom").attr("onchange", "reloadData('" + id + "')");
+            $("#dateTo").attr("onchange", "reloadData('" + id + "')");
+            $("#rate").attr("onchange", "reloadData('" + id + "')");
+
+            var dateTime = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+
+            var today = new Date()
+            var tomorrow = new Date(today)
+            tomorrow.setDate(tomorrow.getDate() + 1)
+
+            $("#dateFrom").val(today.toISOString().substr(0, 10));
+            $("#dateTo").val(tomorrow.toISOString().substr(0, 10));
+
+            $("#blurBox").show();
+            $("#infoAndEditBox").show();
+
+            $.getJSON("/ajax/getPlantTelemetry.php?sensorID=" + id + "&dateFrom=" + (new Date(dateTime).getTime()) / 1000 + "&dateTo=" + ((new Date(dateTime).getTime()) / 1000 + 86400) + "&latest=false&intervalRate=h", function (data) {
+                console.log(data[0]);
+
+                var lightData = [];
+                var moistureData = [];
+                var humidityData = [];
+                var temperatureData = [];
+                var labels = [];
+
+                for (var i = 0; i < data[0].length; i++) {
+
+                    lightData.push(data[0][i][2]);
+                    moistureData.push(data[0][i][3]);
+                    humidityData.push(data[0][i][0]);
+                    temperatureData.push(data[0][i][1]);
+                    labels.push(i);
+
+                }
+
+                var ctx = document.getElementById('Chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Light',
+                                borderColor: 'rgb(255, 216, 0)',
+                                backgroundColor: 'rgb(255, 216, 0)',
+                                data: lightData,
                                 fill: false
                             },
                             {
-                                label: 'My Second dataset',
-                                borderColor: 'rgb(100, 99, 132)',
-                                backgroundColor: 'rgb(100, 99, 132)',
-                                data: [5, 1, 5, 2, 7, 100, 45],
+                                label: 'Moisture',
+                                borderColor: 'rgb(0, 147, 255)',
+                                backgroundColor: 'rgb(0, 147, 255)',
+                                data: moistureData,
+                                fill: false
+                            },
+                            {
+                                label: 'Humidity',
+                                borderColor: 'rgb(0, 196, 255)',
+                                backgroundColor: 'rgb(0, 196, 255)',
+                                data: humidityData,
+                                fill: false
+                            },
+                            {
+                                label: 'Temperature',
+                                borderColor: 'rgb(255, 0, 0)',
+                                backgroundColor: 'rgb(255, 0, 0)',
+                                data: temperatureData,
                                 fill: false
                             }
-                ]
-            },
+                        ]
+                    },
 
-            // Configuration options go here
-            options: {
-                scales: {
-                    yAxes: [{
-                        position: 'right',
-                        stacked: false
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            //reverse: true
+                    // Configuration options go here
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                position: 'right',
+                                stacked: false
+                            }],
+                            xAxes: [{
+                                ticks: {}
+                            }]
+                        },
+                        animation: {
+                            duration: 0
                         }
-                    }]
-                },
-                animation: {
-                    duration: 0
+                    }
+                });
+
+            });
+        }
+
+        function reloadData( id ) {
+
+            $.getJSON("/ajax/getPlantTelemetry.php?sensorID=" + id + "&dateFrom=" + (new Date($("#dateFrom").val()).getTime()) / 1000 + "&dateTo=" + ((new Date($("#dateTo").val()).getTime()) / 1000 + 86400) + "&latest=false&intervalRate=" + $("#rate").val(), function (data) {
+                console.log(data[0]);
+
+                var lightData = [];
+                var moistureData = [];
+                var humidityData = [];
+                var temperatureData = [];
+                var labels = [];
+
+                for (var i = 0; i < data[0].length; i++) {
+
+                    lightData.push(data[0][i][2]);
+                    moistureData.push(data[0][i][3]);
+                    humidityData.push(data[0][i][0]);
+                    temperatureData.push(data[0][i][1]);
+                    labels.push(i);
+
                 }
-            }
-        });
+
+                $("#chartBox").html('<canvas id="Chart" style="width:100%; height:100%;"></canvas>');
+
+                var ctx = document.getElementById('Chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Light',
+                                borderColor: 'rgb(255, 216, 0)',
+                                backgroundColor: 'rgb(255, 216, 0)',
+                                data: lightData,
+                                fill: false
+                            },
+                            {
+                                label: 'Moisture',
+                                borderColor: 'rgb(0, 147, 255)',
+                                backgroundColor: 'rgb(0, 147, 255)',
+                                data: moistureData,
+                                fill: false
+                            },
+                            {
+                                label: 'Humidity',
+                                borderColor: 'rgb(0, 196, 255)',
+                                backgroundColor: 'rgb(0, 196, 255)',
+                                data: humidityData,
+                                fill: false
+                            },
+                            {
+                                label: 'Temperature',
+                                borderColor: 'rgb(255, 0, 0)',
+                                backgroundColor: 'rgb(255, 0, 0)',
+                                data: temperatureData,
+                                fill: false
+                            }
+                        ]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                position: 'right',
+                                stacked: false
+                            }],
+                            xAxes: [{
+                                ticks: {}
+                            }]
+                        },
+                        animation: {
+                            duration: 0
+                        }
+                    }
+                });
+
+            });
+
+        }
 
     </script>
 </body>
