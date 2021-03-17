@@ -234,6 +234,22 @@ img {
     top: 83px;
 }
 
+#buttons {
+    position: absolute;
+    width: 230px;
+    height: 50px;
+    top: 380px;
+    left: 435px;
+    display: flex;
+    flex-direction: row;
+}
+
+#buttons > img {
+    position: relative;
+    height: 50px;
+    margin:auto;
+}
+
 @media screen and (max-width: 699px) {
 
     body {

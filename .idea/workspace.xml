@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[/includes/accounts.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style&#10;&#10;[/includes/main.html]&#10;- added mobile style&#10;&#10;[/includes/login.html]&#10;- added mobile style">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jquery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ajax/getPlantTelemetry.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/includes/my plants.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/sun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/temperature.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/waterDrop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/my plants.html/waterDropMoisture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajax/listSensors.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/listSensors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/companies.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/companies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/getPlantTelemetry.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/getPlantTelemetry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/my plants.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my plants.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/includes/accounts.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/accounts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/includes/companies.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/companies.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/includes/sensors.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/sensors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/includes/my plants.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/my plants.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,7 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -94,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,6 +184,16 @@
       <workItem from="1614165866190" duration="1429000" />
       <workItem from="1614236247691" duration="2020000" />
       <workItem from="1614439477058" duration="701000" />
+      <workItem from="1614938069724" duration="1092000" />
+      <workItem from="1615202600198" duration="1786000" />
+      <workItem from="1615215197992" duration="9165000" />
+      <workItem from="1615301033445" duration="5796000" />
+      <workItem from="1615376270005" duration="3827000" />
+      <workItem from="1615446007814" duration="2365000" />
+      <workItem from="1615732794018" duration="3775000" />
+      <workItem from="1615807392817" duration="2379000" />
+      <workItem from="1615810667345" duration="1075000" />
+      <workItem from="1615902189079" duration="4439000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -349,11 +342,18 @@
       <option name="project" value="LOCAL" />
       <updated>1612722754817</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="[/ajax/getPlantTelemetry.php]&#10;-added functionality for Charts&#10;&#10;[/includes/my plants.html]&#10;-functionality for viewing charts&#10;&#10;[/resources/css/includes]&#10;-added CSS for mobile devices">
+      <created>1615807536119</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1615807536119</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create Account and login working partially" />
@@ -377,97 +377,7 @@
     <MESSAGE value="[/ajax/getUserData.php]&#10;- fixed error where field &quot;company&quot; in return Object is always the name of the first Company in Databse&#10;&#10;[/ajax/sensor_post.php]&#10;- fixed error where 0.0 is not passing as float value check, thus not writing to database&#10;&#10;[/includes/companies.html]&#10;- mobile version of Website&#10;&#10;[/includes/sensors.html]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/accounts.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/companies.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/main.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/my account.css]&#10;- mobile version of Website&#10;&#10;[/resources/css/includes/sensors.css]&#10;- mobile version of Website" />
     <MESSAGE value="[/resources/css/includes/sensors.css]&#10;- fixed misplacement of last online p tag" />
     <MESSAGE value="[/ajax/getContentForUser.php]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/ajax/sensor_post.php]&#10;- added missing &quot;$&quot; in line 6&#10;&#10;[/includes/main.html]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/includes/my plants.html]&#10;- added file&#10;- added static graph for testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="[/ajax/getContentForUser.php]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/ajax/sensor_post.php]&#10;- added missing &quot;$&quot; in line 6&#10;&#10;[/includes/main.html]&#10;- added entry for &quot;My Plants&quot;&#10;&#10;[/includes/my plants.html]&#10;- added file&#10;- added static graph for testing" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="562" y="109" key="#Deployment" timestamp="1613395597754">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="562" y="109" key="#Deployment/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613395597754" />
-    <state x="660" y="128" key="#Deployment/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613210528676" />
-    <state x="978" y="525" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607441437165">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="978" y="525" key="#com.intellij.fileTypes.FileTypeChooser/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607441437165" />
-    <state x="663" y="0" width="1736" height="1314" key="CommitChangelistDialog2" timestamp="1612722754318">
-      <screen x="0" y="0" width="3008" height="1692" />
-    </state>
-    <state x="564" y="0" width="1975" height="1440" key="CommitChangelistDialog2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606847096885" />
-    <state x="0" y="0" width="1680" height="1050" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1611412201798" />
-    <state x="321" y="118" width="2239" height="1322" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610888042192" />
-    <state x="3840" y="612" key="CommitChangelistDialog2/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084407251" />
-    <state x="663" y="0" width="1736" height="1314" key="CommitChangelistDialog2/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1612722754318" />
-    <state x="0" y="0" width="1920" height="1080" key="DiffContextDialog" timestamp="1607932839286">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="0" y="0" key="DiffContextDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606846602974" />
-    <state x="0" y="0" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1607932839286" />
-    <state x="597" y="289" key="FileChooserDialogImpl" timestamp="1606379087491">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="597" y="289" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1606379087491" />
-    <state x="551" y="173" key="NewPhpClassDialog" timestamp="1606303755100">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="551" y="173" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1606303755100" />
-    <state x="1063" y="629" key="NewPhpFileDialog" timestamp="1613400126196">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1063" y="629" key="NewPhpFileDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607008666746" />
-    <state x="598" y="393" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1606738477873" />
-    <state x="1063" y="629" key="NewPhpFileDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613400126196" />
-    <state x="1178" y="436" key="RollbackChangesDialog" timestamp="1607351001864">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1178" y="436" key="RollbackChangesDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607351001864" />
-    <state x="395" y="152" key="SettingsEditor" timestamp="1606754733562">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="395" y="152" key="SettingsEditor/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606754733562" />
-    <state x="1026" y="533" key="Vcs.Push.Dialog.v2" timestamp="1612722761313">
-      <screen x="0" y="0" width="3008" height="1692" />
-    </state>
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1606847106518" />
-    <state x="573" y="331" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1611412213028" />
-    <state x="873" y="454" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610888048147" />
-    <state x="4495" y="952" key="Vcs.Push.Dialog.v2/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084413578" />
-    <state x="1026" y="533" key="Vcs.Push.Dialog.v2/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1612722761313" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog" timestamp="1614459687755">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1609761441776" />
-    <state x="3259" y="682" key="com.intellij.ide.util.TipDialog/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@2560.305.1920.1080" timestamp="1606747494150" />
-    <state x="641" y="397" key="com.intellij.ide.util.TipDialog/-152.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1614236261148" />
-    <state x="641" y="397" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1611747129055" />
-    <state x="977" y="545" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1614459687755" />
-    <state x="4573" y="1021" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1612084104694" />
-    <state x="1095" y="590" key="com.intellij.ide.util.TipDialog/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613209496239" />
-    <state x="911" y="417" width="739" height="606" key="find.popup" timestamp="1610827566029">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="911" y="417" width="739" height="606" key="find.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610827566029" />
-    <state x="1051" y="547" key="publish.login" timestamp="1614439567776">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1051" y="547" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@0.0.2560.1440" timestamp="1607450605781" />
-    <state x="3348" y="715" key="publish.login/-1280.1440.1280.1024/0.0.2560.1440/2560.305.1920.1080@2560.305.1920.1080" timestamp="1607450648931" />
-    <state x="690" y="399" key="publish.login/-152.-1080.1920.1080/0.0.1680.1050@0.0.1680.1050" timestamp="1614240438913" />
-    <state x="591" y="342" key="publish.login/0.0.1440.900@0.0.1440.900" timestamp="1607342566884" />
-    <state x="690" y="399" key="publish.login/0.0.1680.1050@0.0.1680.1050" timestamp="1612180697839" />
-    <state x="1051" y="547" key="publish.login/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1614439567776" />
-    <state x="4628" y="1022" key="publish.login/0.0.2560.1440/3840.612.1920.1080@3840.612.1920.1080" timestamp="1611405034957" />
-    <state x="1235" y="643" key="publish.login/3008.299.1920.1080/0.0.3008.1692@0.0.3008.1692" timestamp="1613210511210" />
-    <state x="674" y="330" key="run.anything.popup" timestamp="1610885061364">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="674" y="330" key="run.anything.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1610885061364" />
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1613397465315">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613397465315" />
-    <state x="1003" y="633" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1613398384496">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state x="1003" y="633" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2560.1440/3840.612.1920.1080@0.0.2560.1440" timestamp="1613398384496" />
+    <MESSAGE value="[/ajax/getPlantTelemetry.php]&#10;-added functionality for Charts&#10;&#10;[/includes/my plants.html]&#10;-functionality for viewing charts&#10;&#10;[/resources/css/includes]&#10;-added CSS for mobile devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="[/ajax/getPlantTelemetry.php]&#10;-added functionality for Charts&#10;&#10;[/includes/my plants.html]&#10;-functionality for viewing charts&#10;&#10;[/resources/css/includes]&#10;-added CSS for mobile devices" />
   </component>
 </project>

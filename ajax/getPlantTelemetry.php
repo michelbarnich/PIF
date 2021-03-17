@@ -60,7 +60,7 @@
                 $response["SQLError"] = $stmt->error;
 
                 $row = $result->fetch_assoc();
-                array_push($dataArray, [ replaceSpecialChars($row["AVG(dtLuftfeuchtigkeit)"]), replaceSpecialChars($row["AVG(dtTemperatur)"]), replaceSpecialChars($row["AVG(dtHelligkeit)"]), replaceSpecialChars($row["AVG(dtBodenfeuchtigkeit)"])]);
+                array_push($dataArray, [ replaceSpecialChars($row["AVG(dtLuftfeuchtigkeit)"]), replaceSpecialChars($row["AVG(dtTemperatur)"]), replaceSpecialChars($row["AVG(dtHelligkeit)"]), replaceSpecialChars($row["AVG(dtBodenfeuchtigkeit)"]), ($_GET["dateFrom"] + ($i * $interval))]);
 
             }
 

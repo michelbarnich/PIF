@@ -22,6 +22,13 @@
         <input type="date" id="dateFrom" onchange="reloadData()">
         <input type="date" id="dateTo" onchange="reloadData()">
 
+        <div id="buttons">
+            <img src="/resources/img/my%20plants.html/waterDrop.png" alt="waterDrop" id="waterDrop" onclick="">
+            <img src="/resources/img/my%20plants.html/sun.png" alt="sun" id="sun">
+            <img src="/resources/img/my%20plants.html/waterDropMoisture.png" alt="waterDropMoisture" id="waterDropMoisture">
+            <img src="/resources/img/my%20plants.html/temperature.png" alt="temperatureIcon" id="temperatureIcon">
+        </div>
+
         <div style="" id="chartBox">
             <canvas id="Chart" style="width:100%; height:100%;"></canvas>
         </div>
@@ -123,11 +130,14 @@
 
         function showInfo( id ) {
 
-            $("#dateFrom").attr("onchange", "reloadData('" + id + "')");
-            $("#dateTo").attr("onchange", "reloadData('" + id + "')");
-            $("#rate").attr("onchange", "reloadData('" + id + "')");
+            $("#dateFrom").attr("onchange", "reloadData('" + id + "', false)");
+            $("#dateTo").attr("onchange", "reloadData('" + id + "', false)");
+            $("#rate").attr("onchange", "reloadData('" + id + "', false)");
 
-            var dateTime = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+            $("#waterDrop").attr("onclick", "reloadData('" + id + "', false, 0)");
+            $("#temperatureIcon").attr("onclick", "reloadData('" + id + "', false, 1)");
+            $("#sun").attr("onclick", "reloadData('" + id + "', false, 2)");
+            $("#waterDropMoisture").attr("onclick", "reloadData('" + id + "', false, 3)");
 
             var today = new Date()
             var tomorrow = new Date(today)
@@ -139,103 +149,70 @@
             $("#blurBox").show();
             $("#infoAndEditBox").show();
 
-            $.getJSON("/ajax/getPlantTelemetry.php?sensorID=" + id + "&dateFrom=" + (new Date(dateTime).getTime()) / 1000 + "&dateTo=" + ((new Date(dateTime).getTime()) / 1000 + 86400) + "&latest=false&intervalRate=h", function (data) {
-                console.log(data[0]);
+            reloadData( id, true);
 
-                var lightData = [];
-                var moistureData = [];
-                var humidityData = [];
-                var temperatureData = [];
-                var labels = [];
-
-                for (var i = 0; i < data[0].length; i++) {
-
-                    lightData.push(data[0][i][2]);
-                    moistureData.push(data[0][i][3]);
-                    humidityData.push(data[0][i][0]);
-                    temperatureData.push(data[0][i][1]);
-                    labels.push(i);
-
-                }
-
-                var ctx = document.getElementById('Chart').getContext('2d');
-                var chart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'line',
-
-                    // The data for our dataset
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: 'Light',
-                                borderColor: 'rgb(255, 216, 0)',
-                                backgroundColor: 'rgb(255, 216, 0)',
-                                data: lightData,
-                                fill: false
-                            },
-                            {
-                                label: 'Moisture',
-                                borderColor: 'rgb(0, 147, 255)',
-                                backgroundColor: 'rgb(0, 147, 255)',
-                                data: moistureData,
-                                fill: false
-                            },
-                            {
-                                label: 'Humidity',
-                                borderColor: 'rgb(0, 196, 255)',
-                                backgroundColor: 'rgb(0, 196, 255)',
-                                data: humidityData,
-                                fill: false
-                            },
-                            {
-                                label: 'Temperature',
-                                borderColor: 'rgb(255, 0, 0)',
-                                backgroundColor: 'rgb(255, 0, 0)',
-                                data: temperatureData,
-                                fill: false
-                            }
-                        ]
-                    },
-
-                    // Configuration options go here
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                position: 'right',
-                                stacked: false
-                            }],
-                            xAxes: [{
-                                ticks: {}
-                            }]
-                        },
-                        animation: {
-                            duration: 0
-                        }
-                    }
-                });
-
-            });
+            lastChoice = -1;
         }
 
-        function reloadData( id ) {
+        var lastChoice = -1;
 
-            $.getJSON("/ajax/getPlantTelemetry.php?sensorID=" + id + "&dateFrom=" + (new Date($("#dateFrom").val()).getTime()) / 1000 + "&dateTo=" + ((new Date($("#dateTo").val()).getTime()) / 1000 + 86400) + "&latest=false&intervalRate=" + $("#rate").val(), function (data) {
+        function reloadData( id, now=false, selection=0 ) {
+
+            if (reloadData.caller.name == "onchange") {
+                selection = lastChoice;
+            }
+
+            var dateTime = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+
+            var today = new Date()
+            var tomorrow = new Date(today)
+            tomorrow.setDate(tomorrow.getDate() + 1)
+
+            var dateFrom = (new Date(dateTime).getTime()) / 1000;
+            var dateTo = ((new Date(dateTime).getTime()) / 1000 + 86400);
+            var rate = "h";
+
+            if(!now) {
+                dateFrom = (new Date($("#dateFrom").val()).getTime()) / 1000;
+                dateTo = ((new Date($("#dateTo").val()).getTime()) / 1000 + 86400);
+                rate = $("#rate").val();
+            }
+
+            $.getJSON("/ajax/getPlantTelemetry.php?sensorID=" + id + "&dateFrom=" + dateFrom + "&dateTo=" + dateTo + "&latest=false&intervalRate=" + rate, function (data) {
                 console.log(data[0]);
 
-                var lightData = [];
-                var moistureData = [];
-                var humidityData = [];
-                var temperatureData = [];
+                var sensorData = [];
+                var colorForChart = "";
                 var labels = [];
 
                 for (var i = 0; i < data[0].length; i++) {
 
-                    lightData.push(data[0][i][2]);
-                    moistureData.push(data[0][i][3]);
-                    humidityData.push(data[0][i][0]);
-                    temperatureData.push(data[0][i][1]);
-                    labels.push(i);
+                    sensorData.push(data[0][i][selection]);
+
+                    if(selection == 0) {
+                        lastChoice = 0;
+                        colorForChart = 'rgb(0, 196, 255)';
+                    } else if(selection == 1) {
+                        lastChoice = 1;
+                        colorForChart = 'rgb(255, 0, 0)';
+                    } else if(selection == 2) {
+                        lastChoice = 2;
+                        colorForChart = 'rgb(255, 216, 0)';
+                    } else if(selection == 3) {
+                        lastChoice = 3;
+                        colorForChart = 'rgb(0, 147, 255)';
+                    }
+
+                    var months_arr = ['1','2','3','4','5','6','7','8','9','0','11','12'];
+                    var date = new Date(data[0][i][4]*1000);
+                    var year = date.getFullYear();
+                    var month = months_arr[date.getMonth()];
+                    var day = date.getDate();
+                    var hours = date.getHours();
+                    var minutes = "0" + date.getMinutes();
+                    var fulldate = day+'.'+month+'.'+year+' '+hours + ':' + minutes.substr(-2);
+
+                    labels.push(fulldate);
 
                 }
 
@@ -251,31 +228,9 @@
                         labels: labels,
                         datasets: [
                             {
-                                label: 'Light',
-                                borderColor: 'rgb(255, 216, 0)',
-                                backgroundColor: 'rgb(255, 216, 0)',
-                                data: lightData,
-                                fill: false
-                            },
-                            {
-                                label: 'Moisture',
-                                borderColor: 'rgb(0, 147, 255)',
-                                backgroundColor: 'rgb(0, 147, 255)',
-                                data: moistureData,
-                                fill: false
-                            },
-                            {
-                                label: 'Humidity',
-                                borderColor: 'rgb(0, 196, 255)',
-                                backgroundColor: 'rgb(0, 196, 255)',
-                                data: humidityData,
-                                fill: false
-                            },
-                            {
-                                label: 'Temperature',
-                                borderColor: 'rgb(255, 0, 0)',
-                                backgroundColor: 'rgb(255, 0, 0)',
-                                data: temperatureData,
+                                borderColor: colorForChart,
+                                backgroundColor: colorForChart,
+                                data: sensorData,
                                 fill: false
                             }
                         ]
@@ -283,6 +238,9 @@
 
                     // Configuration options go here
                     options: {
+                        legend: {
+                            display: false
+                        },
                         scales: {
                             yAxes: [{
                                 position: 'right',

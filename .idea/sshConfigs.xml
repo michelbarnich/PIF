@@ -59,6 +59,9 @@
       <sshConfig authType="PASSWORD" host="localhost" id="a8f3f164-5531-4e45-8a7b-1335a348e0db" port="22" customName="localServer" nameFormat="CUSTOM" username="root">
         <option name="customName" value="localServer" />
       </sshConfig>
+      <sshConfig authType="PASSWORD" host="192.168.178.122" id="a3deac1b-5dfc-4387-8225-3df781a5762f" port="22" customName="hostMacPro" nameFormat="CUSTOM">
+        <option name="customName" value="hostMacPro" />
+      </sshConfig>
     </configs>
   </component>
 </project>
