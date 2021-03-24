@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/my plants.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my plants.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +192,7 @@
       <workItem from="1615810667345" duration="1075000" />
       <workItem from="1615902189079" duration="4439000" />
       <workItem from="1615979935912" duration="2461000" />
+      <workItem from="1616596967400" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -367,14 +369,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615981373416</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="added /includes/shell.php to git repo. It was in the project and live website before but Windows Defender deleted it, so I had to add it again.">
+      <created>1616597036997</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1616597036997</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create Account and login working partially" />
     <MESSAGE value="fixed Create Account Bug (SQL email field not long enough), and Session is now working correctly (scripts/setUpSession.pp)" />
     <MESSAGE value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
     <MESSAGE value="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers" />
@@ -399,6 +407,7 @@
     <MESSAGE value="[/ajax/getPlantTelemetry.php]&#10;- added Timestamp to $dataArray&#10;&#10;[/includes/my plants.html]&#10;- switching between different values is now possible&#10;- showing timestamps/dates in ChartJS now instead of a counter value&#10;&#10;[/resources/css/includes/my plants.css]&#10;- added CSS for new selection buttons&#10;- TODO:&#10;    mobile Styles for buttons" />
     <MESSAGE value="[/ajax/deleteAccount.php]&#10;- preventing deletion of the same account as thge logged in user" />
     <MESSAGE value="[/ajax/getPkantTelemetry.php]&#10;- preventing accessing data outside of the users company" />
-    <option name="LAST_COMMIT_MESSAGE" value="[/ajax/getPkantTelemetry.php]&#10;- preventing accessing data outside of the users company" />
+    <MESSAGE value="added /includes/shell.php to git repo. It was in the project and live website before but Windows Defender deleted it, so I had to add it again." />
+    <option name="LAST_COMMIT_MESSAGE" value="added /includes/shell.php to git repo. It was in the project and live website before but Windows Defender deleted it, so I had to add it again." />
   </component>
 </project>

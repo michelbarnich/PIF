@@ -141,7 +141,6 @@
 
             var today = new Date()
             var tomorrow = new Date(today)
-            tomorrow.setDate(tomorrow.getDate() + 1)
 
             $("#dateFrom").val(today.toISOString().substr(0, 10));
             $("#dateTo").val(tomorrow.toISOString().substr(0, 10));
