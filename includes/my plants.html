@@ -33,6 +33,9 @@
             <canvas id="Chart" style="width:100%; height:100%;"></canvas>
         </div>
 
+        <input id="sensor_name" placeholder="Name">
+        <button id="save_changes">Save Changes</button>
+
     </div>
     <div id="plants">
 
@@ -94,7 +97,7 @@
                             "            <div class=\"temperature\">\n" +
                             "                <span style=\"width: " + (100 - data["plantTelemetry"].temperature) + "%;\"></span>\n" +
                             "            </div>\n" +
-                            "            <button onclick='showInfo(\"" + plantID + "\")'>More Info</button>\n" +
+                            "            <button onclick='showInfo(\"" + plantID + "\", \"" + plantName + "\")'>More Info</button>\n" +
                             "        </div>"
                         );
                     } else {
@@ -128,7 +131,9 @@
         });
 
 
-        function showInfo( id ) {
+        function showInfo( id, name ) {
+
+            $("#sensor_name").val(name);
 
             $("#dateFrom").attr("onchange", "reloadData('" + id + "', false)");
             $("#dateTo").attr("onchange", "reloadData('" + id + "', false)");
@@ -138,6 +143,8 @@
             $("#temperatureIcon").attr("onclick", "reloadData('" + id + "', false, 1)");
             $("#sun").attr("onclick", "reloadData('" + id + "', false, 2)");
             $("#waterDropMoisture").attr("onclick", "reloadData('" + id + "', false, 3)");
+
+            $("#save_changes").attr("onclick", "saveChanges('" + id + "')");
 
             var today = new Date()
             var tomorrow = new Date(today)
@@ -156,6 +163,10 @@
             reloadData( id, true);
 
             lastChoice = -1;
+        }
+
+        function saveChanges( id ) {
+            console.log(id);
         }
 
         var lastChoice = -1;
