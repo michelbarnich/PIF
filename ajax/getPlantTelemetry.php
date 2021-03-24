@@ -42,6 +42,15 @@
                     ];
                 }
 
+                if ($result->num_rows < 1) {
+                    $response["plantTelemetry"] = [
+                        "humidity" => 0,
+                        "temperature" => 0,
+                        "light" => 0,
+                        "moisture" => 0
+                    ];
+                }
+
             } else {
 
                 if($_GET["intervalRate"] == "h") {
