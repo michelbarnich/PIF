@@ -166,7 +166,12 @@
         }
 
         function saveChanges( id ) {
-            console.log(id);
+
+            $.get("/ajax/updateSensor.php?id=" + id + "&name=" + $("#sensor_name").val(), function (data) {
+                console.log(data);
+                location.reload();
+            })
+
         }
 
         var lastChoice = -1;

@@ -48,16 +48,18 @@
 
             $sql = "SELECT * FROM tblsensorstation WHERE idIdentifikationsNummer = ? AND fiFirma = '" . $response["userData"]["companyId"] . "'";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $_POST["id"]);
+            $stmt->bind_param("s", $_GET["id"]);
             $stmt->execute();
             $result = $stmt->get_result();
             $response["SQLError"] = $stmt->error;
+
+            echo $result->num_rows;
 
             if($result->num_rows == 1) {
 
                 $sql = "UPDATE tblsensorstation SET dtName = ? WHERE idIdentifikationsNummer = ?";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ss",$_POST["name"], $_POST["id"]);
+                $stmt->bind_param("ss",$_GET["name"], $_GET["id"]);
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $response["SQLError"] = $stmt->error;
