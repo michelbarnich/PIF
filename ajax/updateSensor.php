@@ -46,7 +46,7 @@
             }
         } elseif ($response["userData"]["role"] >= 2 && $queries["page_name"] == "my plants") {
 
-            $sql = "SELECT * FROM tblsensorstation WHERE idIdentifikationsNummer = ?;";
+            $sql = "SELECT * FROM tblsensorstation WHERE idIdentifikationsNummer = ? AND fiFirma = '" . $response["userData"]["companyId"] . "'";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("s", $_POST["id"]);
             $stmt->execute();

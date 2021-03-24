@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="">
+    <list default="true" id="32d49878-455a-4f19-b6f3-458036f8b47b" name="Default Changelist" comment="[/ajax/logout.php]&#10;- properly deletes session now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/my plants.html" beforeDir="false" afterPath="$PROJECT_DIR$/includes/my plants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax/updateSensor.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajax/updateSensor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/includes/my plants.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/includes/my plants.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,8 @@
       <workItem from="1615810667345" duration="1075000" />
       <workItem from="1615902189079" duration="4439000" />
       <workItem from="1615979935912" duration="2461000" />
-      <workItem from="1616596967400" duration="344000" />
+      <workItem from="1616596967400" duration="2912000" />
+      <workItem from="1616611586384" duration="3894000" />
     </task>
     <task id="LOCAL-00001" summary="create Account and login working partially">
       <created>1602788807825</created>
@@ -376,20 +378,62 @@
       <option name="project" value="LOCAL" />
       <updated>1616597036997</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[/includes/my plants.html]&#10;fixed jumping in time when switching between sensor readings (moirture, temperature, etc)">
+      <created>1616597378452</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1616597378452</updated>
+    </task>
+    <task id="LOCAL-00028" summary="[/ajax/logout.php]&#10;- properly deletes session now">
+      <created>1616598201278</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1616598201278</updated>
+    </task>
+    <task id="LOCAL-00029" summary="[/ajax/getPlantTelemetry.php]&#10;- added 0 values to $response, else the onclick value of the &quot;more info&quot; button in /includes/my plants.html will not be set properly">
+      <created>1616599471492</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1616599471492</updated>
+    </task>
+    <task id="LOCAL-00030" summary="- trying to fix scrolling issue on mobile WebKit browsers&#10;- fixed button placement in infoBox in my plants">
+      <created>1616613275274</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1616613275274</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed scrolling issue by disabling scrolling if any blurbox is shown, and automatically scrolling to top of page">
+      <created>1616613916758</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1616613916758</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added backend support for modifying sensor station names">
+      <created>1616615087515</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1616615087515</updated>
+    </task>
+    <task id="LOCAL-00033" summary="load current name into input field in my plants if more info is pressed">
+      <created>1616615526107</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1616615526107</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed Create Account Bug (SQL email field not long enough), and Session is now working correctly (scripts/setUpSession.pp)" />
-    <MESSAGE value="Logout working, fixed multiple bugs, and added checks for validating email addresses" />
-    <MESSAGE value="main page done, fixed visual bugs on landing page, design is now fully responsive for Desktop Computers" />
-    <MESSAGE value="idk anymore" />
-    <MESSAGE value="[login.html/login.css]&#10;- fixed loginBox placement and size&#10;&#10;[main.html/main.css]&#10;- fixed body size issue for some window-sizes" />
-    <MESSAGE value="[ajax/sensor_post.php]&#10;- added this file to transfer data from the sensorStations to the MySQL Database.&#10;&#10;[ajax/getUserData]&#10;- added $silent. If true, the script will not echo anything.&#10;&#10;[ajax/getContentForUser.php]&#10;- added a role check. System.php can now only be displayed if you have role 3 (Administrator)&#10;&#10;[includes/main.html]&#10;- removes &quot;System&quot; from the sidebar if you are not role 3 (Administrator)" />
-    <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)&#10;&#10;[includes/login.html]&#10;- removed unnecessary code" />
     <MESSAGE value="[includes/my account.html]&#10;- added the file&#10;&#10;[resources/css/includes/my account.css]&#10;- added the file&#10;&#10;[ajax/getContentForUser.php]&#10;- added option for &quot;my account&quot;" />
     <MESSAGE value="[ajax/login.php]&#10;- fixed possible privilege escalation by having multiple accounts with the same email Address (The issue itself will be fixed later on)" />
     <MESSAGE value="[ajax/updateAccount.php]&#10;- added file and check if the ID is set in the session&#10;&#10;[includes/my account.html]&#10;- aded id's to inputfields&#10;&#10;[resources/css/includes/my account.css]&#10;- fixed misplaycing of some elements" />
@@ -408,6 +452,13 @@
     <MESSAGE value="[/ajax/deleteAccount.php]&#10;- preventing deletion of the same account as thge logged in user" />
     <MESSAGE value="[/ajax/getPkantTelemetry.php]&#10;- preventing accessing data outside of the users company" />
     <MESSAGE value="added /includes/shell.php to git repo. It was in the project and live website before but Windows Defender deleted it, so I had to add it again." />
-    <option name="LAST_COMMIT_MESSAGE" value="added /includes/shell.php to git repo. It was in the project and live website before but Windows Defender deleted it, so I had to add it again." />
+    <MESSAGE value="[/includes/my plants.html]&#10;fixed jumping in time when switching between sensor readings (moirture, temperature, etc)" />
+    <MESSAGE value="[/ajax/logout.php]&#10;- properly deletes session now" />
+    <MESSAGE value="[/ajax/getPlantTelemetry.php]&#10;- added 0 values to $response, else the onclick value of the &quot;more info&quot; button in /includes/my plants.html will not be set properly" />
+    <MESSAGE value="- trying to fix scrolling issue on mobile WebKit browsers&#10;- fixed button placement in infoBox in my plants" />
+    <MESSAGE value="fixed scrolling issue by disabling scrolling if any blurbox is shown, and automatically scrolling to top of page" />
+    <MESSAGE value="added backend support for modifying sensor station names" />
+    <MESSAGE value="load current name into input field in my plants if more info is pressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="load current name into input field in my plants if more info is pressed" />
   </component>
 </project>

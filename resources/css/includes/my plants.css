@@ -155,6 +155,18 @@ img {
     background-color: white;
 }
 
+#sensor_name {
+    position: absolute;
+    left: 440px;
+    top: 460px !important;
+}
+
+#save_changes {
+    position: absolute;
+    left: 485px;
+    top: 530px;
+}
+
 #infoAndEditBox {
     z-index: 100;
     position: absolute;
