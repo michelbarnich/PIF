@@ -142,7 +142,6 @@ input {
 
 #blurBox {
     display: none;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -151,6 +150,8 @@ input {
     margin: 0;
     border-radius: 0;
     background-color: rgba(255,255,255,0.3);
+    position: sticky;
+    position: -webkit-sticky;
 }
 
 @media screen and (max-width: 699px) {
@@ -190,6 +191,8 @@ input {
         width: 434px;
         height: 100%;
         margin-left: -20px;
+        position: sticky;
+        position: -webkit-sticky;
     }
 
     #createBox, #editBox {

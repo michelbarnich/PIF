@@ -240,7 +240,8 @@ h2 {
 }
 
 #blurBox {
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -340,11 +341,12 @@ h2 {
     #blurBox {
         height: calc(100% + 87px);
         top: -87px;
-        position: fixed;
+        position: sticky;
+        position: -webkit-sticky;
     }
 
     #accountSettingsContainer {
-        top: 0px;
+        top: 90px;
         margin-top: 0px;
         left: 0px;
         width: 394px;
