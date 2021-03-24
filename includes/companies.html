@@ -87,12 +87,24 @@
             $("#blurBox").show();
             $("#createBox").show();
 
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
+
         }
 
         function editCompany(id) {
 
             $("#blurBox").show();
             $("#editBox").show();
+
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
 
             $.post("/ajax/getCompanyData.php", {id: id}, function (data) {
                 console.log(data);

@@ -55,6 +55,12 @@
             $("#createBox").show();
             $("#blurBox").show();
 
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
+
             $.get("/ajax/listCompanies.php", function (data) {
                 console.log(data);
 
@@ -73,6 +79,12 @@
         function editSensor(id) {
             $("#editBox").show();
             $("#blurBox").show();
+
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
 
             $("#editID").val(id);
 

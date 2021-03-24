@@ -147,6 +147,11 @@
 
             $("#blurBox").show();
             $("#infoAndEditBox").show();
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
 
             reloadData( id, true);
 

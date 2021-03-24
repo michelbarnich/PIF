@@ -67,6 +67,12 @@
         $("#createAccount").click(function () {
             $("#createAccountBox").show();
             $("#blurBox").show();
+
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
         });
 
         function deleteUser( id ) {
@@ -156,6 +162,12 @@
 
             $("#accountSettingsContainer").show();
             $("#blurBox").show();
+
+            $('html').css({
+                'overflow': 'hidden',
+                'height': '100%'
+            });
+            $('html, body').animate({scrollTop:(0)}, '10');
 
             $.get("/ajax/listUsers.php", function (data) {
                 console.log(data);
