@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Notifications</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/resources/css/includes/notifications.css">
 </head>
 <body>
 
+    <div id="container"></div>
 
+    <script>
 
+        $(window).resize(function () {
+            if(document.documentElement.clientWidth <= 699) {
+                $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+            } else {
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";            }
+        });
+
+        $(document).ready(function () {
+            if(document.documentElement.clientWidth <= 699) {
+                $("body").height(document.documentElement.clientHeight * 414 / document.documentElement.clientWidth);
+                $("body").css({"transform": "scale(" +  document.documentElement.clientWidth / 414 +  ")", "left": (document.documentElement.clientWidth - 414) / 2 + "px", "top": ( $("body").height() * document.documentElement.clientWidth / 414 - $("body").height() ) / 2 + "px"});
+            } else {
+                let zoomFactor = (document.documentElement.clientWidth / 1638 * 100);
+                document.body.style.zoom = zoomFactor + "%";
+            }
+
+            $.getJSON("/ajax/getNotifications.php", function (json) {
+                let notifications = json["notifications"]
+                console.log(notifications);
+
+                for (var i = 0; i < notifications.length; i++) {
+
+                    if($('#'+ notifications[i]["sensorID"]).length) {
+                        $('#'+ notifications[i]["sensorID"]).html(
+                            $('#'+ notifications[i]["sensorID"]).html() +
+                            "<p>The plant is " + notifications[i]["cause"] + "<img alt='warning' src='/resources/img/notifications.html/warning.png'></p>"
+                        )
+                    } else {
+                        $("#container").html(
+                            $("#container").html() +
+                            "<div id=" + notifications[i]["sensorID"] + "><h1>" + notifications[i]["sensorName"] + "</h1><p>The plant is " + notifications[i]["cause"] + "<img alt='warning' src='/resources/img/notifications.html/warning.png'></p></div>"
+
+                        )
+                    }
+
+                }
+
+            })
+        });
+
+    </script>
 </body>
 </html>

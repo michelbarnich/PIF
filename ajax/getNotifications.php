@@ -35,62 +35,71 @@
             $response["SQLError"] = $stmt3->error;
 
             $row3 = $result3->fetch_assoc();
+            $row2 = $result2->fetch_assoc();
 
             //print_r($row3);
 
             if($row["dtMinimumLuftfeuchtigkeit"] > $row3["dtLuftfeuchtigkeit"] && !is_null($row["dtMinimumLuftfeuchtigkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "not humid enough"
+                    "cause" => "not humid enough",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMaximumLuftfeuchtigkeit"] < $row3["dtLuftfeuchtigkeit"] && !is_null($row["dtMaximumLuftfeuchtigkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "too humid"
+                    "cause" => "too humid",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMinimumHelligkeit"] > $row3["dtHelligkeit"] && !is_null($row["dtMinimumHelligkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "not bright enough"
+                    "cause" => "not bright enough",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMaximumHelligkeit"] < $row3["dtLuftfeuchtigkeit"] && !is_null($row["dtMaximumHelligkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "too bright"
+                    "cause" => "too bright",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMinimumBodenfeuchtigkeit"] > $row3["dtBodenfeuchtigkeit"] && !is_null($row["dtMinimumBodenfeuchtigkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "too moist"
+                    "cause" => "too moist",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMaximumBodenfeuchtigkeit"] < $row3["dtBodenfeuchtigkeit"] && !is_null($row["dtMaximumBodenfeuchtigkeit"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "not moist enough"
+                    "cause" => "not moist enough",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMinimumTemperatur"] > $row3["dtTemperatur"] && !is_null($row["dtMinimumTemperatur"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "too cold"
+                    "cause" => "too cold",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
             if($row["dtMaximumTemperatur"] < $row3["dtTemperatur"] && !is_null($row["dtMaximumTemperatur"])) {
                 array_push($response["notifications"], [
                     "sensorID" => $row["fiSensor"],
-                    "cause" => "too warm"
+                    "cause" => "too warm",
+                    "sensorName" => $row2["dtName"]
                 ]);
             }
 
