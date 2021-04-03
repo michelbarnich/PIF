@@ -47,3 +47,25 @@ body {
     left: 20px;
 }
 
+@media screen and (max-width: 699px) {
+
+    body {
+        width: 414px;
+        top: 0;
+    }
+
+    #container {
+        width: 404px;
+        position: absolute;
+        left: 5px;
+        top: 54px;
+    }
+
+    #container > div > p {
+        padding-top: 50px;
+        width: 354px;
+        height: 40px;
+    }
+
+}
+
