@@ -168,8 +168,17 @@ img {
 
 #save_changes {
     position: absolute;
-    left: 485px;
-    top: 530px;
+    left: 410px;
+    top: 670px;
+    color: #20C800;
+    border-radius: 30px;
+    -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    font-size: 30px;
+    width: 280px;
+    height: 56px;
+    border: none;
+    background-color: white;
 }
 
 #infoAndEditBox {
@@ -285,6 +294,84 @@ img {
 #temperatureIcon {
     padding-left: 17px;
     padding-right: 18px;
+}
+
+section.range-slider {
+    position: absolute;
+    width: 1100px;
+    height: 35px;
+    top: 550px;
+}
+
+section.range-slider input {
+    position: absolute;
+    overflow: hidden;
+    top: 41px;
+    width: 640px;
+    outline: none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    left: 230px;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    border: 0;
+}
+section.range-slider input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+#minVal {
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    font-size: 24px;
+    height: 53px;
+    color: #434343;
+    width: 220px;
+    top:23px;
+    left: 0 !important;
+}
+
+#maxVal {
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+    font-size: 24px;
+    height: 53px;
+    color: #434343;
+    width: 220px;
+    right: 0px !important;
+    left: unset !important;
+    top:23px
 }
 
 @media screen and (max-width: 699px) {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/includes/my plants.css">
 </head>
 <body>
+
     <div id="blurBox" style=""></div>
     <div id="infoAndEditBox">
 
@@ -36,11 +37,47 @@
         <input id="sensor_name" placeholder="Name">
         <button id="save_changes">Save Changes</button>
 
+        <section class="range-slider">
+            <span class="rangeValues"></span>
+            <input type="number" id="minVal">
+            <input value="5" min="0" max="100" step="0.5" type="range" id="bottomSlider">
+            <input value="10" min="0" max="100" step="0.5" type="range" id="topSlider">
+            <input type="number" id="maxVal">
+        </section>
+
     </div>
     <div id="plants">
 
     </div>
     <script>
+
+        function getVals(){
+            // Get slider values
+            var parent = this.parentNode;
+            var slides = parent.getElementsByTagName("input");
+            var slide1 = parseFloat( slides[1].value );
+            var slide2 = parseFloat( slides[2].value );
+            // Neither slider will clip the other, so make sure we determine which is larger
+            if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+
+            $("#maxVal").val(slide2)
+            $("#minVal").val(slide1)
+        }
+
+        window.onload = function(){
+            // Initialize Sliders
+            var sliderSections = document.getElementsByClassName("range-slider");
+            for( var x = 0; x < sliderSections.length; x++ ){
+                var sliders = sliderSections[x].getElementsByTagName("input");
+                for( var y = 0; y < sliders.length; y++ ){
+                    if( sliders[y].type ==="range" ){
+                        sliders[y].oninput = getVals;
+                        // Manually trigger event first time to display values
+                        sliders[y].oninput();
+                    }
+                }
+            }
+        }
 
         $(window).resize(function () {
             if(document.documentElement.clientWidth <= 699) {
