@@ -80,6 +80,11 @@ img {
     left: 19px;
 }
 
+#sun {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 .waterDropMoisture {
     top: 195px;
     left: 20px;
