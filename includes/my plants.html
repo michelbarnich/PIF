@@ -273,6 +273,46 @@
 
                 }
 
+                var value="";
+
+                switch (lastChoice) {
+                    case 0:
+                        value = "humidity"
+                        break;
+                    case 1:
+                        value = "light"
+                        break;
+                    case 2:
+                        value = "moisture"
+                        break;
+                    case 3:
+                        value = "temperature"
+                        break;
+                }
+
+                $.getJSON("/ajax/getNotificationRanges.php?sensorID=" + id + "&value=" + value, function (data) {
+
+                    console.log(data)
+
+                    if(data["values"]["max"] != null && data["values"]["min"] != null) {
+
+                        $("#minVal").val(data["values"]["min"])
+                        $("#maxVal").val(data["values"]["max"])
+
+                        $("#topSlider").val(data["values"]["max"]);
+                        $("#bottomSlider").val(data["values"]["min"]);
+                    } else {
+
+                        $("#minVal").val(0)
+                        $("#maxVal").val(100)
+
+                        $("#topSlider").val(100);
+                        $("#bottomSlider").val(0);
+                    }
+
+
+                })
+
                 $("#chartBox").html('<canvas id="Chart" style="width:100%; height:100%;"></canvas>');
 
                 var ctx = document.getElementById('Chart').getContext('2d');
