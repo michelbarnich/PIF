@@ -5,7 +5,6 @@
     include_once "../scripts/connectToDatabase.php";
     include_once "../scripts/setUpSession.php";
     include_once "../ajax/getUserData.php";
-    include_once "../scripts/parseURLForQueries.php";
 
     if ($response["userData"]["role"] >= 1 ) {
 
