@@ -160,12 +160,6 @@ img {
     background-color: white;
 }
 
-#sensor_name {
-    position: absolute;
-    left: 440px;
-    top: 460px !important;
-}
-
 #save_changes {
     position: absolute;
     left: 410px;
@@ -374,6 +368,12 @@ section.range-slider input[type=range]::-moz-focus-outer {
     top:23px
 }
 
+#sensor_name {
+    position: absolute;
+    left: 440px;
+    top: 460px !important;
+}
+
 @media screen and (max-width: 699px) {
 
     body {
@@ -410,7 +410,7 @@ section.range-slider input[type=range]::-moz-focus-outer {
 
     #buttons {
         left: 77px;
-        top: 460px;
+        top: 385px;
     }
 
     #blurBox {
@@ -428,6 +428,11 @@ section.range-slider input[type=range]::-moz-focus-outer {
         font-size: 20px;
     }
 
+    #sensor_name {
+        top: 435px !important;
+        left: 20px !important;
+    }
+
     #infoAndEditBox > select {
         width: 369px;
     }
@@ -442,6 +447,49 @@ section.range-slider input[type=range]::-moz-focus-outer {
 
     #chartBox {
         top: 150px;
+        height: 250px;
+    }
+
+    #buttons > img {
+        position: relative;
+        height: 30px;
+        margin:auto;
+        border-radius: 15px;
+        -webkit-box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 3px 16px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    #minVal {
+        width: 40px;
+        text-align: center;
+        top: -70px;
+    }
+
+    #maxVal {
+        width: 40px;
+        text-align: center;
+        top: -70px;
+        left: 355px !important;
+        right: 0px;
+    }
+
+    #topSlider {
+        top: -55px;
+        left: 50px;
+        width: 290px;
+    }
+
+    #bottomSlider {
+        top: -55px;
+        left: 50px;
+        width: 290px;
+    }
+
+    #save_changes {
+        left: 60px;
+        top: 530px;
     }
 
 }
