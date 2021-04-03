@@ -51,9 +51,18 @@
     </div>
     <script>
 
+        $("#maxVal, #minVal").change( function () {
+
+            $("#topSlider").val($("#maxVal").val())
+            $("#bottomSlider").val($("#minVal").val())
+
+            getVals()
+
+        })
+
         function getVals(){
             // Get slider values
-            var parent = this.parentNode;
+            var parent = document.getElementsByClassName("range-slider")[0];
             var slides = parent.getElementsByTagName("input");
             var slide1 = parseFloat( slides[1].value );
             var slide2 = parseFloat( slides[2].value );
