@@ -14,7 +14,7 @@
         } elseif($_GET["value"] == "humidity") {
             $fields = "dtMinimumLuftfeuchtigkeit AS min, dtMaximumLuftfeuchtigkeit AS max";
         } elseif($_GET["value"] == "light") {
-            $fields = "dtMinimumHelligkeit AS min, dtMinimumHelligkeit AS max";
+            $fields = "dtMinimumHelligkeit AS min, dtMaximumHelligkeit AS max";
         } elseif($_GET["value"] == "temperature") {
             $fields = "dtMinimumTemperatur AS min, dtMaximumTemperatur AS max";
         }
