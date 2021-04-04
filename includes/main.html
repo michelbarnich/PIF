@@ -33,6 +33,7 @@
         <li class="sidebar_option">
             <img src="resources/img/main.html/System.png" class="option_icon">
             <span>Notifications</span>
+            <p id="notificationNumber"></p>
         </li>
     </ul>
     <button id="sidebar_logout" class="sidebar_option">Logout!</button>
@@ -86,6 +87,18 @@
                 $("#sidebar").hide();
                 sidebarHide = true;
             }
+        });
+
+        $.getJSON("/ajax/getNotifications.php", function (json) {
+            let notifications = json["notifications"]
+            console.log(notifications);
+
+            if(notifications.length == 0) {
+                $("#notificationNumber").hide();
+            } else {
+                $("#notificationNumber").html(notifications.length);
+            }
+
         });
 
     });
