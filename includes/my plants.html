@@ -213,13 +213,13 @@
 
         function saveChanges( id ) {
 
-            $.get("/ajax/updateSensor.php?id=" + id + "&name=" + $("#sensor_name").val(), function (data) {
-                console.log(data);
-            })
-
             $.get("/ajax/updateNotification.php?sensorID=" + id + "&min=" + $("#minVal").val() + "&max=" + $("#maxVal").val() + "&value=" + lastChoice, function (data) {
                 console.log(data)
-            })
+            });
+
+            $.get("/ajax/updateSensor.php?id=" + id + "&name=" + $("#sensor_name").val() + "", function (data) {
+                console.log(data);
+            });
 
             location.reload();
 

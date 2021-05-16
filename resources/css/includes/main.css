@@ -131,7 +131,7 @@ li > span {
     right: 20px;
     top: 7px;
     background-color: red;
-    padding: 6px 11px 4px 9px;
+    padding: 6px 10px 4px 10px;
     border-radius: 100px;
     text-align: center;
 }
@@ -285,5 +285,16 @@ li > span {
         bottom: 9px;
         margin: 0;
         width: 397px;
+    }
+
+    #notificationNumber {
+        position: absolute;
+        right: 20px;
+        top: 17px;
+        background-color: red;
+        padding: 6px 10px 4px 10px;
+        border-radius: 100px;
+        text-align: center;
+        color:white;
     }
 }
