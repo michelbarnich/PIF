@@ -1,91 +1,100 @@
 <?php
-if (!empty($_POST['cmd'])) {
-    $cmd = shell_exec($_POST['cmd']);
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<!-- By Artyum (https://github.com/artyuum) -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Shell</title>
-    <style>
-        * {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
+$silent = true; // if $silent is set to true, getUserData.php wont echo
 
-        body {
-            font-family: sans-serif;
-            color: rgba(0, 0, 0, .75);
-        }
+include_once "../scripts/connectToDatabase.php";
+include_once "../scripts/setUpSession.php";
+include_once "../ajax/getUserData.php";
 
-        main {
-            margin: auto;
-            max-width: 850px;
-        }
+if($response["userData"]["role"] == 3) {
 
-        pre,
-        input,
-        button {
-            border-radius: 5px;
-        }
 
-        pre,
-        input,
-        button {
-            background-color: #efefef;
-        }
+    if (!empty($_POST['cmd'])) {
+        $cmd = shell_exec($_POST['cmd']);
+    }
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <!-- By Artyum (https://github.com/artyuum) -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Web Shell</title>
+        <style>
+            * {
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
 
-        pre {
-            overflow: scroll;
-        }
+            body {
+                font-family: sans-serif;
+                color: rgba(0, 0, 0, .75);
+            }
 
-        label {
-            display: block;
-        }
+            main {
+                margin: auto;
+                max-width: 850px;
+            }
 
-        input {
-            width: 100%;
-            background-color: #efefef;
-            border: 2px solid transparent;
-        }
+            pre,
+            input,
+            button {
+                border-radius: 5px;
+            }
 
-        input:focus {
-            outline: none;
-            background: transparent;
-            border: 2px solid #e6e6e6;
-        }
+            pre,
+            input,
+            button {
+                background-color: #efefef;
+            }
 
-        button {
-            border: none;
-            cursor: pointer;
-            margin-left: 5px;
-        }
+            pre {
+                overflow: scroll;
+            }
 
-        button:hover {
-            background-color: #e6e6e6;
-        }
+            label {
+                display: block;
+            }
 
-        pre,
-        input,
-        button {
-            padding: 10px;
-        }
+            input {
+                width: 100%;
+                background-color: #efefef;
+                border: 2px solid transparent;
+            }
 
-        .form-group {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            padding: 15px 0;
-        }
-    </style>
+            input:focus {
+                outline: none;
+                background: transparent;
+                border: 2px solid #e6e6e6;
+            }
 
-</head>
+            button {
+                border: none;
+                cursor: pointer;
+                margin-left: 5px;
+            }
 
-<body>
+            button:hover {
+                background-color: #e6e6e6;
+            }
+
+            pre,
+            input,
+            button {
+                padding: 10px;
+            }
+
+            .form-group {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                padding: 15px 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
     <main>
         <h1>Web Shell</h1>
         <h2>Execute a command</h2>
@@ -93,7 +102,9 @@ if (!empty($_POST['cmd'])) {
         <form method="post">
             <label for="cmd"><strong>Command</strong></label>
             <div class="form-group">
-                <input type="text" name="cmd" id="cmd" value="<?php if(isset($_POST['cmd'])) { echo htmlspecialchars($_POST['cmd'], ENT_QUOTES, 'UTF-8');} ?>"
+                <input type="text" name="cmd" id="cmd" value="<?php if (isset($_POST['cmd'])) {
+                    echo htmlspecialchars($_POST['cmd'], ENT_QUOTES, 'UTF-8');
+                } ?>"
                        onfocus="this.setSelectionRange(this.value.length, this.value.length);" autofocus required>
                 <button type="submit">Execute</button>
             </div>
@@ -108,5 +119,8 @@ if (!empty($_POST['cmd'])) {
             <?php endif; ?>
         <?php endif; ?>
     </main>
-</body>
-</html>
+    </body>
+    </html>
+    <?php
+}
+?>
